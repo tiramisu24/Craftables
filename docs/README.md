@@ -9,6 +9,6 @@
 * Searching projects by keyword
   * search title and description for keyword
   * parse out unique words in title and description when project is saved to database
-Bonus: Featured project channels
-Bonus: Categories
-Bonus: Pull data from Pinterest
+* Bonus: Featured project channels
+* Bonus: Categories
+* Bonus: Pull data from Pinterest
