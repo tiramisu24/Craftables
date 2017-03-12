@@ -8,10 +8,10 @@
   * Publish
   * Categories
 
-#AuthFormContainer
+**AuthFormContainer**
   * AuthForm
 
-#ProjectIndex
+**ProjectIndex**
   * Image
   * Title
   * Views
@@ -19,26 +19,26 @@
 
 #Main Page
 
-#HomeContainer
+**HomeContainer**
   * SearchBox
   * ProjectIndex
 
-#SearchBoxContainer
+**SearchBoxContainer**
   * Image
   * Categories
   * SearchBar
 
-#ProjectIndexContainer
+**ProjectIndexContainer**
   * ProjectIndex
 
-#Search Result Page
+**Search Result Page**
 
-#SearchResultContainer
+**SearchResultContainer**
   * SearchMessage
     * keyword
   * ProjectIndex
 
-#Project Page
+**Project Page**
   * ProjectDetail
     * Step
     * Image
@@ -50,7 +50,7 @@
   * Favorite
 
 #New Project
-#NewProjectContainer
+**NewProjectContainer**
   * NewProject
   * NewProjectButton
 
