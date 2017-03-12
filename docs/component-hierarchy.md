@@ -20,8 +20,8 @@
 #Main Page
 
 **HomeContainer**
-  * SearchBox
-  * ProjectIndex
+  * SearchBoxContainer
+  * ProjectIndexContainer
 
 **SearchBoxContainer**
   * Image
@@ -31,14 +31,14 @@
 **ProjectIndexContainer**
   * ProjectIndex
 
-#Search Result Page**
+#Search Result Page
 
 **SearchResultContainer**
   * SearchMessage
     * keyword
   * ProjectIndex
 
-#Project Page**
+#Project Page
   **ProjectContainer**
     * ProjectDetail
       * Step
