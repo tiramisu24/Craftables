@@ -1,24 +1,12 @@
-# README
+# Craftables
+[craftables.co][craft] is ???. Inspired by Instructables, Craftables allows users to post, comment on and share projects.  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Features
 
-Things you may want to cover:
+## Project Design
 
-* Ruby version
+## Technology
 
-* System dependencies
+## Future Implementations
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[craft]: http://craftables.co
