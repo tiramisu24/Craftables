@@ -39,16 +39,16 @@
   * ProjectIndex
 
 #Project Page
-  **ProjectContainer**
-    * ProjectDetail
-      * Step
-      * Image
-      * Description
-    * Comments
-    * AuthorDetail
-      * Image
-      * Bio
-    * Favorite
+**ProjectContainer**
+  * ProjectDetail
+    * Step
+    * Image
+    * Description
+  * Comments
+  * AuthorDetail
+    * Image
+    * Bio
+  * Favorite
 
 #New Project
 **NewProjectContainer**
