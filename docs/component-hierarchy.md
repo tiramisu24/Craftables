@@ -31,29 +31,35 @@
 **ProjectIndexContainer**
   * ProjectIndex
 
-**Search Result Page**
+#Search Result Page**
 
 **SearchResultContainer**
   * SearchMessage
     * keyword
   * ProjectIndex
 
-**Project Page**
-  * ProjectDetail
-    * Step
-    * Image
-    * Description
-  * Comments
-  * AuthorDetail
-    * Image
-    * Bio
-  * Favorite
+#Project Page**
+  **ProjectContainer**
+    * ProjectDetail
+      * Step
+      * Image
+      * Description
+    * Comments
+    * AuthorDetail
+      * Image
+      * Bio
+    * Favorite
 
 #New Project
 **NewProjectContainer**
   * NewProject
   * NewProjectButton
 
+#User Profile Page
+**UserContainer**
+  * UpdateProfilePicButton
+  * CreatedProjects
+  * FavoritedProjects
 
   ## Routes
 
@@ -62,13 +68,8 @@
   | "/sign-up" | "AuthFormContainer" |
   | "/sign-in" | "AuthFormContainer" |
   | "/home" | "HomeContainer" |
-  | "/home/note/:noteId" | "NotesContainer" |
-  | "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-  | "/home/tag/:tagId/note/:notedId" | "TagContainer" |
+  | "/home/project/:projectId" | "NotesContainer" |
   | "/home/search-results" | "SearchResultsContainer"
-  | "/new-note" | "NewNoteContainer" |
+  | "/new-project" | "NewProjectContainer" |
   | "/search" | "Search" |
-  | "/new-notebook" | "NewNotebook" |
-  | "/new-tag" | "NewTag" |
-  | "/tag-search" | "TagSearch" |
-  | "/notebook-search" | "NotebookSearch" |
+  | "/users/userId" | "UserContainer" |
