@@ -89,9 +89,9 @@
   |-------|-------------|
   | "/sign-up" | "AuthFormContainer" |
   | "/sign-in" | "AuthFormContainer" |
-  | "/home" | "HomeContainer" |
-  | "/home/project/:projectId" | "NotesContainer" |
-  | "/home/search-results" | "SearchResultsContainer"
+  | "/" | "HomeContainer" |
+  | "/project/:projectId" | "NotesContainer" |
+  | "/search-results" | "SearchResultsContainer"|
   | "/new-project" | "NewProjectContainer" |
   | "/search" | "Search" |
   | "/users/userId" | "UserContainer" |
