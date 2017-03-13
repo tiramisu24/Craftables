@@ -1,0 +1,35 @@
+# Schema Information
+
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null, indexed, unique
+image_url       | string    | not null, indexed
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
+
+## Project
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+body        | text      | not null
+author_id   | integer   | not null, foreign key (references users), indexed
+archived    | boolean   | not null, default: false
+featured    | boolean   | not null, default: false
+
+## comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+author_id   | integer   | not null, foreign key (references users), indexed
+title       | string    | not null
+description | string    |
+
+## favorite
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer    | not null, foreign key (references tags), indexed
+project_id  | integer    | not null, foreign key (references notes), indexed, unique [tag_id]
