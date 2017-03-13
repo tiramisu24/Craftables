@@ -20,6 +20,13 @@ archived    | boolean   | not null, default: false
 featured    | boolean   | not null, default: false
 keywords    | string    | array, default: []
 
+## keywords
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+word        | string    | not null
+project_id  | integer   | not null, foreign key (references users), indexed
+
 ## comments
 column name | data type | details
 ------------|-----------|-----------------------
