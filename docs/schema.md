@@ -25,7 +25,22 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
+project_id  | integer   | not null, foreign key (references users), indexed
 description | string    |
+
+## image_table
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+media_url   | string    | not null
+project_id  | integer   | not null, foreign key (references notes), indexed
+
+## video_table
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+media_url   | string    | not null
+project_id  | integer   | not null, foreign key (references notes), indexed
 
 ## favorite
 column name | data type | details
