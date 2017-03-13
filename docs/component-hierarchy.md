@@ -4,9 +4,10 @@
   * AuthForm
   * SearchBar
   * Profile Page
-  * Explore
-  * Publish
-  * Categories
+  * Menu
+    * Explore
+    * Publish
+    * Categories
 
 **AuthFormContainer**
   * AuthForm
@@ -68,8 +69,9 @@
     * SaveButton
     * PublishButton
   * AddStep
-    * Image 
+    * Image
     * Description
+    * AddStepButton
 
 #User Profile Page
 **UserContainer**
