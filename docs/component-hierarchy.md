@@ -17,6 +17,10 @@
   * Views
   * Favorites
 
+**AuthorDetailContainer**
+  * Image
+  * Bio
+
 #Main Page
 
 **HomeContainer**
@@ -40,26 +44,42 @@
 
 #Project Page
 **ProjectContainer**
+  * Favorite Button
+  * Made Project Button
+  * StepContainer
+      * Steps
+      * Next/Prev Step Buttons
   * ProjectDetail
-    * Step
     * Image
     * Description
-  * Comments
-  * AuthorDetail
-    * Image
-    * Bio
-  * Favorite
+  * CommentsContainer
+    * Comments
+  * ProjectInfoContainer
+    * Views
+    * AuthorDetailContainer
+
 
 #New Project
 **NewProjectContainer**
-  * NewProject
-  * NewProjectButton
+  * AddIntro
+    * Image
+    * Description
+    * PreviewButton
+    * SaveButton
+    * PublishButton
+  * AddStep
+    * Image 
+    * Description
 
 #User Profile Page
 **UserContainer**
   * UpdateProfilePicButton
-  * CreatedProjects
-  * FavoritedProjects
+  * CreatedProjectsContainer
+    * ProjectIndex
+  * FavoritedProjectsContainer
+    * ProjectIndex
+  * AuthorDetailContainer
+
 
   ## Routes
 
