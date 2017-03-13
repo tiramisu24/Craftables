@@ -18,18 +18,25 @@ body        | text      | not null
 author_id   | integer   | not null, foreign key (references users), indexed
 archived    | boolean   | not null, default: false
 featured    | boolean   | not null, default: false
+keywords    | string    | array, default: []
 
 ## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
 description | string    |
 
 ## favorite
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer    | not null, foreign key (references tags), indexed
-project_id  | integer    | not null, foreign key (references notes), indexed, unique [tag_id]
+user_id     | integer   | not null, foreign key (references tags), indexed
+project_id  | integer   | not null, foreign key (references notes), indexed
+
+## done
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references tags), indexed
+project_id  | integer   | not null, foreign key (references notes), indexed
