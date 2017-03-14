@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, hashHistory} from 'react-router';
 import merge from 'lodash/merge';
 
-class SessionForm extends React.component{
+class SessionForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {username: "", password: ""};
