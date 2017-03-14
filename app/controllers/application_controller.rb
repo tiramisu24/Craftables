@@ -18,4 +18,10 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find_by(session_token: session[:session_token])
   end
+
+  def require_login
+    unless current_user
+      render json: ["invalid credentials"], status: 401
+    end
+  end
 end

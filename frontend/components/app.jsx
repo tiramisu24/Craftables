@@ -8,4 +8,4 @@ const App = ({children}) => (
   </div>
 )
 
-export default
+export default App;

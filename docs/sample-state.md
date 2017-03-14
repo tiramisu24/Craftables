@@ -3,6 +3,7 @@
     id: 1,
     username: "user1"
   },
+  errors: [],
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},

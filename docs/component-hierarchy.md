@@ -94,4 +94,4 @@
   | "/search-results" | "SearchResultsContainer"|
   | "/new-project" | "NewProjectContainer" |
   | "/search" | "Search" |
-  | "/users/userId" | "UserContainer" |
+  | "/users/:username" | "UserContainer" |
