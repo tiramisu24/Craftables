@@ -69,13 +69,13 @@ class LoginModal extends React.Component{
 
         <Modal.Body>
           <form className="auth-form" onSubmit={this.handleSubmit}>
-              <label>Username
+              <label className="modal-input">Username
                 <input type="text" onChange={this.update("username")}></input>
               </label>
-              <label>Password
+              <label className="modal-input">Password
                 <input type="password" onChange={this.update("password")}></input>
               </label>
-              <input type="submit"></input>
+              <input type="submit" className="modal-input"></input>
           </form>
         </Modal.Body>
       </Modal>
