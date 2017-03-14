@@ -2,16 +2,20 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import App from './app'
 import SessionFormContainer from './sessions/session_form_container';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute} from 'react-router';
+import { HashRouter } from 'react-router-dom';
 
 
 const Root = ({store}) => (
   <Provider store={store}>
-    <Router history={ hashHistory}>
-      <Route path='/' component={App}>
-        <Route path="/api/session" component={ SessionFormContainer } />
-        <Route path="/api/users" component={ SessionFormContainer }/>
+    <HashRouter>
+      <Route path='/'>
+        <App>
+          <Route path="/login" component={ SessionFormContainer } />
+          <Route path="/signup" component={ SessionFormContainer }/>
+        </App>
       </Route>
-    </Router>
+    </HashRouter>
   </Provider>
 )
+export default Root;

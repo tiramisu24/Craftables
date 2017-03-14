@@ -10,6 +10,7 @@ const initialState = {
 };
 
 const SessionReducer = (state = initialState, action) => {
+  console.log(action);
   let newState = merge({}, state);
   switch(action.type){
     case RECEIVE_CURRENT_USER:

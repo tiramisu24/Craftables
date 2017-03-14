@@ -3,14 +3,23 @@ import {Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import merge from 'lodash/merge';
 
-class SessionForm extends React.Component{
+class SignUPModal extends React.Component{
   constructor(props){
     super(props);
-    this.state = {username: "", password: ""};
+    this.state = {open: false, username: "", password: ""};
+
+    this.initialState = this.initialState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
+  initialState() {
+    return {
+      open: false,
+      username: '',
+      email: '',
+    };
+  }
+  
   redirect(path){
 
     const history = createHistory();
@@ -49,7 +58,7 @@ class SessionForm extends React.Component{
         <li key={idx}>{er}</li>
       ))
     }
-    
+
     return (
       <div>
         {input_header}
@@ -70,4 +79,4 @@ class SessionForm extends React.Component{
 
   }
 }
-export default SessionForm;
+export default SignUPModal;
