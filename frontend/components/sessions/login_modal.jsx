@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import merge from 'lodash/merge';
 import Modal from 'react-bootstrap-modal';
 
-class SignUPModal extends React.Component{
+class LoginModal extends React.Component{
   constructor(props){
     super(props);
 
@@ -58,10 +58,10 @@ class SignUPModal extends React.Component{
 
     return (
       <div className="modal-div">
-        <button onClick={this.openModal()} className="signup-button">Sign Up</button>
-        <Modal show={this.state.open} onHide={this.closeModal()} className="signup-modal">
+        <button onClick={this.openModal()} className="login-button">Log In</button>
+        <Modal show={this.state.open} onHide={this.closeModal()} className="login-modal">
         <Modal.Header closeButton>
-          <Modal.Title>Sign Up</Modal.Title>
+          <Modal.Title>Log In</Modal.Title>
           <ul>
             {show_errors}
           </ul>
@@ -84,4 +84,4 @@ class SignUPModal extends React.Component{
 
   }
 }
-export default SignUPModal;
+export default LoginModal;

@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: cornflowerblue;
+  height: 60px;
+}
+
+.auth-modals {
+  display: flex;
+  flex-direction: row;
+  background-color: blue;
+  margin: 10px;
+}
+
+.logo {
+  display: table;
+  margin-left: 20px;
+}
+logo h1 {
+  display: table-cell;;
+}

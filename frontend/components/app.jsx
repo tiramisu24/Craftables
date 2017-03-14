@@ -1,11 +1,15 @@
 import React from 'react'
 
 
-const App = ({children}) => (
+const HomePage = ({children}) => (
   <div>
-    <h1>Craftables</h1>
-    {children}
+    <div className="header">
+      <div className="logo"><h4>Craftables</h4></div>
+      <div className="auth-modals">
+        {children}
+      </div>
+    </div>
   </div>
 )
 
-export default App;
+export default HomePage;

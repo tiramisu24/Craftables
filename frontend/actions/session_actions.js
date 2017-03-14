@@ -7,14 +7,16 @@ export const receiveCurrentUser = (user) => ({
   user
 })
 
-export const receiveErrors = (error) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
-  error
+  errors
 })
 
 export const login = (user) => dispatch => {
-  return APIUtil.login(user).then((loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)))
-    .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+  return APIUtil
+          .login(user)
+          .then((loggedInUser) => dispatch(receiveCurrentUser(loggedInUser)))
+          .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 

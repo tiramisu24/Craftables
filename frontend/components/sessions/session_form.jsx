@@ -23,7 +23,7 @@ class SessionForm extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    const user = merge({}, this.state);
+    let user = this.state
     this.props.processForm( {user} )
               .then(this.redirect('/'));
 }
@@ -49,7 +49,7 @@ class SessionForm extends React.Component{
         <li key={idx}>{er}</li>
       ))
     }
-    
+
     return (
       <div>
         {input_header}
