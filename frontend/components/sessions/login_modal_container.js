@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {login} from '../../actions/session_actions';
+import {login, clearErrors} from '../../actions/session_actions';
 import LoginModal from './login_modal';
 
 const mapStateToProps = ({session}) => ({
@@ -9,6 +9,7 @@ const mapStateToProps = ({session}) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
+  clearErrors: () => dispatch(clearErrors()),
   processForm: user => dispatch(login(user))
 });
 

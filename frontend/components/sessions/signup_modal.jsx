@@ -32,14 +32,19 @@ class SignUPModal extends React.Component{
       password: this.state.password
     }
     this.props.processForm({user})
+              .then(this.closeModal());
   }
 
   openModal(){
-    return () => this.setState({open: true});
+    return () => this.setState({open: true})
   }
 
+
   closeModal(){
-    return () => this.setState({open: false});
+    return () => {
+      this.props.clearErrors();
+      return this.setState({open: false});
+    }
   }
 
   render(){

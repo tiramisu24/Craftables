@@ -12,7 +12,7 @@ class UserDropdown extends React.Component {
 
   handleClick(e){
     e.preventDefault();
-    this.props.logout().then(localStorage.setItem("user", ""));;
+    this.props.logout().then(localStorage.setItem("user", ""));
   }
   profileClicked(){
     let newState = !this.state.clicked;

@@ -9,6 +9,7 @@ class LoginModal extends React.Component{
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showErrors = this.showErrors.bind(this);
     this.state = this.initialState();
   }
 
@@ -22,8 +23,8 @@ class LoginModal extends React.Component{
 
 
   redirect(path){
-
-    return <Redirect to="/" />;
+    const history = createHistory();
+    history.push(path);
   }
 
   update(input){
@@ -36,26 +37,35 @@ class LoginModal extends React.Component{
       username: this.state.username,
       password: this.state.password
     }
-    this.props.processForm( {user} );
+    this.props.processForm({user})
+              .then(this.closeModal());
   }
 
   openModal(){
     return () => this.setState({open: true});
+
   }
 
   closeModal(){
-    return () => this.setState({open: false});
+    return () => {
+      this.props.clearErrors();
+      return this.setState({open: false});
+    }
   }
 
-  render(){
+  showErrors(){
     let show_errors = <div></div>;
-    if (localStorage.user !== "") return <div></div>;
 
     if(!!this.props.errors){
       show_errors = this.props.errors.map((er,idx) => (
         <li key={idx}>{er}</li>
       ))
     }
+    return show_errors
+  }
+
+  render(){
+    if (localStorage.user !== "") return <div></div>;
 
     return (
       <div className="modal-div">
@@ -64,7 +74,7 @@ class LoginModal extends React.Component{
         <Modal.Header closeButton>
           <Modal.Title>Log In</Modal.Title>
           <ul>
-            {show_errors}
+            {this.showErrors()}
           </ul>
         </Modal.Header>
 
