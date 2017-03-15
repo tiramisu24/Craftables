@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import merge from 'lodash/merge';
-import Modal from 'react-bootstrap-modal';
+import {Modal} from 'react-bootstrap';
 
 class LoginModal extends React.Component{
   constructor(props){
@@ -67,17 +67,24 @@ class LoginModal extends React.Component{
           </ul>
         </Modal.Header>
 
-        <Modal.Body>
-          <form className="auth-form" onSubmit={this.handleSubmit}>
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          <Modal.Body>
               <label className="modal-input">Username
-                <input type="text" onChange={this.update("username")}></input>
+                <input type="text"
+                       onChange={this.update("username")}
+                       placeholder="Tiramisu"></input>
               </label>
               <label className="modal-input">Password
-                <input type="password" onChange={this.update("password")}></input>
+                <input type="password"
+                       onChange={this.update("password")}
+                       placeholder="Password"></input>
               </label>
-              <input type="submit" className="modal-input"></input>
+            </Modal.Body>
+            <Modal.Footer>
+              <input type="submit" className="modal-input" value="Log In"></input>
+            </Modal.Footer>
           </form>
-        </Modal.Body>
+
       </Modal>
     </div>
     )
