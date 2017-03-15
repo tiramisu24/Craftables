@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import merge from 'lodash/merge';
 import {Modal} from 'react-bootstrap';
@@ -20,10 +20,10 @@ class LoginModal extends React.Component{
     };
   }
 
+
   redirect(path){
 
-    const history = createHistory();
-    history.push(path);
+    return <Redirect to="/" />;
   }
 
   update(input){
@@ -36,7 +36,9 @@ class LoginModal extends React.Component{
       username: this.state.username,
       password: this.state.password
     }
-    this.props.processForm( {user} );
+    this.props.processForm( {user} ).then(
+      localStorage.setItem("user", user.username)
+    );
   }
 
   openModal(){
@@ -49,7 +51,8 @@ class LoginModal extends React.Component{
 
   render(){
     let show_errors = <div></div>;
-    if(this.props.loggedIn) return null;
+    if (localStorage.user !== "") return <div></div>;
+
     if(!!this.props.errors){
       show_errors = this.props.errors.map((er,idx) => (
         <li key={idx}>{er}</li>
