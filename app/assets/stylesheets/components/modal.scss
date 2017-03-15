@@ -37,3 +37,23 @@
   margin-left: 1.3rem;
   border: none;
 }
+
+
+.dropdown-option{
+  position: absolute;
+}
+
+.dropdown-menu-contents{
+  width: 13rem;
+  position: relative;
+  right: 10rem;
+  top: 1rem;
+  border-radius: 4px;
+  background-color: white;
+  border: 3px solid grey;
+}
+
+.dropdown-menu-contents >div {
+  padding: 10px;
+
+}
