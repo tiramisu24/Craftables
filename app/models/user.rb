@@ -8,6 +8,10 @@ class User < ApplicationRecord
 	after_initialize :ensure_session_token
 	before_validation :ensure_session_token_uniqueness
 
+  has_many :projects,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Project 
 
 	def password= (password)
     @password = password
