@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_reader :password
 
-	validates :username, :password_digest, :session_token, presence: true
+	validates :username, :password, :session_token, presence: true
 	validates :username, uniqueness: true
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :projects,
     primary_key: :id,
     foreign_key: :author_id,
-    class_name: :Project 
+    class_name: :Project
 
 	def password= (password)
     @password = password

@@ -1,4 +1,5 @@
 class Api::ProjectsController < ApplicationController
+  before_action :require_log_in
   def create
     @project = Project.new(project_params)
     if @project.save
@@ -8,13 +9,12 @@ class Api::ProjectsController < ApplicationController
     end
   end
 
-  def update
+  # def update
+  # end
 
-  end
-
-  def destroy
-
-  end
+  # def destroy
+  #
+  # end
 
   private
 

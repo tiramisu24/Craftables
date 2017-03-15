@@ -26,7 +26,7 @@ id          | integer   | not null, primary key
 stepNum     | integer   | not null
 title       | string    | not null
 body        | text      | not null
-project_id  | integer   | not null, foreign key (references users), indexed
+project_id  | integer   | not null, foreign key, (references projects), indexed
 
 
 ## keywords
@@ -56,7 +56,7 @@ column name | data type | details
 id          | integer   | not null, primary key
 image_url   | string    | not null
 project_id  | integer   | foreign key (references notes), indexed
-step_id     | integer   | foreign key 
+step_id     | integer   | foreign key
 
 ## videos
 column name | data type | details

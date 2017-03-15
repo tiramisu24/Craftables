@@ -8,6 +8,8 @@ class Project < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User
 
+  has_many :steps
+
   private
   def ensure_not_archived
     self.archived = false

@@ -1,10 +1,9 @@
 import React from 'react'
+import Header from '../header/header'
 
 
-const HomePage = ({children}) => (
-  <div>
-    {children}
-  </div>
+const HomePage = () => (
+  <Header/>
 )
 
 export default HomePage;
