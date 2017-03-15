@@ -36,9 +36,7 @@ class LoginModal extends React.Component{
       username: this.state.username,
       password: this.state.password
     }
-    this.props.processForm( {user} ).then(
-      localStorage.setItem("user", user.username)
-    );
+    this.props.processForm( {user} );
   }
 
   openModal(){

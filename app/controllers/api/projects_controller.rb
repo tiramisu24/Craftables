@@ -4,7 +4,7 @@ class Api::ProjectsController < ApplicationController
     if @project.save
       render 'api/show/project'
     else
-
+      render json: @project.errors.full_messages, status: 404
     end
   end
 

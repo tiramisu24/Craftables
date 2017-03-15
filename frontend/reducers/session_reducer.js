@@ -14,6 +14,12 @@ const SessionReducer = (state = initialState, action) => {
   switch(action.type){
     case RECEIVE_CURRENT_USER:
       newState.currentUser = action.user;
+      newState.errors = [];
+      if(action.user){
+        localStorage.setItem("user", action.user.username);
+      } else {
+        localStorage.setItem("user", "");
+      }
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;

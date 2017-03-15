@@ -31,9 +31,7 @@ class SignUPModal extends React.Component{
       username: this.state.username,
       password: this.state.password
     }
-    this.props.processForm({user}).then(
-      localStorage.setItem("user", user.username)
-    );
+    this.props.processForm({user})
   }
 
   openModal(){
@@ -46,11 +44,11 @@ class SignUPModal extends React.Component{
 
   render(){
     let show_errors = <div></div>;
-    // if (window.currentUser) return null;
     if(!!this.props.errors){
       show_errors = this.props.errors.map((er,idx) => (
         <li key={idx}>{er}</li>
       ))
+
     }
     if (localStorage.user !== "") return <div></div>;
 
