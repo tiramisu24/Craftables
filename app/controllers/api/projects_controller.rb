@@ -1,9 +1,9 @@
 class Api::ProjectsController < ApplicationController
-  before_action :require_log_in
+  before_action :require_login
   def create
     @project = Project.new(project_params)
     if @project.save
-      render 'api/show/project'
+      render 'api/projects/show'
     else
       render json: @project.errors.full_messages, status: 404
     end
@@ -19,7 +19,7 @@ class Api::ProjectsController < ApplicationController
   private
 
   def project_params
-    params[:user][:author_id] = current_user.id
+    params[:project][:author_id] = current_user.id
     params.require(:project).permit(:title, :body, :author_id)
   end
 end

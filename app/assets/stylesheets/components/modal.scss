@@ -1,25 +1,25 @@
 
 .modal-div{
-  margin: 0 0.5rem;
+  margin: 0 .5rem;
   display: flex;
 }
 
 .login-button{
-  font-size: 1rem;
+  font-size: 11px;
+  height: 2.2rem;
   border: 1px solid grey;
   border-radius: 3px;
   width: 8rem;
-  height: 2.2rem;
   background-color: #90C3D4;
 
 }
 .signup-button{
-  font-size: 1rem;
+  font-size: 11px;
   height: 2.2rem;
   border: 1px solid grey;
-  background-color: #D3D9DB;
-  width: 8rem;
   border-radius: 3px;
+  width: 8rem;
+  background-color: #D3D9DB;
 }
 
 .modal-body{
@@ -34,25 +34,23 @@
 }
 
 .modal-input > input {
-  margin-left: 1.3rem;
   border: none;
+  margin-left: 10px;
 }
-
 
 .dropdown-option{
   position: absolute;
 }
-
 .dropdown-menu-contents{
-  width: 13rem;
-  position: relative;
-  right: 10rem;
-  top: 1rem;
+  position:relative;
+  top: 5px;
+  right: 70px;
+  width: 100px;
+  border: 1px solid grey;
   border-radius: 4px;
   background-color: white;
-  border: 3px solid grey;
-}
 
+}
 .dropdown-menu-contents >div {
   padding: 10px;
 

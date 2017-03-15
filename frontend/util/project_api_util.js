@@ -1,22 +1,22 @@
-export const login = (user) => (
+export const createProject = (project) => (
   $.ajax({
     type: "POST",
-    url: "api/session",
-    data: user
+    url: "api/projects",
+    data: project
   })
 );
 
-export const logout = () => (
+export const deleteProject = (projectId) => (
   $.ajax({
     type: "DELETE",
-    url: "api/session"
+    url: `api/projects/${projectId}`
   })
 );
 
-export const signup = (user) => {
-  return $.ajax({
-    type: "POST",
-    url: "api/users",
-    data: user
+export const updateProject = (project) => (
+  $.ajax({
+    type: "UPDATE",
+    url: `api/projects/${project.id}`
+    data: project
   })
-};
+);

@@ -4,28 +4,27 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :log_in?
 
   def log_in(user)
-    user.reset_token
-    session[:session_token] = user.session_token
-    nil
+    session[:session_token] = user.reset_token
+    @current_user = user
   end
 
   def log_in?
-    current_user ? true : false
+    !!current_user
   end
 
   def log_out
-    current_user.reset_token
+    @current_user.reset_token
     session[:session_token] = nil
-    nil
+    @current_user = nil
   end
 
   def current_user
-    User.find_by(session_token: session[:session_token])
+    @current_user =User.find_by(session_token: session[:session_token])
   end
 
   def require_login
-    unless current_user
-      render json: ["invalid credentials"], status: 401
+    unless log_in?
+      render json: ["not logged in"], status: 402
     end
   end
 end

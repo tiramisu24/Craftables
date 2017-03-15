@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import createHistory from 'history/createBrowserHistory';
 class UserDropdown extends React.Component {
   constructor(props){
     super(props)
@@ -9,10 +10,14 @@ class UserDropdown extends React.Component {
     this.state = {clicked : false}
   }
 
-
+  redirect(path){
+    debugger
+    const history = createHistory();
+    history.push(path)
+  }
   handleClick(e){
     e.preventDefault();
-    this.props.logout().then(localStorage.setItem("user", ""));
+    this.props.logout();
   }
   profileClicked(){
     let newState = !this.state.clicked;
@@ -38,7 +43,7 @@ class UserDropdown extends React.Component {
   }
 
   render(){
-    if(localStorage.user === ""){
+    if(!localStorage.user){
 
       return <div></div>;
     }

@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
-import merge from 'lodash/merge';
+import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
 
 class LoginModal extends React.Component{
@@ -21,12 +19,6 @@ class LoginModal extends React.Component{
     };
   }
 
-
-  redirect(path){
-    const history = createHistory();
-    history.push(path);
-  }
-
   update(input){
     return event => this.setState({[input]: event.target.value })
   }
@@ -39,17 +31,21 @@ class LoginModal extends React.Component{
     }
     this.props.processForm({user})
               .then(this.closeModal());
+
+
   }
 
   openModal(){
-    return () => this.setState({open: true});
+    return () => {
+      return this.setState({open: true})
+    };
 
   }
 
   closeModal(){
     return () => {
       this.props.clearErrors();
-      return this.setState({open: false});
+      return this.setState({open: false})
     }
   }
 

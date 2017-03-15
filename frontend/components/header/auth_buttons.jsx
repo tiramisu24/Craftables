@@ -6,8 +6,8 @@ import UserDropdownContainer from '../users/user_dropdown_container';
 
 const AuthButtons = () => (
    <div className="auth-modals">
-    <SignUPModalContainer/>
     <LoginModalContainer/>
+    <SignUPModalContainer/>
     <UserDropdownContainer/>
   </div>
 )
