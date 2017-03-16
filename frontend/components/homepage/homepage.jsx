@@ -5,7 +5,6 @@ import FeaturedProjectsContainer from './featured_projects_container';
 
 const HomePage = () => (
   <div>
-    <Header/>
     <FeaturedProjectsContainer/>
   </div>
 )

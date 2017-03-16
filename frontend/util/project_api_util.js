@@ -34,3 +34,11 @@ export const updateProject = (project) => (
     data: project
   })
 );
+
+export const newStep = (step) => (
+  $.ajax({
+    type: "POST",
+    url: "api/steps",
+    data: step
+  })
+)

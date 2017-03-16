@@ -1,7 +1,6 @@
 class Api::ProjectsController < ApplicationController
   before_action :require_login, only: [:create]
   def index
-    #change this to be conditional later
     @projects = Project.all
     render :index
   end
@@ -15,7 +14,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find_by(id: params[:id]);
+    @project = Project.find_by(id: params[:id])
     if @project
       render :show
     else

@@ -3,7 +3,6 @@ import {showProjects} from '../../actions/project_actions';
 import FeaturedProjects from './featured_projects'
 
 const mapStateToProps =(state, ownProps) => {
-  debugger;
   return{
   project : state.project
 }}

@@ -6,6 +6,7 @@ const initialState = {
   currentUser: null,
   errors: [],
   project: {},
+  steps: {},
   search: {}
 };
 

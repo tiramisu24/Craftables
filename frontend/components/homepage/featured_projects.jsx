@@ -16,9 +16,8 @@ class FeaturedProjects extends React.Component{
   }
 
   render(){
-    if(Object.keys(this.props.project).length === 0) return <div>no projects</div>;
+    if(Object.keys(this.props.project).length === 0) return <div></div>;
 
-      debugger;
 
     let wrappedList = this.state.projectList.project.map(project => (
       <div key={project.id}>

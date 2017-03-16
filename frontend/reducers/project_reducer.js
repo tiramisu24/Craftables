@@ -1,4 +1,4 @@
-import {RECEIVE_PROJECT, RECEIVE_ERRORS, RECEIVE_PROJECTS, DELETE_PROJECT} from '../actions/project_actions';
+import {RECEIVE_PROJECT, RECEIVE_ERRORS, RECEIVE_PROJECTS, DELETE_PROJECT, RECEIVE_STEPS} from '../actions/project_actions';
 import merge from 'lodash/merge';
 
 
@@ -7,15 +7,21 @@ const ProjectReducer = (state, action) => {
   switch(action.type){
     case RECEIVE_PROJECTS:
       newState.project = action.projects;
+      newState.errors = [];
       return newState;
     case RECEIVE_PROJECT:
       newState = merge(newState, {[action.project.id]:action.project});
+      newState.errors = [];
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;
       return newState;
     case DELETE_PROJECT:
       newState.project[action.id] = null
+      return newState;
+    case RECEIVE_STEPS:
+      newState.steps = action.steps;
+      newState.errors = [];
       return newState;
     default:
       return newState;

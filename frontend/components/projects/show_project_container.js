@@ -2,10 +2,9 @@ import {connect} from 'react-redux';
 import {showProject, removeProject} from '../../actions/project_actions';
 import ShowProject from './show_project'
 
-const mapStateToProps =(state, ownProps) => {
-  return{
+const mapStateToProps =(state, ownProps) => ({
   project : state.project
-}}
+})
 
 
 const mapDispatchToProps = (dispatch) => ({
