@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 const initialState = {
   currentUser: null,
   errors: [],
-  project: {comments:{}},
+  project: {},
   search: {}
 };
 

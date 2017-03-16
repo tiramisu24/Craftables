@@ -20,6 +20,6 @@ class Api::ProjectsController < ApplicationController
 
   def project_params
     params[:project][:author_id] = current_user.id
-    params.require(:project).permit(:title, :body, :author_id)
+    params.require(:project).permit(:title, :body, :author_id, :featured, :archived)
   end
 end

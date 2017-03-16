@@ -1,5 +1,5 @@
-import React from 'react'
-import AuthButtons from './auth_buttons'
+import React from 'react';
+import AuthButtons from './auth_buttons';
 
 const Header = () => (
   <div className="header">

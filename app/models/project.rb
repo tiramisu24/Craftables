@@ -12,11 +12,11 @@ class Project < ApplicationRecord
 
   private
   def ensure_not_archived
-    self.archived = false
+    self.archived ||= false
   end
 
   def ensure_featured
-    self.featured = true
+    self.featured ||= true
   end
 
 end
