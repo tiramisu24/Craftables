@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom';
 import App from './app'
 import HomePage from './homepage/homepage';
 import CreateProjectContainer from './projects/new_project_container';
-import ShowProject from './projects/show_project'
+import ShowProjectContainer from './projects/show_project_container'
 
 
 const Root = ({store}) => (
@@ -14,7 +14,7 @@ const Root = ({store}) => (
       <App>
         <Route path='/' component={HomePage}/>
         <Route path='/newProject' component={CreateProjectContainer}/>
-        <Route path='/Project/:id' component={ShowProject}/>
+        <Route path='/Project/:id' component={ShowProjectContainer}/>
       </App>
     </HashRouter>
   </Provider>

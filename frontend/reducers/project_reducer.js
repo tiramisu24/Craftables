@@ -9,8 +9,7 @@ const ProjectReducer = (state, action) => {
       newState.project = action;
       return newState;
     case RECEIVE_PROJECT:
-      let newProject = merge({}, newState.project, action.project);
-      newState.project = newProject;
+      newState = merge(newState, {[action.project.id]:action.project});
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;

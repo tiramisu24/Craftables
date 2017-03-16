@@ -19,7 +19,6 @@ const SessionReducer = (state = initialState, action) => {
       if(action.user){
         localStorage.setItem("user", action.user.username);
       } else {
-        // debugger
         localStorage.setItem("user", "");
       }
 

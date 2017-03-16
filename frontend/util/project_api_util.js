@@ -6,6 +6,13 @@ export const createProject = (project) => (
   })
 );
 
+export const showProject = (id) => (
+  $.ajax({
+    type: "GET",
+    url: `api/projects/${id}`
+  })
+)
+
 export const deleteProject = (projectId) => (
   $.ajax({
     type: "DELETE",

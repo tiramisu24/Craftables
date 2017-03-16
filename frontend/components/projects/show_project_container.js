@@ -2,12 +2,16 @@ import {connect} from 'react-redux';
 import {showProject} from '../../actions/project_actions';
 import ShowProject from './show_project'
 
+const mapStateToProps =(state, ownProps) => {
+  return{
+  project : state.project
+}}
 
 
 const mapDispatchToProps = (dispatch) => ({
-  showProject: (project) => dispatch(showProject(project))
+  showProject: (id) => dispatch(showProject(id))
 })
 
-const ShowProjectContainer = connect(null, mapDispatchToProps)(ShowProject);
+const ShowProjectContainer = connect(mapStateToProps, mapDispatchToProps)(ShowProject);
 
 export default ShowProjectContainer;

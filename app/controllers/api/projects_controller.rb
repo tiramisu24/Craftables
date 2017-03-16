@@ -1,11 +1,20 @@
 class Api::ProjectsController < ApplicationController
-  before_action :require_login
+  before_action :require_login, only: [:create]
   def create
     @project = Project.new(project_params)
     if @project.save
       render 'api/projects/show'
     else
       render json: @project.errors.full_messages, status: 404
+    end
+  end
+
+  def show
+    @project = Project.find_by(id: params[:id]);
+    if @project
+      render :show
+    else
+      render json: ["no project"], status: 403
     end
   end
 
