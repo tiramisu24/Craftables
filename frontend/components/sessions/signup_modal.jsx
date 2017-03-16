@@ -9,14 +9,18 @@ class SignUPModal extends React.Component{
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demo = this.demo.bind(this);
+
     this.state = this.initialState();
   }
 
   initialState() {
     return {
       open: false,
+      user: {
       username: '',
-      email: '',
+      password: ''},
+      isDemo : false
     };
   }
 
@@ -27,12 +31,27 @@ class SignUPModal extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    const user = {
-      username: this.state.username,
-      password: this.state.password
+    let user = null;
+    if (this.state.isDemo){
+      user = this.state.user
+      this.props.demo({user})
+                .then(this.closeModal());
+    }else {
+      user = {
+        username: this.state.username,
+        password: this.state.password
+      }
+      this.props.processForm({user})
+                .then(this.closeModal());
     }
-    this.props.processForm({user})
-              .then(this.closeModal());
+  }
+  demo(){
+    const user = {
+      username: "test",
+      password: "password"
+    }
+    this.setState({user});
+    this.setState({isDemo: true})
   }
 
   openModal(){
@@ -83,6 +102,7 @@ class SignUPModal extends React.Component{
             </Modal.Body>
             <Modal.Footer>
               <input type="submit" className="modal-input" value="Log In"></input>
+              <button onClick={this.demo} >DEMO</button>
             </Modal.Footer>
           </form>
       </Modal>

@@ -26,10 +26,15 @@ class ShowProject extends React.Component{
 
   render(){
     let project = this.state.project;
+    if(Object.keys(project).length === 0) return <div></div>
     return <div>
       Got here id:{this.state.projectId}
-      <h2>{project.title}</h2>
-      <p>{project.body}</p>
+      <div>
+        <h2>Project Title:{project.title}</h2>
+        <h3>By :{project.author.username}</h3>
+      </div>
+      <p>Instructions:{project.body}</p>
+      <h3>Author:{project.author.username}</h3>
     </div>
   }
 }

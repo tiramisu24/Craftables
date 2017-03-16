@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  validates :title, :body, :author_id, presence: true
+  validates :title, :body, :author, presence: true
   validates_uniqueness_of :title, :scope => :author_id
   before_validation :ensure_not_archived, :ensure_featured
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Redirect} from 'react-router'
 import createHistory from 'history/createBrowserHistory';
 
 
@@ -26,6 +25,7 @@ class CreateProject extends React.Component{
   redirect(path){
     const history = createHistory();
     history.push(path);
+    window.location.reload();
   }
 
   update(input){
@@ -37,11 +37,10 @@ class CreateProject extends React.Component{
     let project = this.state;
     this.props.createProject({project})
         .then(
-          project => {
-            debugger;
-            this.redirect(`/Project/${project.project.id}`)
-          }
-        );
+            project => {
+            let path = `/#/Project/${project.project.id}`;
+            this.redirect(path);
+      });
   }
 
   showErrors(){

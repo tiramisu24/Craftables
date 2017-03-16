@@ -24,6 +24,8 @@ export const createProject = (project) => dispatch => {
 export const showProject = (id) => dispatch => {
   return ProjectAPIUtil
             .showProject(id)
-            .then(project => dispatch(receiveProject(project)))
-            .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+            .then(project => {
+              dispatch(receiveProject(project))})
+            .fail(errors => {
+              dispatch(receiveErrors(errors.responseJSON))})
 }

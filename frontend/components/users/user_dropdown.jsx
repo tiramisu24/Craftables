@@ -11,7 +11,6 @@ class UserDropdown extends React.Component {
   }
 
   redirect(path){
-    debugger
     const history = createHistory();
     history.push(path)
   }
@@ -43,7 +42,7 @@ class UserDropdown extends React.Component {
   }
 
   render(){
-    if(!localStorage.user){
+    if(localStorage.user===""){
 
       return <div></div>;
     }

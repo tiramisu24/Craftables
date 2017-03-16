@@ -8,31 +8,42 @@ class LoginModal extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.showErrors = this.showErrors.bind(this);
+    this.demo = this.demo.bind(this);
     this.state = this.initialState();
   }
 
   initialState() {
     return {
       open: false,
+      user: {
       username: '',
-      email: '',
+      password: ''}
     };
   }
 
   update(input){
-    return event => this.setState({[input]: event.target.value })
+    return event => {
+      const user = this.state.user;
+      user[input] = event.target.value
+      return this.setState({user })
+    }
   }
 
   handleSubmit(event){
     event.preventDefault();
-    const user = {
-      username: this.state.username,
-      password: this.state.password
-    }
+    const user = this.state.user
     this.props.processForm({user})
               .then(this.closeModal());
+  }
 
-
+  demo(){
+    const user = {
+      username: "test",
+      password: "password"
+    }
+    this.setState({user});
+    this.props.processForm({user})
+              .then(this.closeModal());
   }
 
   openModal(){
@@ -89,6 +100,7 @@ class LoginModal extends React.Component{
             </Modal.Body>
             <Modal.Footer>
               <input type="submit" className="modal-input" value="Log In"></input>
+              <button onClick={this.demo} >DEMO</button>
             </Modal.Footer>
           </form>
 
