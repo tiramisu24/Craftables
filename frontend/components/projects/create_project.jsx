@@ -25,7 +25,7 @@ class CreateProject extends React.Component{
 
   redirect(path){
     const history = createHistory();
-    history.push("/");
+    history.push(path);
   }
 
   update(input){
@@ -36,7 +36,12 @@ class CreateProject extends React.Component{
     event.preventDefault;
     let project = this.state;
     this.props.createProject({project})
-        .then(this.redirect("/"));
+        .then(
+          project => {
+            debugger;
+            this.redirect(`/Project/${project.project.id}`)
+          }
+        );
   }
 
   showErrors(){

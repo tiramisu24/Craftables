@@ -17,7 +17,7 @@ class UserDropdown extends React.Component {
   }
   handleClick(e){
     e.preventDefault();
-    this.props.logout();
+    this.props.logout().then(this.setState({clicked:false}));
   }
   profileClicked(){
     let newState = !this.state.clicked;
