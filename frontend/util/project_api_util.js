@@ -1,3 +1,10 @@
+export const getProjects = () => (
+  $.ajax({
+    type: "GET",
+    url: "api/projects"
+  })
+)
+
 export const createProject = (project) => (
   $.ajax({
     type: "POST",

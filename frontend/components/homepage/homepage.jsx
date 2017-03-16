@@ -1,9 +1,13 @@
-import React from 'react'
-import Header from '../header/header'
+import React from 'react';
+import Header from '../header/header';
+import FeaturedProjectsContainer from './featured_projects_container';
 
 
 const HomePage = () => (
-  <Header/>
+  <div>
+    <Header/>
+    <FeaturedProjectsContainer/>
+  </div>
 )
 
 export default HomePage;

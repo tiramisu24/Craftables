@@ -1,5 +1,10 @@
 class Api::ProjectsController < ApplicationController
   before_action :require_login, only: [:create]
+  def index
+    #change this to be conditional later
+    @projects = Project.all
+    render :index
+  end
   def create
     @project = Project.new(project_params)
     if @project.save
@@ -21,9 +26,15 @@ class Api::ProjectsController < ApplicationController
   # def update
   # end
 
-  # def destroy
-  #
-  # end
+  def destroy
+    @project = Project.find_by(id: params[:id]);
+    if @project
+      @project.destroy
+      render "api/projects/show"
+    else
+      render json: ["no project"], status: 404
+    end
+  end
 
   private
 

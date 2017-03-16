@@ -1,4 +1,5 @@
 import React from 'react';
+import createHistory from 'history/createBrowserHistory';
 
 class ShowProject extends React.Component{
   constructor(props){
@@ -11,6 +12,8 @@ class ShowProject extends React.Component{
       projectId : projId,
       project: this.props.project
     }
+    this.deleteProject = this.deleteProject.bind(this);
+    this.deleteButton = this.deleteButton.bind(this);
   }
 
   componentWillMount(){
@@ -18,12 +21,27 @@ class ShowProject extends React.Component{
       this.props.showProject(this.state.projectId);
     }
   }
-
+  redirect(path){
+    const history = createHistory();
+    history.push("/");
+    window.location.reload();
+  }
   componentWillReceiveProps(nextProps){
     let project = nextProps.project[this.state.projectId]
     this.setState({project})
   }
+  deleteProject(){
+    this.props.removeProject(this.state.projectId)
+              .then(this.redirect("/"));
+  }
 
+  deleteButton(){
+    if(localStorage.user !== this.state.project.author.username){
+      return <div></div>
+    }else {
+      return <button onClick={this.deleteProject}>Delete This Project</button>
+    }
+  }
   render(){
     let project = this.state.project;
     if(Object.keys(project).length === 0) return <div></div>
@@ -35,6 +53,7 @@ class ShowProject extends React.Component{
       </div>
       <p>Instructions:{project.body}</p>
       <h3>Author:{project.author.username}</h3>
+      <div>{this.deleteButton()}</div>
     </div>
   }
 }

@@ -19,4 +19,8 @@ class Project < ApplicationRecord
     self.featured ||= true
   end
 
+  def all_featured_projects
+    #TODO
+  end
+
 end
