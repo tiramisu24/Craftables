@@ -3,8 +3,8 @@ import {createProject, newStep} from '../../actions/project_actions';
 import CreateProject from './create_project'
 
 const mapStateToProps =(state) => {
-  // debugger
-  let projectKeys = Object.keys(state.project);
+  let projectKeys = Object.keys(state.project.project);
+  debugger
   return{
   authorId : state.session.currentUser ? state.session.currentUser.id : null,
   projectId: (projectKeys.length > 0)? projectKeys[projectKeys.length -2] : 0

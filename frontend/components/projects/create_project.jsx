@@ -37,10 +37,11 @@ class CreateProject extends React.Component{
 
   redirect(path){
     // debugger;
-    const history = createHistory();
+    // const history = createHistory();
     // this.props.router.push("/");
-    history.push(path);
-    window.location.reload();
+    // history.push(path);
+    // window.location.reload();
+    this.props.history.push(path);
   }
 
   update(input){
@@ -77,14 +78,12 @@ class CreateProject extends React.Component{
               debugger;
               this.props.newStep({step});
             })
-          }
-        )
-        .then(
-            project => {
-            let path = `/#/Project/${this.props.projectId}`;
+            let path = `/#/project/${this.props.projectId}`;
+            debugger;
             this.redirect(path);
-      }
-    );
+          }
+        );
+
   }
 
   showErrors(){
@@ -153,6 +152,7 @@ class CreateProject extends React.Component{
           {this.addStep()}
         </form>
         <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
+
       </div>
     )
   }

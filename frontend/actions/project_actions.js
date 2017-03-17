@@ -2,7 +2,8 @@ import * as ProjectAPIUtil from '../util/project_api_util';
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const DELETE_PROJECT = 'DELETE_PROJECT';
-export const RECEIVE_PROJECTS = 'RECEIVE_CURRENT_PROJECTS';
+export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
+export const RECEIVE_CURRENT_PROJECT = "RECEIVE_CURRENT_PROJECT";
 export const RECEIVE_STEPS = 'RECEIVE_STEPS';
 
 const receiveProject = (project) => ({
@@ -20,9 +21,14 @@ const deleteProject = (projectId) => ({
   projectId
 })
 
-const recieveProjects = (projects) => ({
+const receiveProjects = (projects) => ({
   type: RECEIVE_PROJECTS,
   projects
+})
+
+const receiveCurrentProject = project => ({
+  type: RECEIVE_CURRENT_PROJECT,
+  project
 })
 
 const recieveSteps = (steps) => ({
@@ -48,14 +54,14 @@ export const createProject = (project) => dispatch => {
 export const showProject = (id) => dispatch => {
   return ProjectAPIUtil
             .showProject(id)
-            .then(project =>   dispatch(receiveProject(project)))
+            .then(project => dispatch(receiveCurrentProject(project)))
             .fail(errors =>   dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const showProjects = () => dispatch => {
   return ProjectAPIUtil
             .getProjects()
-            .then(projects => dispatch(recieveProjects(projects)))
+            .then(projects => dispatch(receiveProjects(projects)))
             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
@@ -68,6 +74,5 @@ export const getAllSteps = (projectId) => dispatch => {
 }
 
 export const newStep = (step) => dispatch => {
-  // debugger;
   return ProjectAPIUtil.newStep(step)
 }

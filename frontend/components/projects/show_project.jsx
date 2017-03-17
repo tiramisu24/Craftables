@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 class ShowProject extends React.Component{
   constructor(props){
     super(props);
-    const Re = /\/Project\/\d+/;
+    const Re = /\/project\/\d+/;
     const Red = /\d+/;
     const ProjectIdPath = window.location.hash.match(Re)[0];
     const projId = ProjectIdPath.match(Red)[0];
@@ -44,8 +44,9 @@ class ShowProject extends React.Component{
   }
   render(){
     let project = this.state.project;
+    // debugger;
     if(Object.keys(project).length === 0) return <div></div>
-
+    debugger;
     let steps = this.state.project.steps.map(step => (
       <li key={step.id}>
         <h5>{step.title}</h5>
