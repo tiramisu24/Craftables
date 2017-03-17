@@ -33,7 +33,6 @@ class UserDropdown extends React.Component {
         <div className="dropdown-option">
           <div className="dropdown-menu-contents">
             <div>Profile</div>
-            <div>New Project</div>
             <div>
               <button onClick={this.handleClick} className="logout-button">Log Out</button>
             </div>

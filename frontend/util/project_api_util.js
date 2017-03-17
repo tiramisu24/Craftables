@@ -45,7 +45,7 @@ export const newStep = (step) => (
 
 export const updateStep = (step) => {
   // debugger;
-  $.ajax({
+  return $.ajax({
     type: "PATCH",
     url: `api/steps/${step.id}`,
     data: {step}

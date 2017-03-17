@@ -4,13 +4,13 @@ import createHistory from 'history/createBrowserHistory';
 class ShowProject extends React.Component{
   constructor(props){
     super(props);
-    const Re = /\/project\/\d+/;
-    const Red = /\d+/;
-    const ProjectIdPath = window.location.hash.match(Re)[0];
-    const projId = ProjectIdPath.match(Red)[0];
+    // const Re = /\/project\/\d+/;
+    // const Red = /\d+/;
+    // const ProjectIdPath = window.location.hash.match(Re)[0];
+    // const projId = ProjectIdPath.match(Red)[0];
     this.state = {
-      projectId : projId,
-      project: this.props.projectsHash
+      projectId : this.props.match.params.id,
+      projectsHash: this.props.projectsHash
     }
     this.deleteProject = this.deleteProject.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
@@ -27,8 +27,14 @@ class ShowProject extends React.Component{
     window.location.reload();
   }
   componentWillReceiveProps(nextProps){
-    let project = nextProps.projectsHash
-    this.setState({project})
+
+    let projectsHash = {
+      projectsHash: nextProps.projectsHash,
+      projectId: this.props.match.params.id
+    }
+
+    this.setState(projectsHash)
+    debugger;
   }
   deleteProject(){
     this.props.removeProject(this.state.projectId)
@@ -43,10 +49,10 @@ class ShowProject extends React.Component{
     }
   }
   render(){
-    let projectList = this.state.project;
+    let projectList = this.state.projectsHash;
     if(Object.keys(projectList).length === 0) return <div></div>;
     let projectId = this.state.projectId;
-
+    debugger;
     let project = projectList[projectId];
     let steps = project.steps.map(step => (
       <li key={step.id}>
