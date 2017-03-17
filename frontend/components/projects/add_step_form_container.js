@@ -9,7 +9,7 @@ const mapStateToProps =(state, ownProps) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-  newStep: (id) => dispatch(newStep(id))
+  newStep: (step) => dispatch(newStep(step))
 })
 
 const NewStepContainer = connect(mapStateToProps, mapDispatchToProps)(NewStep);

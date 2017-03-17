@@ -13,6 +13,7 @@ class CreateProject extends React.Component{
 
     this.showErrors = this.showErrors.bind(this);
     this.update = this.update.bind(this);
+    this.updateStep = this.updateStep.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addStep = this.addStep.bind(this);
     this.clickAddStep = this.clickAddStep.bind(this);
@@ -29,7 +30,6 @@ class CreateProject extends React.Component{
         featured: true
       },
       steps :{},
-      stepNum: 1,
       addNumStep : []
     }
 
@@ -50,14 +50,14 @@ class CreateProject extends React.Component{
       this.setState({project})
     };
   }
-  updateStep(input){
+  updateStep(input,stepNum){
     return event => {
-      let steps = this.state.step;
-      let stepNum = this.state.stepNum;
+      if(stepNum === 0) return null;
+      let steps = this.state.steps;
       let step = steps[stepNum] ? steps[stepNum] : {title: "", body: ""};
 
       step[input] = event.target.value;
-      let newSteps = merge(steps, {stepNum: step});
+      let newSteps = merge(steps, {[stepNum]: step});
 
       this.setState({steps: newSteps})
     };
@@ -67,13 +67,22 @@ class CreateProject extends React.Component{
     event.preventDefault;
     let project = this.state.project;
     this.props.createProject({project})
-        .then(
-          //createSteps
+        .then( () => {
+            let steps = this.state.steps;
+            let numberSteps = Object.keys(this.state.steps);
+            numberSteps.forEach( numStep => {
+              let step = steps[numStep];
+              step["stepNum"] = numStep;
+              step["project_id"] = this.props.projectId;
+              debugger;
+              this.props.newStep({step});
+            })
+          }
         )
         .then(
             // () =>  <Redirect to="/"/>
             project => {
-            let path = `/#/Project/${project.project.id}`;
+            let path = `/#/Project/${this.props.projectId}`;
             this.redirect(path);
       }
     );
@@ -94,17 +103,17 @@ class CreateProject extends React.Component{
     if(this.state.addNumStep === 0){
       return stepForm;
     }else{
-      stepForm = this.state.addNumStep.map(num => (
-        <div>
+      stepForm = this.state.addNumStep.map((num,idx) => (
+        <div key={idx}>
           <label>
             Step Title
             <input type="text"
-              onChange={this.updateStep("title")}
+              onChange={this.updateStep("title",idx+1)}
               placeholder="StepTitle"></input>
           </label>
           <label>
             Instructions
-            <textarea onChange={this.updateStep("body")}></textarea>
+            <textarea onChange={this.updateStep("body",idx+1)}></textarea>
           </label>
           <button onClick={this.clickAddStep}>Add Step</button>
         </div>

@@ -68,5 +68,6 @@ export const getAllSteps = (projectId) => dispatch => {
 }
 
 export const newStep = (step) => dispatch => {
+  // debugger;
   return ProjectAPIUtil.newStep(step)
 }
