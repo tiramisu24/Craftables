@@ -2,8 +2,9 @@ import {connect} from 'react-redux';
 import {newStep} from '../../actions/project_actions';
 import NewStep from './new_step'
 
-const mapStateToProps =(state, ownProps) => ({
-  project : state.project,
+const mapStateToProps =(state, ownProps) => (
+  return{
+  project : state.projects,
   projectId: ownProps.id
 })
 

@@ -6,7 +6,7 @@ import ErrorsReducer from './errors_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
-  project: ProjectReducer,
+  projects: ProjectReducer,
   errors: ErrorsReducer
 })
 

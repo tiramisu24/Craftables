@@ -62,14 +62,29 @@ export const showProjects = () => dispatch => {
             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
+export const updateProject = (project) => dispatch => {
+  return ProjectAPIUtil
+            .updateProject(project)
+            .then(project => dispatch(receiveProject(project)))
+            .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
+}
 export const getAllSteps = (projectId) => dispatch => {
+  debugger;
   return ProjectAPIUtil
             .getSteps(projectId)
             .then(steps => dispatch(receiveSteps(steps)))
             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 
 }
-
 export const newStep = (step) => dispatch => {
   return ProjectAPIUtil.newStep(step)
+}
+
+export const updateStep = (step) => dispatch => {
+  return ProjectAPIUtil
+            .updateStep(step)
+            .then(step => {
+              debugger
+              dispatch(receiveProject(step))})
+            .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }

@@ -4,7 +4,7 @@ import FeaturedProjects from './featured_projects'
 
 const mapStateToProps =(state, ownProps) => {
   return{
-  projectsHash : state.project.projects
+  projectsHash : state.projects.projects
 }}
 
 

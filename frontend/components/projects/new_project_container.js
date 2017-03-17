@@ -3,7 +3,7 @@ import {createProject, newStep} from '../../actions/project_actions';
 import CreateProject from './create_project'
 
 const mapStateToProps =(state) => {
-  let projectKeys = Object.keys(state.project.projects);
+  let projectKeys = Object.keys(state.projects.projects);
   return{
   authorId : state.session.currentUser ? state.session.currentUser.id : null,
   projectId: (projectKeys.length > 0)? projectKeys[0] : 0

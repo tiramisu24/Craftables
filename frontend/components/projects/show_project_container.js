@@ -4,9 +4,8 @@ import ShowProject from './show_project'
 
 const mapStateToProps =(state, ownProps) => {
   return{
-  projectsHash : state.project.projects
+  projectsHash : state.projects.projects
 }}
-
 
 
 const mapDispatchToProps = (dispatch) => ({

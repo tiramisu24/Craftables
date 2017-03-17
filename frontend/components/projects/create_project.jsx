@@ -155,4 +155,4 @@ class CreateProject extends React.Component{
   }
 }
 
-export default withRouter(CreateProject);
+export default CreateProject;

@@ -29,9 +29,9 @@ export const deleteProject = (projectId) => (
 
 export const updateProject = (project) => (
   $.ajax({
-    type: "UPDATE",
+    type: "PATCH",
     url: `api/projects/${project.id}`,
-    data: project
+    data: {project}
   })
 );
 
@@ -42,3 +42,12 @@ export const newStep = (step) => (
     data: step
   })
 )
+
+export const updateStep = (step) => {
+  // debugger;
+  $.ajax({
+    type: "PATCH",
+    url: `api/steps/${step.id}`,
+    data: {step}
+  })
+}
