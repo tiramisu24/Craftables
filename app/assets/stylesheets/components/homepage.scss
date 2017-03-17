@@ -1,0 +1,24 @@
+.featured-project-list{
+  display: flex;
+  margin: 5vh 10vh;
+  // background-color: wheat;
+
+}
+.card-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #CFBCC1;
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+}
+
+.card-project-image{
+  height: 80%;
+}
+.card-project-title {
+  // background-color: cornflowerblue;
+  width: 80%;
+  margin: 4px 0px;
+}

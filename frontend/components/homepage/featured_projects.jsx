@@ -20,13 +20,13 @@ class FeaturedProjects extends React.Component{
 
 
     let wrappedList = this.state.projectList.project.map(project => (
-      <div key={project.id}>
-        <div>{project.title}</div>
+      <div key={project.id} className="card-project">
+        <div className="card-project-image">Image goes here</div>
+        <div className = "card-project-title">{project.title}</div>
       </div>
     ))
     return(
-      <ul>
-        there is project
+      <ul className="featured-project-list">
         {wrappedList}
       </ul>
     )

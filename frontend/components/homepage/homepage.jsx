@@ -5,6 +5,9 @@ import FeaturedProjectsContainer from './featured_projects_container';
 
 const HomePage = () => (
   <div>
+    <div>
+      Search Box Goes Here
+    </div>
     <FeaturedProjectsContainer/>
   </div>
 )

@@ -44,7 +44,15 @@ class ShowProject extends React.Component{
   }
   render(){
     let project = this.state.project;
+
     if(Object.keys(project).length === 0) return <div></div>
+
+    let steps = this.state.project.steps.map(step => (
+      <li key={step.id}>
+        <h5>{step.title}</h5>
+        <p>{step.body}</p>
+      </li>
+    ))
     return <div>
       Got here id:{this.state.projectId}
       <div>
@@ -53,6 +61,7 @@ class ShowProject extends React.Component{
       </div>
       <p>Instructions:{project.body}</p>
       <h3>Author:{project.author.username}</h3>
+      <ul>{steps}</ul>
       <div>{this.deleteButton()}</div>
     </div>
   }

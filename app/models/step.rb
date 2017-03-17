@@ -1,5 +1,5 @@
 class Step < ApplicationRecord
-  validates :title, :stepNum, :project, :body, presence: true
+  validates :stepNum, :project, presence: true
   validates_uniqueness_of :stepNum, scope: [:project]
   validates_uniqueness_of :title, scope: [:project, :stepNum]
 
