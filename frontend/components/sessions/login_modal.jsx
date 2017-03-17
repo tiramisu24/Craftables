@@ -38,7 +38,7 @@ class LoginModal extends React.Component{
 
   demo(){
     const user = {
-      username: "test",
+      username: "tiramisu",
       password: "password"
     }
     this.setState({user});
