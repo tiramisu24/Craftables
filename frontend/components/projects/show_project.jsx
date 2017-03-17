@@ -1,13 +1,10 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
+import {Link} from 'react-router-dom';
 
 class ShowProject extends React.Component{
   constructor(props){
     super(props);
-    // const Re = /\/project\/\d+/;
-    // const Red = /\d+/;
-    // const ProjectIdPath = window.location.hash.match(Re)[0];
-    // const projId = ProjectIdPath.match(Red)[0];
     this.state = {
       projectId : this.props.match.params.id,
       projectsHash: this.props.projectsHash
@@ -21,11 +18,8 @@ class ShowProject extends React.Component{
       this.props.showProject(this.state.projectId);
     }
   }
-  redirect(path){
-    const history = createHistory();
-    history.push("/");
-    window.location.reload();
-  }
+
+
   componentWillReceiveProps(nextProps){
 
     let projectsHash = {
@@ -36,15 +30,17 @@ class ShowProject extends React.Component{
     this.setState(projectsHash)
   }
   deleteProject(){
-    this.props.removeProject(this.state.projectId)
-              .then(this.redirect("/"));
+    this.props.removeProject(this.state.projectId);
   }
 
   deleteButton(author_name){
     if(localStorage.user !== author_name){
-      return <div></div>
+      return <div>whet</div>
     }else {
-      return <button onClick={this.deleteProject}>Delete This Project</button>
+      return <div className="edit-buttons">
+        <Link to={`/edit_project/${this.state.projectId}`}>Update Project</Link>
+        <button onClick={this.deleteProject}>Delete This Project</button>
+      </div>
     }
   }
   render(){

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class FeaturedProjects extends React.Component{
   constructor(props){
@@ -21,10 +22,10 @@ class FeaturedProjects extends React.Component{
 
 
     let wrappedList = Object.keys(projects).map(projectId => (
-      <div key={projectId} className="card-project">
+      <Link to={`/project/${projectId}`} key={projectId} className="card-project">
         <div className="card-project-image">Image goes here</div>
         <div className = "card-project-title">{projects[projectId].title}</div>
-      </div>
+      </Link>
     ))
     return(
       <ul className="featured-project-list">
