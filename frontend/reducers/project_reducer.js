@@ -17,6 +17,8 @@ const ProjectReducer = (state=initialState, action) => {
   switch(action.type){
     case RECEIVE_PROJECTS:
       newState.projects = action.projects;
+      //hacky way to fix jbuilder
+      delete newState.projects["project"];
       return newState;
     case RECEIVE_PROJECT:
       let projectId = action.project.id

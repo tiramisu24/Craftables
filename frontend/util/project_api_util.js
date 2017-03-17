@@ -43,11 +43,10 @@ export const newStep = (step) => (
   })
 )
 
-export const updateStep = (step) => {
-  // debugger;
-  return $.ajax({
+export const updateStep = (step) => (
+  $.ajax({
     type: "PATCH",
     url: `api/steps/${step.id}`,
     data: {step}
   })
-}
+)

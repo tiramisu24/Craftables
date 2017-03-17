@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 class UserDropdown extends React.Component {
   constructor(props){
@@ -33,6 +33,9 @@ class UserDropdown extends React.Component {
         <div className="dropdown-option">
           <div className="dropdown-menu-contents">
             <div>Profile</div>
+            <div>
+              <Link to="/new_project">New Project</Link>
+            </div>
             <div>
               <button onClick={this.handleClick} className="logout-button">Log Out</button>
             </div>

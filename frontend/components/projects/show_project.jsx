@@ -34,7 +34,6 @@ class ShowProject extends React.Component{
     }
 
     this.setState(projectsHash)
-    debugger;
   }
   deleteProject(){
     this.props.removeProject(this.state.projectId)
@@ -52,7 +51,6 @@ class ShowProject extends React.Component{
     let projectList = this.state.projectsHash;
     if(Object.keys(projectList).length === 0) return <div></div>;
     let projectId = this.state.projectId;
-    debugger;
     let project = projectList[projectId];
     let steps = project.steps.map(step => (
       <li key={step.id}>

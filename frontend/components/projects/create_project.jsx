@@ -35,6 +35,7 @@ class CreateProject extends React.Component{
 
   }
 
+
   redirect(path){
     // const history = createHistory();
     // this.props.router.push("/");
@@ -76,7 +77,9 @@ class CreateProject extends React.Component{
               step["project_id"] = this.props.projectId;
               this.props.newStep({step});
             })
+            console.log(this.props);
             let path = `/project/${this.props.projectId}`;
+            console.log(path);
             this.redirect(path);
           }
         );
