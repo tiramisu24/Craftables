@@ -90,7 +90,6 @@ class CreateProject extends React.Component{
   }
 
   addStep(){
-    // debugger;
     let stepForm = <div></div>
     if(this.state.addNumStep === 0){
       return stepForm;
