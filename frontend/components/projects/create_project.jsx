@@ -107,14 +107,15 @@ class CreateProject extends React.Component{
             Instructions
             <textarea onChange={this.updateStep("body")}></textarea>
           </label>
-          <input type="submit" className="submit-button-new-step" value="Add Step"></input>
+          <button onClick={this.clickAddStep}>Add Step</button>
         </div>
       ))
       return stepForm
     }
   }
 
-  clickAddStep(){
+  clickAddStep(event){
+    event.preventDefault();
     let numSteps = this.state.addNumStep;
     numSteps.push('1');
     this.setState({addNumStep: numSteps});
