@@ -17,3 +17,18 @@
 *{
   font-family: 'Ubuntu', sans-serif;
 }
+
+h2, h4, p, h5{
+  margin: 8px 12px;
+}
+
+button, input, textarea {
+  -webkit-appearance: none;
+  border: none;
+
+}
+
+button {
+  width: 100px;
+  align-self: center;
+}

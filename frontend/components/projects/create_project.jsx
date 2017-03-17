@@ -80,7 +80,6 @@ class CreateProject extends React.Component{
           }
         )
         .then(
-            // () =>  <Redirect to="/"/>
             project => {
             let path = `/#/Project/${this.props.projectId}`;
             this.redirect(path);
@@ -104,19 +103,19 @@ class CreateProject extends React.Component{
       return stepForm;
     }else{
       stepForm = this.state.addNumStep.map((num,idx) => (
-        <div key={idx}>
-          <label>
-            Step Title
-            <input type="text"
-              onChange={this.updateStep("title",idx+1)}
-              placeholder="StepTitle"></input>
-          </label>
-          <label>
-            Instructions
-            <textarea onChange={this.updateStep("body",idx+1)}></textarea>
-          </label>
-          <button onClick={this.clickAddStep}>Add Step</button>
-        </div>
+        <div key={idx} className="create-project-form-inputs">
+            <div className="create-project-form-text-inputs">
+              <label>
+                <input type="text"
+                  onChange={this.updateStep("title",idx+1)}
+                  placeholder="StepTitle"></input>
+              </label>
+              <label>
+                <textarea onChange={this.updateStep("body",idx+1)}></textarea>
+              </label>
+            </div>
+            <div>Future Image</div>
+          </div>
       ))
       return stepForm
     }
@@ -136,17 +135,24 @@ class CreateProject extends React.Component{
       <div className="create-project-div">
         <ul>{this.showErrors}</ul>
         <form className="create-project-form" onSubmit={this.handleSubmit}>
-          <label>
-            <input type="text" onChange={this.update("title")} placeholder="Title"></input>
-          </label>
+          <div className="create-project-form-inputs">
+            <div className="create-project-form-text-inputs">
+              <label>
+                <input type="text" onChange={this.update("title")} placeholder="Title" ></input>
+              </label>
 
-          <label>
-            <textarea onChange={this.update("body")}></textarea>
-          </label>
-          <input type="submit" className="submit-button-create-project" value="Publish"></input>
+              <label>
+                <textarea onChange={this.update("body")}></textarea>
+              </label>
+            </div>
+            <div className>Future Image Upload</div>
+          </div>
+          <div className="submit-button-create-project">
+            <input type="submit"  value="Publish"></input>
+          </div>
           {this.addStep()}
         </form>
-        <button onClick={this.clickAddStep}>Add Step</button>
+        <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
       </div>
     )
   }

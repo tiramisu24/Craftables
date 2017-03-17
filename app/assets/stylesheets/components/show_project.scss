@@ -1,0 +1,38 @@
+.project-show-main{
+  display: flex;
+  flex-direction: column;
+  background-color: #DED8B8;
+  margin: 5vh 8em;
+  padding: 0vh 2em;
+}
+
+.project-show-header {
+  border-bottom: 1px solid grey;
+}
+
+.project-show-main > p{
+  margin: 5vh 2em;
+}
+
+.steps-list{
+  list-style: none;
+  padding-left: 0;
+
+  // background-color: blue;
+}
+
+.steps-list > li {
+  border-top: 1px solid grey;
+  align-self: left;
+  margin: 1vh 0px;
+}
+
+.steps-list p{
+  margin: 2vh 2em;
+}
+
+.delete-button{
+  -webkit-appearance: none;
+  align-self: center;
+  border-radius: 10px;
+}

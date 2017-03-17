@@ -44,7 +44,6 @@ class ShowProject extends React.Component{
   }
   render(){
     let project = this.state.project;
-
     if(Object.keys(project).length === 0) return <div></div>
 
     let steps = this.state.project.steps.map(step => (
@@ -53,16 +52,16 @@ class ShowProject extends React.Component{
         <p>{step.body}</p>
       </li>
     ))
-    return <div>
-      Got here id:{this.state.projectId}
-      <div>
-        <h2>Project Title:{project.title}</h2>
-        <h3>By :{project.author.username}</h3>
+    return <div className="project-show-main">
+      <div className="project-show-header">
+        <h2>{project.title}</h2>
+        <h4>By: {project.author.username}</h4>
       </div>
-      <p>Instructions:{project.body}</p>
-      <h3>Author:{project.author.username}</h3>
-      <ul>{steps}</ul>
-      <div>{this.deleteButton()}</div>
+      <p>Description: {project.body}</p>
+      <ul className="steps-list">
+        <h4>Instructions: </h4>
+        {steps}</ul>
+      <div className="delete-button">{this.deleteButton()}</div>
     </div>
   }
 }

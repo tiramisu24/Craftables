@@ -48,7 +48,7 @@ class UserDropdown extends React.Component {
     }
     return (
       <div className="dropdown-form">
-        <button onClick={this.profileClicked}>|_|</button>
+        <button  onClick={this.profileClicked}>|_|</button>
         {this.displayForm()}
       </div>
     )
