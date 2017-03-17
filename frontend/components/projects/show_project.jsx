@@ -10,7 +10,7 @@ class ShowProject extends React.Component{
     const projId = ProjectIdPath.match(Red)[0];
     this.state = {
       projectId : projId,
-      project: this.props.project
+      project: this.props.projectsHash
     }
     this.deleteProject = this.deleteProject.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
@@ -27,7 +27,7 @@ class ShowProject extends React.Component{
     window.location.reload();
   }
   componentWillReceiveProps(nextProps){
-    let project = nextProps.project[this.state.projectId]
+    let project = nextProps.projectsHash
     this.setState({project})
   }
   deleteProject(){
@@ -35,19 +35,20 @@ class ShowProject extends React.Component{
               .then(this.redirect("/"));
   }
 
-  deleteButton(){
-    if(localStorage.user !== this.state.project.author.username){
+  deleteButton(author_name){
+    if(localStorage.user !== author_name){
       return <div></div>
     }else {
       return <button onClick={this.deleteProject}>Delete This Project</button>
     }
   }
   render(){
-    let project = this.state.project;
-    // debugger;
-    if(Object.keys(project).length === 0) return <div></div>
-    debugger;
-    let steps = this.state.project.steps.map(step => (
+    let projectList = this.state.project;
+    if(Object.keys(projectList).length === 0) return <div></div>;
+    let projectId = this.state.projectId;
+
+    let project = projectList[projectId];
+    let steps = project.steps.map(step => (
       <li key={step.id}>
         <h5>{step.title}</h5>
         <p>{step.body}</p>
@@ -62,7 +63,7 @@ class ShowProject extends React.Component{
       <ul className="steps-list">
         <h4>Instructions: </h4>
         {steps}</ul>
-      <div className="delete-button">{this.deleteButton()}</div>
+      <div className="delete-button">{this.deleteButton(project.author.username)}</div>
     </div>
   }
 }

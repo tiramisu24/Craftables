@@ -1,36 +1,45 @@
-import {RECEIVE_PROJECT, RECEIVE_CURRENT_PROJECT, RECEIVE_ERRORS, RECEIVE_PROJECTS, DELETE_PROJECT, RECEIVE_STEPS} from '../actions/project_actions';
+import { RECEIVE_PROJECTS,
+         RECEIVE_PROJECT,
+         RECEIVE_CURRENT_PROJECT,
+         RECEIVE_ERRORS,
+         DELETE_PROJECT,
+         RECEIVE_STEPS
+       } from '../actions/project_actions';
 import merge from 'lodash/merge';
 
+const initialState = {
+  currentUser: null,
+  errors: [],
+  projects: {},
+  steps: {},
+  search: {}
+};
 
-const ProjectReducer = (state, action) => {
-  let newState = merge({}, state)
+const ProjectReducer = (state=initialState, action) => {
+  let newState = merge({}, state);
+  newState.errors = [];
+
   switch(action.type){
     case RECEIVE_PROJECTS:
-      newState.project = action.projects;
-      debugger;
-      newState.errors = [];
+      newState.projects = action.projects;
       return newState;
     case RECEIVE_PROJECT:
-      newState = merge(newState, {[action.project.id]:action.project});
-      newState.errors = [];
+      newState.projects = merge(newState.projects, {[action.project.id]: action.project});
       return newState;
     case RECEIVE_CURRENT_PROJECT:
-      newState = action.project;
-      newState.errors =[];
-      debugger;
+      newState.projects = {[action.project.id]: action.project};
       return newState;
     case RECEIVE_ERRORS:
       newState.errors = action.errors;
       return newState;
     case DELETE_PROJECT:
-      newState.project[action.id] = null
+      newState.projects[action.id] = null
       return newState;
     case RECEIVE_STEPS:
       newState.steps = action.steps;
-      newState.errors = [];
       return newState;
     default:
-      return newState;
+      return merge({}, state);
   }
 
 }

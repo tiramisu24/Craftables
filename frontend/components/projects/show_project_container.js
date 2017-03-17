@@ -3,10 +3,10 @@ import {showProject, removeProject} from '../../actions/project_actions';
 import ShowProject from './show_project'
 
 const mapStateToProps =(state, ownProps) => {
-  debugger;
   return{
-  project : state.project
+  projectsHash : state.project.projects
 }}
+
 
 
 const mapDispatchToProps = (dispatch) => ({

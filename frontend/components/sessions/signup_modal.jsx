@@ -37,10 +37,7 @@ class SignUPModal extends React.Component{
       this.props.demo({user})
                 .then(this.closeModal());
     }else {
-      user = {
-        username: this.state.username,
-        password: this.state.password
-      }
+      user = this.state.user;
       this.props.processForm({user})
                 .then(this.closeModal());
     }
@@ -101,7 +98,7 @@ class SignUPModal extends React.Component{
               </label>
             </Modal.Body>
             <Modal.Footer>
-              <input type="submit" className="modal-input" value="Log In"></input>
+              <input type="submit" className="modal-input" value="Sign Up"></input>
               <button onClick={this.demo} >DEMO</button>
             </Modal.Footer>
           </form>
