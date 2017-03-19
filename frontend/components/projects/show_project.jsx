@@ -1,13 +1,14 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import {Link} from 'react-router-dom';
+import Comments from './comments_container'
 
 class ShowProject extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       projectId : this.props.match.params.id,
-      projectsHash: this.props.projectsHash
+      projectsHash: this.props.projectsHash,
     }
     this.deleteProject = this.deleteProject.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
@@ -21,10 +22,9 @@ class ShowProject extends React.Component{
 
 
   componentWillReceiveProps(nextProps){
-
     let projectsHash = {
       projectsHash: nextProps.projectsHash,
-      projectId: this.props.match.params.id
+      projectId: this.props.match.params.id,
     }
 
     this.setState(projectsHash)
@@ -65,6 +65,7 @@ class ShowProject extends React.Component{
       <ul className="steps-list">
         <h4>Instructions: </h4>
         {steps}</ul>
+      <Comments projectId={this.state.projectId}/>
       <div className="delete-button">{this.deleteButton(project.author.username)}</div>
     </div>
   }

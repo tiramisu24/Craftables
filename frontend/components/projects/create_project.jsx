@@ -4,7 +4,14 @@ import {withRouter} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import {Redirect} from 'react-router-dom';
 import merge from 'lodash/merge';
-// import AddStepForm from './add_step_form';
+// import DropzoneComponent from 'react-dropzone-component';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
+
+const CLOUDINARY_UPLOAD_PRESET = 'rb5gmcfs';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/Craftables/upload';
+
 
 
 class CreateProject extends React.Component{
@@ -27,10 +34,12 @@ class CreateProject extends React.Component{
         author_id: this.props.authorId,
         body: "",
         archived: false,
-        featured: true
+        featured: true,
+        img_url: null
       },
       steps :{},
-      addNumStep : []
+      addNumStep : [],
+      uploadFile : null
     }
 
   }
@@ -59,6 +68,38 @@ class CreateProject extends React.Component{
     };
   }
 
+  // uploadImage(){
+  //   console.log("i am here");
+  //   debugger;
+  //   return (event) => {
+  //     debugger;
+  //     console.log("I am here");
+  //   }
+  // }
+
+
+  onImageDrop(files) {
+    // debugger;
+    this.handleImageUpload(files[0]);
+      // console.log(file);
+  }
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          uploadedFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
+  }
   handleSubmit(event){
     event.preventDefault;
     let project = this.state.project;
@@ -81,7 +122,6 @@ class CreateProject extends React.Component{
             this.redirect(path);
           }
         );
-
   }
 
   showErrors(){
@@ -127,6 +167,19 @@ class CreateProject extends React.Component{
 
   render(){
     if (localStorage.user === "") return <div></div>;
+    // const componentConfig = {
+    //     iconFiletypes: ['.jpg', '.png', '.gif'],
+    //     showFiletypeIcon: true,
+    //     postUrl: 'no-url'
+    //   };
+    // const djsConfig = {
+    //   autoProcessQueue: false,
+    //   uploadMultiple: true
+    // };
+    // const eventHandlers = {
+    //   addedfile: this.handleFileAdded.bind(this),
+    //   processingmultiple: this.handleFileAdded.bind(this)
+    // }
 
     return(
       <div className="create-project-div">
@@ -142,7 +195,9 @@ class CreateProject extends React.Component{
                 <textarea onChange={this.update("body")}></textarea>
               </label>
             </div>
-            <div className>Future Image Upload</div>
+            <Dropzone multiple={true}
+                      accept="image/*"
+                      onDrop={this.onImageDrop.bind(this)}></Dropzone>
           </div>
           <div className="submit-button-create-project">
             <input type="submit"  value="Publish"></input>

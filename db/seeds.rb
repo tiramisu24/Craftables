@@ -59,7 +59,7 @@ Cut the same sized circle on the thermocol/cardboard and stick it right on top o
 \n
 You can take two straws and attach it on top of the circle on the cardboard in a way that they are parallel to each other. Now using double-sided tape attach the motor in between the two straws and secure it firmly with tape.\n
 \n
-Remember try to make the house and hovercraft as light as possible using really light-weight materials, so that you can get the house to float higher, making the effect better and people happier.", project_id: "#{project1.id}")
+Remember try to make the house and hovercraft as light as possible using really light-weight materials, so that you can get the house to float higher, making the effect better and people happier.", stepNum: "2", project_id: "#{project1.id}")
 
 Step.create(title: "Step 3: Making the UP House
 
@@ -71,7 +71,7 @@ I suggest that you color each and every part and include all the details in the 
 \n
 IMPORTANT NOTE: Try to make the house as light as possible, so that your final house can fly higher. Use light weight materials and try to make the house as real as possible. Due to my time limit I was not able to accomplish a very realistic house, but you can.\n
 \n
-I've also added a picture of the UP house with all the views of the house. It was of great reference to me and maybe to you as well :)", project_id: "#{project1.id}")
+I've also added a picture of the UP house with all the views of the house. It was of great reference to me and maybe to you as well :)", stepNum: "3", project_id: "#{project1.id}")
 
 Step.create(title: "Step 4: Finishing Touches and Extra Details
 
@@ -92,7 +92,7 @@ OTHER DETAILS: unfortunately I wasn't able to implement these ideas, but maybe y
 4. To cover up the battery box behind, maybe make a staircase out of it, or just put the grassy paper on top of it.\n
 \n
 And again, be creative guys, but remember whatever you do try to make it as light as possible and most of all colourful.\n
-", project_id: "#{project1.id}")
+", stepNum: "3", project_id: "#{project1.id}")
 
 Step.create(title: "Step 1: Materials", body: "- A glass mosaic tile; these are usually supplied on a net or with some other backing that doesn't look that attractive. On mine, these was adhesive from the mesh on the back. I later chose to cover mine with felt, but I think a better way would have been to sand/polish the back instead. \n
 \n
@@ -104,13 +104,13 @@ The best thing about using mosaic tiles is that there are so many different colo
 \n
 - Pliers; I'm using my jewellery pliers for this. Any flat or blunt nose pliers would work - you just need to bend 90 degree corners in the wire, and do a little bit of shaping.\n
 \n
-- Small piece of felt (optional)", project_id: "#{project2.id}")
+- Small piece of felt (optional)", stepNum: "1",project_id: "#{project2.id}")
 
 Step.create(title: "Step2: Cutting and Bending the Wire", body: "You will need to cut out 2 pieces of 20 gauge copper wire the same length. The length you need will be calculated by measuring the perimeter of the tile, and then adding at least 10cm (4in).\n
 \n
 Next, use your flat/blunt nose pliers to bend 2 right-angles in the wire, as shown in the picture. Do the first bend after about 5cm (2in) from the end of the wire, then the next bend after half the width of the tile.\n
 \n
-You want this wire to wrap snugly around the tile, with a 5cm length sticking up from the centre.", project_id: "#{project2.id}")
+You want this wire to wrap snugly around the tile, with a 5cm length sticking up from the centre.", stepNum: "2",project_id: "#{project2.id}")
 
 Step.create(title: "Step3: Weaving the Bail", body: "This first bit of weaving is going to create the bail at the top of the tile.\n
 \n
@@ -124,15 +124,17 @@ Then follow the diagram I've made to continue weaving down to the first bend in 
 \n
 Do 2 wraps with the thin wire on one thick wire, then 2 wraps on the other thick wire and so on. Between each thicker wire you will change direction with your wrapping i.e. 2 wraps clockwise on one wire, 2 wraps anti-clockwise on the other wire...\n
 
-P.S. Whenever you are weaving, you will need to regularly use your pliers to carefully push your woven copper strands together so the wire wraps are touching. You want the weaving to be as tight and as closely woven as possible without loose bits.", project_id: "#{project2.id}")
+P.S. Whenever you are weaving, you will need to regularly use your pliers to carefully push your woven copper strands together so the wire wraps are touching. You want the weaving to be as tight and as closely woven as possible without loose bits.", stepNum: "3",project_id: "#{project2.id}")
 
 Step.create(title: "Step4: Weaving the Frame", body: "At the bend in the wire, it's time to change weaving pattern for the frame section.\n
 \n
-To do this, start by wrapping one thick wire 5 times. Then follow the weaving diagram. The next step is wrapping both thick wires 3 times, then the opposing thick wire 5 times, then both wires 3 times, then back to the beginning of the pattern.", project_id: "#{project2.id}")
+To do this, start by wrapping one thick wire 5 times. Then follow the weaving diagram. The next step is wrapping both thick wires 3 times, then the opposing thick wire 5 times, then both wires 3 times, then back to the beginning of the pattern.",
+  stepNum: "4",project_id: "#{project2.id}")
 
 Step.create(title: "Step5: Complete the Frame", body: "Keep going with the weaving, and when you've done enough weaving to go around another corner of the tile, you can bend the woven wire at right angles to snugly fit around the tile edge.\n
 \n
-Stop when you have completed the full square frame and reached the base of the bail. Don't stop short of this point; weave right up to and maybe slightly past the base of the bail, otherwise there may be a little gap.", project_id: "#{project2.id}")
+Stop when you have completed the full square frame and reached the base of the bail. Don't stop short of this point; weave right up to and maybe slightly past the base of the bail, otherwise there may be a little gap.",
+stepNum: "5", project_id: "#{project2.id}")
 
 Step.create(title: "Step6: Wire Loop Embellishment", body: "The next step is to finish the thick wire that is at the front of the tile. \n
 \n
@@ -140,47 +142,49 @@ To do this, I take my round nose pliers and loop the wire over 3 times in the sa
 \n
 The tile should be snugly fitting, and no glue should be required to keep the tile in place.\n
 \n
-You can manipulate the wire frame now to make it fit the tile the best it can, and to make sure the frame has nice straight sides and sharp 90 dgeree corners.", project_id: "#{project2.id}")
+You can manipulate the wire frame now to make it fit the tile the best it can, and to make sure the frame has nice straight sides and sharp 90 dgeree corners.", stepNum: "6",project_id: "#{project2.id}")
 
-Step.create(title: "Credits", body: "This project is a modified verion of from the instructable by FernMakes")
+Step.create(title: "Credits", body: "This project is a modified verion of from the instructable by FernMakes",
+stepNum: "7", project_id: "#{project2.id}")
 
 Step.create(title: "Step 1:", body: "The first thing I did was gathered up some junk mail that was all about the same size.
 
-", project_id: "#{project3.id}")
+", stepNum: "1", project_id: "#{project3.id}")
 
 Step.create(title: "Step 2:", body: "I use a homemade press to make the junk mail billet, I'll show what it looks like in a few of pictures in the next step, the wooden piece you see in the first pic is the press block. All of the junk mail has to be cut to the same width and length as this block, so I use it as my reference for making the paper strips. It doesn't have to be perfect but the closer you can get it to the same size the better.
 
-", project_id: "#{project3.id}")
+", stepNum: "2", project_id: "#{project3.id}")
 
 Step.create(title: "Step 3:", body: "These are a few pics of the Micarta press I made. The body is just a U shaped channel made from MDF supported by a couple of pieces of 2x4s that work as the legs to get it off the table. The 2x4 legs make it easier to clamp up. I also added a support piece to the 2x4 legs that is just a piece of scrap wood. The press block is made from 3/4 plywood that I double up so that it would be rigid and wouldn't flex when clamped. Before using the press I make sure to thoroughly coat the entire work surface with wax. This will help prevent the billet from sticking. I also use wax paper for added protection from sticking.
 
-", project_id: "#{project3.id}")
+", stepNum: "3", project_id: "#{project3.id}")
 
 Step.create(title: "Step 4:", body: "This is the resin I use. I mix it per the instructions on the can. Make sure to cover your work surface with a trash bag or something that is disposable since this is a messy process. There will be squeeze out and the resin gets everywhere and does not clean up easily.
 
-", project_id: "#{project3.id}")
+", stepNum: "4", project_id: "#{project3.id}")
 
 Step.create(title: "Step 5:", body: "I use a small plastic tub and pour some of the resin mixture in to it. Then I dip the paper strips one at a time in to the resin. I try to squeegee out the excess between my fingers. Then I place it in the press/mold.
 
-", project_id: "#{project3.id}")
+", stepNum: "5", project_id: "#{project3.id}")
 
 Step.create(title: "Step 6:", body: "Next I clamp up the press trying to apply even pressure across the entire press block. Otherwise you can end up with one side being thinner than the other side because one clamp was applying more pressure than the others.
-", project_id: "#{project3.id}")
+", stepNum: "6", project_id: "#{project3.id}")
 
 Step.create(title: "Step 7", body: "After it has cured for 24 hours I remove the billet. I use a small hammer to tap out the press block and then a screw driver to pry out the billet. If you did a good job of waxing the press this part will be fairly easy. If you didn't then it will require a lot more effort to get the billet out.
 
-", project_id: "#{project3.id}")
+", stepNum: "7", project_id: "#{project3.id}")
 
 Step.create(title: "Step 8", body: "Next I drew the shape of the letter opener that I wanted to make, I was able to get two letter openers out of this one billet.
 
-", project_id: "#{project3.id}")
+", stepNum: "8", project_id: "#{project3.id}")
 
 Step.create(title: "Step 9", body: "I used my band saw to cut out the rough shape of the letter openers. If you don't have a band saw you could use a scroll saw or a coping saw to do the same.
 
-", project_id: "#{project3.id}")
+", stepNum: "9", project_id: "#{project3.id}")
 
 Step.create(title: "Step10:", body: "After the rough shape was cut out I used my belt sanders to refine the shape of the letter opener and what would become the blade portion. This is very similar to making and shaping a knife. I start with a rough grit like 120 and work my way up to higher grits.
 
-", project_id: "#{project3.id}")
+", stepNum: "10", project_id: "#{project3.id}")
 
-Step.create(title: "Credits", body: "This project is a modified version from the instrucable by danthemakerman")
+Step.create(title: "Credits", stepNum: "11",
+body: "This project is a modified version from the instrucable by danthemakerman", project_id: "#{project3.id}")

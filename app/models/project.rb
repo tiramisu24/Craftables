@@ -10,6 +10,8 @@ class Project < ApplicationRecord
 
   has_many :steps
 
+  has_many :comments
+
   private
   def ensure_not_archived
     self.archived ||= false
