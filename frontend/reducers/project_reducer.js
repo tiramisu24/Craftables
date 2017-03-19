@@ -2,7 +2,8 @@ import { RECEIVE_PROJECTS,
          RECEIVE_PROJECT,
          RECEIVE_CURRENT_PROJECT,
          DELETE_PROJECT,
-         RECEIVE_STEPS
+         RECEIVE_STEPS,
+         RECEIVE_STEP
        } from '../actions/project_actions';
 import merge from 'lodash/merge';
 
@@ -32,11 +33,21 @@ const ProjectReducer = (state=initialState, action) => {
       newState.projects = {[action.project.id]: action.project};
       return newState;
     case DELETE_PROJECT:
-      newState.projects[action.id] = null
+      if (newState.projects[action.projectId]){
+        delete newState.projects[action.projectId]
+      }
       return newState;
     case RECEIVE_STEPS:
       newState.steps = action.steps;
       return newState;
+    case RECEIVE_STEP:
+    let stepId = action.step.id
+    if (newState.steps[stepId]){
+      newState.steps[stepId] = action.step;
+    }else{
+      newState.steps = merge(newState.steps, {[stepId]: action.step});
+    }
+    return newState;
     default:
       return merge({}, state);
   }

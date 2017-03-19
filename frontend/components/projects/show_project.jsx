@@ -31,11 +31,13 @@ class ShowProject extends React.Component{
   }
   deleteProject(){
     this.props.removeProject(this.state.projectId);
+    this.props.history.push("/homepage");
+
   }
 
   deleteButton(author_name){
     if(localStorage.user !== author_name){
-      return <div>whet</div>
+      return <div></div>
     }else {
       return <div className="edit-buttons">
         <Link to={`/edit_project/${this.state.projectId}`}>Update Project</Link>

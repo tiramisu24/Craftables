@@ -5,13 +5,14 @@ export const DELETE_PROJECT = 'DELETE_PROJECT';
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_CURRENT_PROJECT = "RECEIVE_CURRENT_PROJECT";
 export const RECEIVE_STEPS = 'RECEIVE_STEPS';
+export const RECEIVE_STEP = 'RECEIVE_STEP';
 
 const receiveProject = (project) => ({
   type: RECEIVE_PROJECT,
   project
 })
 
-const deleteProject = (projectId) => ({
+const deleteCurrentProject = (projectId) => ({
   type: DELETE_PROJECT,
   projectId
 })
@@ -26,15 +27,20 @@ const receiveCurrentProject = project => ({
   project
 })
 
-const recieveSteps = (steps) => ({
+const receiveSteps = (steps) => ({
   type: RECEIVE_STEPS,
   steps
+})
+
+const receiveStep = (step) => ({
+  type: RECEIVE_STEP,
+  step
 })
 
 export const removeProject = (id) => dispatch => {
   return ProjectAPIUtil
             .deleteProject(id)
-            .then(deletedProject => dispatch(receivePoject(null)))
+            .then(deletedProject => dispatch(deleteCurrentProject(deletedProject.id)))
             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
@@ -77,6 +83,8 @@ export const getAllSteps = (projectId) => dispatch => {
 }
 export const newStep = (step) => dispatch => {
   return ProjectAPIUtil.newStep(step)
+                       .then(step =>                       dispatch(receiveStep(step)))
+                       .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const updateStep = (step) => dispatch => {
