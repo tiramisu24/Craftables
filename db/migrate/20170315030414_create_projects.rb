@@ -6,6 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.integer :author_id, null: false
       t.boolean :archived, null: false
       t.boolean :featured, null: false
+      t.string :img_url
       t.timestamps
     end
 

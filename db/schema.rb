@@ -21,24 +21,26 @@ ActiveRecord::Schema.define(version: 20170315184352) do
     t.integer  "author_id",  null: false
     t.boolean  "archived",   null: false
     t.boolean  "featured",   null: false
+    t.string   "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_projects_on_author_id", using: :btree
   end
 
   create_table "steps", force: :cascade do |t|
-    t.integer  "stepNum",    null: false
-    t.string   "title",      null: false
-    t.text     "body",       null: false
-    t.integer  "project_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "stepNum",                 null: false
+    t.string   "title",                   null: false
+    t.text     "body",                    null: false
+    t.integer  "project_id",              null: false
+    t.string   "img_urls",   default: [],              array: true
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["project_id"], name: "index_steps_on_project_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
-    t.string   "image_url"
+    t.string   "img_url"
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
     t.datetime "created_at",      null: false
