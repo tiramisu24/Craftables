@@ -5,7 +5,6 @@ import CreateProject from './create_project'
 const mapStateToProps =(state) => {
   let projectKeys = Object.keys(state.projects.projects);
   let stepKeys = state.projects.steps;
-  console.log(stepKeys);
   return{
   authorId : state.session.currentUser ? state.session.currentUser.id : null,
   projectId: (projectKeys.length > 0)? projectKeys[projectKeys.length-1] : 0,

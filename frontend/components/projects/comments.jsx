@@ -23,10 +23,11 @@ class Comments extends React.Component{
   handleSubmit(event){
     event.preventDefault();
     let comment = {
-      author_id: "",
       project_id: this.state.projectId,
       description: this.state.commentDes
     }
+    if(localStorage.id !== "") comment.author_id = localStorage.id;
+
     this.props.createComment(comment)
   }
 
@@ -42,6 +43,7 @@ class Comments extends React.Component{
           {this.state.comments[key].description}
         </div>
         <div>{this.state.comments[key].author.username}</div>
+        <div>{this.state.comments[key].created_at}</div>
       </li>
     ));
     return <div>
@@ -52,6 +54,7 @@ class Comments extends React.Component{
         <label>
           <input type="text" onChange={this.update.bind(this)} placeholder="Add a comment..."/>
         </label>
+        <input type = "submit" value="Comment"/>
       </form>
     </div>
   }

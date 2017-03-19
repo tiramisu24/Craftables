@@ -9,10 +9,10 @@ const SessionReducer = (state = null, action) => {
       newState.errors = [];
       if(action.user){
         localStorage.setItem("user", action.user.username);
-        localStorage.setItem("author_id", action.user.id)
+        localStorage.setItem("id", action.user.id)
       } else {
         localStorage.setItem("user", "");
-        localStorage.setItem("author_id", "")
+        localStorage.setItem("id", "")
       }
       return newState;
     default:

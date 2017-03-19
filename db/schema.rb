@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20170319201805) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "author_id",   null: false
-    t.integer  "project_id",  null: false
-    t.string   "description", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "author_id",                         null: false
+    t.integer  "project_id",                        null: false
+    t.string   "description", default: "Anonymous", null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["project_id"], name: "index_comments_on_project_id", using: :btree
   end
 

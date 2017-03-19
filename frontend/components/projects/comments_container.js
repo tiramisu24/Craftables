@@ -3,7 +3,7 @@ import {createComment, getAllComments} from '../../actions/comment_actions'
 import ShowComments from './comments'
 
 const mapStateToProps =(state, ownProps) => {
-  debugger;
+  // debugger;
   return{
   projectId: ownProps.projectId,
   comments : state.comments

@@ -16,13 +16,12 @@ export const receiveAllComments = (comments) => ({
 
 export const createComment = (comment) => dispatch => {
   return CommentAPIUtil.newComment(comment)
-                       .then(comment => dispatch(receiveComment(comment)))
+                       .then(comment =>dispatch(receiveComment(comment)))
                        .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const getAllComments = (projectId) => dispatch => {
   return CommentAPIUtil.getAllComments(projectId)
-                       .then(comments =>{
-                       dispatch(receiveAllComments(comments))})
+                       .then(comments =>dispatch(receiveAllComments(comments)))
                         .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }

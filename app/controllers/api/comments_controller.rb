@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  def new
+  def create
     @comment = Comment.new(comment_params)
     if @comment.save
       render :show
@@ -14,7 +14,6 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    params[:project_id] = 15
     @comments = Comment.where(project_id: params[:project_id])
     if @comments
       render :index
