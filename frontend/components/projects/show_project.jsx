@@ -1,7 +1,9 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import {Link} from 'react-router-dom';
+import {Grid, Jumbotron} from 'react-bootstrap'
 import Comments from './comments_container'
+
 
 class ShowProject extends React.Component{
   constructor(props){
@@ -57,16 +59,28 @@ class ShowProject extends React.Component{
       </li>
     ))
     return <div className="project-show-main">
-      <div className="project-show-header">
-        <h2>{project.title}</h2>
-        <h4>By: {project.author.username}</h4>
+      <div className="col1-1">
+        <div className="project-show-header">
+          <h2>{project.title}</h2>
+          <h4>By: {project.author.username}</h4>
+        </div>
+        <div className="project-show-body">
+          <p>Description: {project.body}</p>
+          <ul className="steps-list">
+            <h4>Instructions: </h4>
+            {steps}</ul>
+          <Comments projectId={this.state.projectId}/>
+          <div className="delete-button">{this.deleteButton(project.author.username)}</div>
+        </div>
       </div>
-      <p>Description: {project.body}</p>
-      <ul className="steps-list">
-        <h4>Instructions: </h4>
-        {steps}</ul>
-      <Comments projectId={this.state.projectId}/>
-      <div className="delete-button">{this.deleteButton(project.author.username)}</div>
+      <div className="col1-2">
+        <div className="project-show-bio">
+          <div>About this Project</div>
+          <div>{project.author.username}</div>
+          <div>Add Author Bio</div>
+        </div>
+      </div>
+
     </div>
   }
 }
