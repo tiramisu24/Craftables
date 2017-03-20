@@ -1,8 +1,10 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import {Link} from 'react-router-dom';
-import {Grid, Row, Col, Jumbotron} from 'react-bootstrap'
-import Comments from './comments_container'
+import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
+import {HashLink} from 'react-router-hash-link';
+import Comments from './comments_container';
+
 
 
 class ShowProject extends React.Component{
@@ -19,17 +21,6 @@ class ShowProject extends React.Component{
   componentWillMount(){
     this.props.showProject(this.state.projectId);
   }
-
-  // componentDidUpdate() {
-  //   let hash = this.props.location.hash.replace('#', '');
-  //   if (hash) {
-  //       let node = ReactDOM.findDOMNode(this.refs[hash]);
-  //       if (node) {
-  //           node.scrollIntoView();
-  //       }
-  //   }
-  // }
-
 
   componentWillReceiveProps(nextProps){
     // debugger;
@@ -79,9 +70,9 @@ class ShowProject extends React.Component{
         <Row className="main-body">
           <Col md={8} sm={12}>
             <Row className="project-show-nav">
-              <Link to="#show-page-instructions">Instructions</Link>
-              <Link to="#show-page-author-bio">Author</Link>
-              <Link to="#show-page-comments">Comments</Link>
+              <HashLink to="#show-page-instructions">Instructions</HashLink>
+              <HashLink to="#show-page-author-bio">Author</HashLink>
+              <HashLink to="#show-page-comments">Comments</HashLink>
 
             </Row>
             <Row className="project-show-header">
