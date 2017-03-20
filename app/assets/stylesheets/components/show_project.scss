@@ -1,38 +1,129 @@
-.project-show-main{
-  display: flex;
-  flex-direction: row;
-  background-color: #DED8B8;
-  margin: 5vh 8em;
-  padding: 0vh 2em;
+// .project-show-main{
+//   display: flex;
+//   flex-direction: row;
+//   background-color: #DED8B8;
+//   margin: 5vh 8em;
+//   padding: 0vh 2em;
+// }
+//
+#project-show-main-picture{
+  margin-bottom: 0px;
+  // background-color: pink;
+  border-radius: 0px;
+  height: 300px;
 }
 
-.project-show-header {
+.main-body{
+  margin-top: 0px;
+  // background-color: wheat;
+}
+.project-show-nav{
+  height: 64px;
+  display: flex;
+  //   flex-direction: row;
+  align-items: center;
   border-bottom: 1px solid grey;
 }
 
-.project-show-main > p{
-  margin: 5vh 2em;
-}
-
-.steps-list{
-  list-style: none;
-  padding-left: 0;
-
+.project-show-nav a {
+  margin-right: 36px;
   // background-color: blue;
+  font-size: 19px;
+}
+.project-show-header {
+  border-bottom: 1px solid grey;
+  margin-left: 0px;
+  padding-left: 0px;
 }
 
-.steps-list > li {
-  border-top: 1px solid grey;
-  align-self: left;
-  margin: 1vh 0px;
+.project-show-header div{
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-.steps-list p{
-  margin: 2vh 2em;
+.project-show-title {
+  // font-size: 36px;
+  padding-top: 30px;
+
+}
+.project-show-author{
+  // font-size: 16px;
+  padding-bottom: 30px;
 }
 
-.delete-button{
-  -webkit-appearance: none;
+// .project-show-body{
+//   // background-color: pink;
+// }
+
+.project-show-intro{
+  padding: 25px 0px;
+  border-bottom: 1px solid grey;
+
+}
+.steps-list{
+  // background-color: pink;
+  // border-bottom: 1px solid grey;
+
+}
+.single-step{
+  padding: 10px 0px;
+}
+
+.single-step-img{
+  height: 300px;
+  border-radius:5px;
+  border: 1px solid grey;
+  margin: 15px 0px;
+}
+
+.project-show-comments{
+  background-color: wheat;
+}
+.project-show-comments p{
+  -webkit-margin: 0px;
+  background-color: wheat;
+}
+
+
+.edit-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid grey;
+}
+
+.edit-buttons > a{
+  background-color: grey;
   align-self: center;
-  border-radius: 10px;
+  padding: 15px 5px;
+  color: white;
 }
+//
+// .project-show-main > p{
+//   margin: 5vh 2em;
+// }
+//
+// .steps-list{
+//   list-style: none;
+//   padding-left: 0;
+//
+//   // background-color: blue;
+// }
+//
+// .steps-list > li {
+//   border-top: 1px solid grey;
+//   align-self: left;
+//   margin: 1vh 0px;
+// }
+//
+// .steps-list p{
+//   margin: 2vh 2em;
+// }
+//
+// .delete-button{
+//   -webkit-appearance: none;
+//   align-self: center;
+//   border-radius: 10px;
+// }

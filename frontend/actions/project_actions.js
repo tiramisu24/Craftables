@@ -55,7 +55,9 @@ export const createProject = (project) => dispatch => {
 export const showProject = (id) => dispatch => {
   return ProjectAPIUtil
             .showProject(id)
-            .then(project => dispatch(receiveCurrentProject(project)))
+            .then(project => {
+              // debugger;
+              dispatch(receiveCurrentProject(project))})
             .fail(errors =>   dispatch(receiveErrors(errors.responseJSON)))
 }
 
@@ -83,7 +85,8 @@ export const getAllSteps = (projectId) => dispatch => {
 }
 export const newStep = (step) => dispatch => {
   return ProjectAPIUtil.newStep(step)
-                       .then(step =>                       dispatch(receiveStep(step)))
+                       .then(step =>
+                        dispatch(receiveStep(step)))
                        .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
@@ -91,7 +94,6 @@ export const updateStep = (step) => dispatch => {
   return ProjectAPIUtil
             .updateStep(step)
             .then(step => {
-              debugger
               dispatch(receiveProject(step))})
             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }

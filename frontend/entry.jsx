@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-let preloadedState = {
-  session: {},
-  errors: [],
-  projects: {projects: {}, steps: {}},
-  comments:{}
-}
-
+let preloadedState = {};
 if(localStorage.user !== ""){
   preloadedState = {
     session: {

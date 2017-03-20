@@ -29,6 +29,13 @@ class Comments extends React.Component{
     if(localStorage.id !== "") comment.author_id = localStorage.id;
 
     this.props.createComment(comment)
+    let newComment ={
+      projectId : this.props.projectId,
+      comments : {},
+      commentDes : ""
+    }
+    this.setState(newComment)
+
   }
 
   update(event){

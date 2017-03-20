@@ -1,7 +1,7 @@
 import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import {Link} from 'react-router-dom';
-import {Grid, Jumbotron} from 'react-bootstrap'
+import {Grid, Row, Col, Jumbotron} from 'react-bootstrap'
 import Comments from './comments_container'
 
 
@@ -17,13 +17,22 @@ class ShowProject extends React.Component{
   }
 
   componentWillMount(){
-    if(this.state.projectId){
-      this.props.showProject(this.state.projectId);
-    }
+    this.props.showProject(this.state.projectId);
   }
+
+  // componentDidUpdate() {
+  //   let hash = this.props.location.hash.replace('#', '');
+  //   if (hash) {
+  //       let node = ReactDOM.findDOMNode(this.refs[hash]);
+  //       if (node) {
+  //           node.scrollIntoView();
+  //       }
+  //   }
+  // }
 
 
   componentWillReceiveProps(nextProps){
+    // debugger;
     let projectsHash = {
       projectsHash: nextProps.projectsHash,
       projectId: this.props.match.params.id,
@@ -52,36 +61,77 @@ class ShowProject extends React.Component{
     if(Object.keys(projectList).length === 0) return <div></div>;
     let projectId = this.state.projectId;
     let project = projectList[projectId];
+    // debugger;
+    if(!project.steps) return <div></div>;
     let steps = project.steps.map(step => (
-      <li key={step.id}>
+      <div className="single-step" key={step.id}>
         <h5>{step.title}</h5>
+        <div className="single-step-img">Future img</div>
         <p>{step.body}</p>
-      </li>
+      </div>
     ))
-    return <div className="project-show-main">
-      <div className="col1-1">
-        <div className="project-show-header">
-          <h2>{project.title}</h2>
-          <h4>By: {project.author.username}</h4>
-        </div>
-        <div className="project-show-body">
-          <p>Description: {project.body}</p>
-          <ul className="steps-list">
-            <h4>Instructions: </h4>
-            {steps}</ul>
-          <Comments projectId={this.state.projectId}/>
-          <div className="delete-button">{this.deleteButton(project.author.username)}</div>
-        </div>
-      </div>
-      <div className="col1-2">
-        <div className="project-show-bio">
-          <div>About this Project</div>
-          <div>{project.author.username}</div>
-          <div>Add Author Bio</div>
-        </div>
-      </div>
+    return (
+      <div>
 
-    </div>
+        <Jumbotron id="project-show-main-picture">Future Image</Jumbotron>
+
+      <Grid className="project-show-main">
+        <Row className="main-body no-gutters">
+          <Col md={8} sm={12} >
+            <Row className="project-show-nav">
+              <Link to="#show-page-instructions">Instructions</Link>
+              <Link to="#show-page-author-bio">Author</Link>
+              <Link to="#show-page-comments">Comments</Link>
+
+            </Row>
+            <Row className="project-show-header">
+                <Col sm={10}>
+                  <h1 className="project-show-title">{project.title}</h1>
+                  <h4 className="project-show-author">By: {project.author.username}</h4>
+                </Col>
+                <Col sm={2}>User Img</Col>
+            </Row>
+            <Row className="project-show-body">
+                <div className="project-show-intro">
+                  <h3>
+                    Description:
+                  </h3>
+                  <h4>{project.body}</h4>
+                </div>
+                <div className="steps-list" id="show-page-instructions">
+                  <h3>Instructions: </h3>
+                  <div>
+                    {steps}
+                  </div>
+                </div>
+                <div className="delete-button">{this.deleteButton(project.author.username)}</div>
+            </Row>
+          </Col>
+          <Col md={4} sm={12} className="project-show-bio">
+              <div>About this Project</div>
+              <div>Favorites</div>
+              <div>Views</div>
+              <div>Done</div>
+              <div>Date Posted</div>
+              <div>{project.author.username}</div>
+              <div> Author pic</div>
+              <div>Other Projects of author</div>
+          </Col>
+        </Row>
+        <Row id="show-page-author-bio">
+              <div>Add Author Bio</div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </Row>
+        <Row>
+          <Col md={12} className="project-show-comments">
+            <h3 id="show-page-comments">Comments</h3>
+            <Comments projectId={this.state.projectId}/>
+          </Col>
+        </Row>
+      </Grid>
+        </div>
+
+      )
   }
 }
 
