@@ -8,4 +8,6 @@ end
 
 # json.steps @project.steps
 
-# json.steps json.set! json.partial! partial: 'api/steps/step', collection: @project.steps, as: :step
+# json.steps do
+#   json.partial! partial: 'api/steps/step', collection: @project.steps, as: :step
+# end

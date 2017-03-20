@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319201805) do
+ActiveRecord::Schema.define(version: 20170320210037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20170319201805) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.index ["project_id"], name: "index_comments_on_project_id", using: :btree
+  end
+
+  create_table "keyword_joins", force: :cascade do |t|
+    t.integer  "keyword_id", null: false
+    t.integer  "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["keyword_id"], name: "index_keyword_joins_on_keyword_id", using: :btree
+    t.index ["project_id"], name: "index_keyword_joins_on_project_id", using: :btree
+  end
+
+  create_table "keywords", force: :cascade do |t|
+    t.string   "keyword",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["keyword"], name: "index_keywords_on_keyword", unique: true, using: :btree
   end
 
   create_table "projects", force: :cascade do |t|
@@ -49,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170319201805) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
+    t.text     "bio"
     t.string   "img_url"
     t.string   "password_digest", null: false
     t.string   "session_token",   null: false
