@@ -7,10 +7,9 @@ const ErrorsReducer = (state = [], action) => {
   switch(action.type){
     case RECEIVE_ERRORS:
       newErrors= action.errors;
-      localStorage.setItem("user", "");
       return newErrors;
     case CLEAR_ERRORS:
-      newErrors.errors = [];
+      newErrors = [];
       return newErrors;
     default:
       return newErrors;

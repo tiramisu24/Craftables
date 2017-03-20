@@ -8,7 +8,7 @@ const CommentReducer = (state={}, action) => {
       newComments = merge(newComments, {[action.comment.id] :action.comment})
       return newComments;
     case GET_ALL_COMMENTS:
-      newComments = merge(newComments, action.comments)
+      newComments = action.comments
       //hacky way to fix jbuilder
       delete newComments["comment"];
       return newComments

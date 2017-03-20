@@ -7,6 +7,8 @@ import merge from 'lodash/merge';
 // import DropzoneComponent from 'react-dropzone-component';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+import ShowErrors from '../show_errors';
+
 
 
 const CLOUDINARY_UPLOAD_PRESET = 'rb5gmcfs';
@@ -122,6 +124,7 @@ class CreateProject extends React.Component{
             this.redirect(path);
           }
         );
+      debugger;
   }
 
   showErrors(){
@@ -180,10 +183,10 @@ class CreateProject extends React.Component{
     //   addedfile: this.handleFileAdded.bind(this),
     //   processingmultiple: this.handleFileAdded.bind(this)
     // }
-
+    debugger;
     return(
       <div className="create-project-div">
-        <ul>{this.showErrors}</ul>
+        <ShowErrors errors={this.props.errors}/>
         <form className="create-project-form" onSubmit={this.handleSubmit}>
           <div className="create-project-form-inputs">
             <div className="create-project-form-text-inputs">

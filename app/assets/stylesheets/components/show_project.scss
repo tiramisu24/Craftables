@@ -1,33 +1,21 @@
-// .project-show-main{
-//   display: flex;
-//   flex-direction: row;
-//   background-color: #DED8B8;
-//   margin: 5vh 8em;
-//   padding: 0vh 2em;
-// }
-//
 #project-show-main-picture{
   margin-bottom: 0px;
-  // background-color: pink;
   border-radius: 0px;
   height: 300px;
 }
 
 .main-body{
   margin-top: 0px;
-  // background-color: wheat;
 }
 .project-show-nav{
   height: 64px;
   display: flex;
-  //   flex-direction: row;
   align-items: center;
   border-bottom: 1px solid grey;
 }
 
 .project-show-nav a {
   margin-right: 36px;
-  // background-color: blue;
   font-size: 19px;
 }
 .project-show-header {
@@ -43,27 +31,16 @@
 }
 
 .project-show-title {
-  // font-size: 36px;
   padding-top: 30px;
 
 }
 .project-show-author{
-  // font-size: 16px;
   padding-bottom: 30px;
 }
-
-// .project-show-body{
-//   // background-color: pink;
-// }
 
 .project-show-intro{
   padding: 25px 0px;
   border-bottom: 1px solid grey;
-
-}
-.steps-list{
-  // background-color: pink;
-  // border-bottom: 1px solid grey;
 
 }
 .single-step{
@@ -77,13 +54,7 @@
   margin: 15px 0px;
 }
 
-.project-show-comments{
-  background-color: wheat;
-}
-.project-show-comments p{
-  -webkit-margin: 0px;
-  background-color: wheat;
-}
+
 
 
 .edit-buttons{
@@ -100,30 +71,44 @@
   padding: 15px 5px;
   color: white;
 }
-//
-// .project-show-main > p{
-//   margin: 5vh 2em;
-// }
-//
-// .steps-list{
-//   list-style: none;
-//   padding-left: 0;
-//
-//   // background-color: blue;
-// }
-//
-// .steps-list > li {
-//   border-top: 1px solid grey;
-//   align-self: left;
-//   margin: 1vh 0px;
-// }
-//
-// .steps-list p{
-//   margin: 2vh 2em;
-// }
-//
-// .delete-button{
-//   -webkit-appearance: none;
-//   align-self: center;
-//   border-radius: 10px;
-// }
+
+
+
+.project-show-bio{
+  border: 1px solid grey;
+  margin: 0px 10px;
+  padding: 20px 15px;
+}
+
+.project-show-content-divider{
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+
+}
+.project-show-content-fav-views{
+  padding: 10px 0px;
+}
+.project-show-content-author{
+  border-top: 1px solid grey;
+}
+
+#show-page-author-bio{
+  padding-bottom: 20px;
+  border-bottom: 1px solid grey;
+
+}
+.project-show-comments p{
+}
+.each-comment{
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+
+}
+.comment-user-info{
+  display: flex;
+}
+
+.comment-img{
+  height: 50px;
+  padding-right: 10px;
+}

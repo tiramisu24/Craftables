@@ -3,6 +3,8 @@ import {Link, Redirect} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import merge from 'lodash/merge';
 import {Modal} from 'react-bootstrap';
+import ShowErrors from '../show_errors';
+
 
 class SignUPModal extends React.Component{
   constructor(props){
@@ -52,25 +54,28 @@ class SignUPModal extends React.Component{
   }
 
   openModal(){
-    return () => this.setState({open: true})
+    return () => {
+      this.props.clearErrors();
+      return this.setState({open: true})
+    }
   }
 
 
   closeModal(){
     return () => {
-      this.props.clearErrors();
+      // this.props.clearErrors();
       return this.setState({open: false});
     }
   }
 
   render(){
-    let show_errors = <div></div>;
-    if(!!this.props.errors){
-      show_errors = this.props.errors.map((er,idx) => (
-        <li key={idx}>{er}</li>
-      ))
-
-    }
+    // let show_errors = <div></div>;
+    // if(!!this.props.errors){
+    //   show_errors = this.props.errors.map((er,idx) => (
+    //     <li key={idx}>{er}</li>
+    //   ))
+    //
+    // }
     if (localStorage.user !== "") return <div></div>;
 
     return (
@@ -79,9 +84,7 @@ class SignUPModal extends React.Component{
         <Modal show={this.state.open} onHide={this.closeModal()} className="signup-modal">
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
-          <ul>
-            {show_errors}
-          </ul>
+          <ShowErrors errors={this.props.errors}/>
         </Modal.Header>
 
         <form className="auth-form" onSubmit={this.handleSubmit}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Modal} from 'react-bootstrap';
+import ShowErrors from '../show_errors';
 
 class LoginModal extends React.Component{
   constructor(props){
@@ -48,6 +49,7 @@ class LoginModal extends React.Component{
 
   openModal(){
     return () => {
+      this.props.clearErrors();
       return this.setState({open: true})
     };
 
@@ -55,7 +57,7 @@ class LoginModal extends React.Component{
 
   closeModal(){
     return () => {
-      this.props.clearErrors();
+      // this.props.clearErrors();
       return this.setState({open: false})
     }
   }
@@ -80,9 +82,7 @@ class LoginModal extends React.Component{
         <Modal show={this.state.open} onHide={this.closeModal()} className="login-modal">
         <Modal.Header closeButton>
           <Modal.Title>Log In</Modal.Title>
-          <ul>
-            {this.showErrors()}
-          </ul>
+          <ShowErrors errors={this.props.errors}/>
         </Modal.Header>
 
         <form className="auth-form" onSubmit={this.handleSubmit}>

@@ -8,7 +8,7 @@ const showErrors = ({errors}) =>  {
       <li key={idx}>{er}</li>
     ))
   }
-  return show_errors
+  return <ul>{show_errors}</ul>
 }
 
 
