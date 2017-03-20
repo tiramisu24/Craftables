@@ -52,8 +52,8 @@ class ShowProject extends React.Component{
     if(Object.keys(projectList).length === 0) return <div></div>;
     let projectId = this.state.projectId;
     let project = projectList[projectId];
-    // debugger;
     if(!project.steps) return <div></div>;
+      // debugger;
     let steps = project.steps.map(step => (
       <div className="single-step" key={step.id}>
         <h5>{step.title}</h5>

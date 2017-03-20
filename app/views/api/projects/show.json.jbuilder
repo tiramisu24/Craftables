@@ -5,3 +5,7 @@ json.partial! 'api/projects/project', project: @project
 json.steps @project.steps do |step|
   json.partial! 'api/steps/step', step: step
 end
+
+# json.steps @project.steps
+
+# json.steps json.set! json.partial! partial: 'api/steps/step', collection: @project.steps, as: :step

@@ -40,7 +40,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 keyword_id  | integer   | not null, foreign key (references keyword), indexed
-user_id     | integer   | not null, foreign key (references user), indexed
+project_id  | integer   | not null, foreign key (references project), indexed
 
 ## comments
 column name | data type | details
