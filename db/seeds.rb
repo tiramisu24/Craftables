@@ -71,7 +71,7 @@ I suggest that you color each and every part and include all the details in the 
 \n
 IMPORTANT NOTE: Try to make the house as light as possible, so that your final house can fly higher. Use light weight materials and try to make the house as real as possible. Due to my time limit I was not able to accomplish a very realistic house, but you can.\n
 \n
-I've also added a picture of the UP house with all the views of the house. It was of great reference to me and maybe to you as well :)",img_urls=["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120837/Craftables/house/House_step3.png"] stepNum: "3", project_id: "#{project1.id}")
+I've also added a picture of the UP house with all the views of the house. It was of great reference to me and maybe to you as well :)",img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120837/Craftables/house/House_step3.png"], stepNum: "3", project_id: "#{project1.id}")
 
 Step.create(title: "Step 4: Finishing Touches and Extra Details
 
@@ -165,26 +165,26 @@ Step.create(title: "Step 4:", body: "This is the resin I use. I mix it per the i
 
 Step.create(title: "Step 5:", body: "I use a small plastic tub and pour some of the resin mixture in to it. Then I dip the paper strips one at a time in to the resin. I try to squeegee out the excess between my fingers. Then I place it in the press/mold.
 
-", stepNum: "5", project_id: "#{project3.id}")
+", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120835/Craftables/letter_opener/Letter_opener_step5.jpg"],stepNum: "5", project_id: "#{project3.id}")
 
 Step.create(title: "Step 6:", body: "Next I clamp up the press trying to apply even pressure across the entire press block. Otherwise you can end up with one side being thinner than the other side because one clamp was applying more pressure than the others.
-", stepNum: "6", project_id: "#{project3.id}")
+", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120835/Craftables/letter_opener/Letter_opener_step6.jpg"],stepNum: "6", project_id: "#{project3.id}")
 
 Step.create(title: "Step 7", body: "After it has cured for 24 hours I remove the billet. I use a small hammer to tap out the press block and then a screw driver to pry out the billet. If you did a good job of waxing the press this part will be fairly easy. If you didn't then it will require a lot more effort to get the billet out.
 
-", stepNum: "7", project_id: "#{project3.id}")
+", img_urls: ["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120839/Craftables/letter_opener/Letter_opener_step7.jpg"],stepNum: "7", project_id: "#{project3.id}")
 
 Step.create(title: "Step 8", body: "Next I drew the shape of the letter opener that I wanted to make, I was able to get two letter openers out of this one billet.
 
-", stepNum: "8", project_id: "#{project3.id}")
+", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120843/Craftables/letter_opener/Letter_opener_step8.jpg"],stepNum: "8", project_id: "#{project3.id}")
 
 Step.create(title: "Step 9", body: "I used my band saw to cut out the rough shape of the letter openers. If you don't have a band saw you could use a scroll saw or a coping saw to do the same.
 
-", stepNum: "9", project_id: "#{project3.id}")
+", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120842/Craftables/letter_opener/Letter_opener_step9.jpg"], stepNum: "9", project_id: "#{project3.id}")
 
 Step.create(title: "Step10:", body: "After the rough shape was cut out I used my belt sanders to refine the shape of the letter opener and what would become the blade portion. This is very similar to making and shaping a knife. I start with a rough grit like 120 and work my way up to higher grits.
 
-", stepNum: "10", project_id: "#{project3.id}")
+", stepNum: "10", img_urls: ["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120844/Craftables/letter_opener/Letter_opener_step10.jpg"], project_id: "#{project3.id}")
 
 Step.create(title: "Credits", stepNum: "11",
 body: "This project is a modified version from the instrucable by danthemakerman", project_id: "#{project3.id}")
