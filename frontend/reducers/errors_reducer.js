@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 
 const ErrorsReducer = (state = [], action) => {
-  let newErrors = merge([], state);
+  let newErrors = [].concat(state);
   switch(action.type){
     case RECEIVE_ERRORS:
       newErrors= action.errors;

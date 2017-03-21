@@ -11,6 +11,6 @@ class Keyword < ApplicationRecord
 
   def self.getProjects(keyword)
     key = Keyword.find_by(keyword: keyword)
-    key ? key.projects : []
+    key ? key.projects : nil
   end
 end

@@ -17,7 +17,7 @@ const deleteCurrentProject = (projectId) => ({
   projectId
 })
 
-const receiveProjects = (projects) => ({
+export const receiveProjects = (projects) => ({
   type: RECEIVE_PROJECTS,
   projects
 })

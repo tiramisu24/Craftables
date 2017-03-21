@@ -7,6 +7,7 @@ import HomePage from './homepage/homepage';
 import CreateProjectContainer from './projects/new_project_container';
 import ShowProjectContainer from './projects/show_project_container';
 import UpdateProjectContainer from './projects/update_project_container';
+import SearchResultContainer from './search/search_result_container';
 import Header from './header/header'
 
 
@@ -20,6 +21,7 @@ const Root = ({store}) => (
         <Route path='/new_project' component={CreateProjectContainer}/>
         <Route path='/project/:id' component={ShowProjectContainer}/>
         <Route path ='/edit_project/:id' component={UpdateProjectContainer}/>
+        <Route path ='/search_result' component={SearchResultContainer}/>
       </App>
     </HashRouter>
   </Provider>
