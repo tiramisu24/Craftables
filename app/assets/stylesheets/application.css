@@ -37,3 +37,8 @@ button {
   margin-bottom: 0px;
   background-color: pink;
 }
+
+#footer{
+  height: 10vh;
+  /*background-color: blue;*/
+}

@@ -17,9 +17,11 @@ const ProjectReducer = (state=initialState, action) => {
 
   switch(action.type){
     case RECEIVE_PROJECTS:
+
       newState.projects = action.projects;
       //hacky way to fix jbuilder
       delete newState.projects["project"];
+
       return newState;
     case RECEIVE_PROJECT:
       let projectId = action.project.id
@@ -31,7 +33,7 @@ const ProjectReducer = (state=initialState, action) => {
       return newState;
     case RECEIVE_CURRENT_PROJECT:
       newState.projects = {[action.project.id]: action.project};
-      
+
       return newState;
     case DELETE_PROJECT:
       if (newState.projects[action.projectId]){

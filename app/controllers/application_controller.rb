@@ -19,12 +19,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user =User.find_by(session_token: session[:session_token])
+    @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
-  def require_login
-    unless log_in?
-      render json: ["not logged in"], status: 402
-    end
-  end
+  # def require_login
+  #   unless log_in?
+  #     render json: ["not logged in"], status: 422
+  #   end
+  # end
 end

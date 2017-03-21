@@ -1,10 +1,9 @@
 class Api::KeywordsController < ApplicationController
   def index
-    params[:keyword] = "up house"
-     projectIds= Keyword.getProjects(params[:keyword])
+
+    projectIds= Keyword.getProjects(params[:keyword])
     @projects =projectIds.map { |el| Project.find_by(id: el) }
-    debugger
-    if @projects
+    if @projects.length >0
       render "api/projects/index"
     else
       render json: ["no projects"], status: 404

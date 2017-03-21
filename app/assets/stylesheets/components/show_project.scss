@@ -71,11 +71,16 @@
   padding: 15px 5px;
   color: white;
 }
-
 #sidebar{
-  background-color: pink;
-  position: fixed;
+  width: 330px;
+}
+#sidebar-top-bar{
+  // background-color: grey;
+}
 
+#replace-top-bar{
+  // height: 65px;
+  // background-color: green;
 }
 
 .project-show-bio{
@@ -115,4 +120,8 @@
 .comment-img{
   height: 50px;
   padding-right: 10px;
+}
+
+.show_img_url{
+  width:100%;
 }

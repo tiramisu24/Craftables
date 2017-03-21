@@ -19,12 +19,15 @@ class FeaturedProjects extends React.Component{
   render(){
     let projects = this.state.projectList;
     if(Object.keys(projects).length === 0) return <div></div>;
-
-
     let wrappedList = Object.keys(projects).map(projectId => (
       <Link to={`/project/${projectId}`} key={projectId} className="card-project">
-        <div className="card-project-image">Image goes here</div>
-        <div className = "card-project-title">{projects[projectId].title}</div>
+        <div className = "card-img-card">
+          <img className="img-card" src={projects[projectId].img_url}></img>
+        </div>
+        <div className = "card-project-info">
+          <div className = "card-project-title">{projects[projectId].title}</div>
+          <div className = "card-project-author">{projects[projectId].author.username}</div>
+        </div>
       </Link>
     ))
     return(

@@ -12,7 +12,7 @@ class SignUPModal extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demo = this.demo.bind(this);
-
+    this.update = this.update.bind(this);
     this.state = this.initialState();
   }
 
@@ -28,9 +28,12 @@ class SignUPModal extends React.Component{
 
 
   update(input){
-    return event => this.setState({[input]: event.target.value })
-  }
-
+    return event => {
+      const user = this.state.user;
+      user[input] = event.target.value
+      return this.setState({user })
+    }
+}
   handleSubmit(event){
     event.preventDefault();
     let user = null;

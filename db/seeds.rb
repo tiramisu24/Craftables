@@ -13,16 +13,16 @@ user2 = User.create(username: "calamari", password: "password");
 Project.destroy_all
 project1 = Project.create(title: "Up House", body: "This project of mine was mainly inspired by all the scrap in my room :P And we do recycle a lot, from my cereal boxes to the amazon boxes. But if you take a closer look or think deeper, think bigger every item that you throw/recycle has some value or the other. We just have to learn to make best use of it and be creative. I'm really happy with this Instructable cause one I didn't spend a single penny and two because it's just one happy and colorful house. Plus making something that moves/works is an art by itself.
 
-Of course, I love participating in competitions and no better place to post your ideas than Instructables. I love working/making projects with a lot of color in them. From bright to dark, color expresses a lot and bright colors actually make the mind happier I feel. And as I said making something move or work (adding life) is something amazing. So that's how I came up with this project, making a colorful full house fly/float !!. Plus you learn how to make a simple hovercraft :)t", author_id: "#{user1.id}");
+Of course, I love participating in competitions and no better place to post your ideas than Instructables. I love working/making projects with a lot of color in them. From bright to dark, color expresses a lot and bright colors actually make the mind happier I feel. And as I said making something move or work (adding life) is something amazing. So that's how I came up with this project, making a colorful full house fly/float !!. Plus you learn how to make a simple hovercraft :)t", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490120647/Craftables/house/intro.jpg",author_id: "#{user1.id}");
 
 project2 = Project.create(title: "Glass Tile & Woven Copper Pendan", body: "This tutorial will take you step-by-step through the process of making a necklace pendant (or earring charm) with just copper wire and a glass mosaic tile.\n
 \n
 It will incorporate basic wire weaving techniques, but you don't have to have jewellery-making experience to give this a go :)\n
-",  author_id: "#{user1.id}")
+",img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490120788/Craftables/glass_tile/Glass_Tile_intro.jpg",  author_id: "#{user1.id}")
 
 project3 = Project.create(title: "Letter Opener Made From Junk Mail", body: "Like everyone else I get a lot of junk mail and it usually ends up in the recycling bin. But I had an idea to see if I could make something with it instead of just throwing it in the bin. So I came up with this, I made a letter opener from the junk mail using fiberglass resin to make it stiff. It is basically the same as making Micarta from fabric but instead I used the paper from my junk mail. The process is fairly straight forward and the end product ended up working quite well. I don't know how long the edge will last but I only plan to use this for opening letters so I'm not too concerned with it becoming dull. And if it does become dull I can always touch up the edge.
 
-", author_id: "#{user2.id}")
+", img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490120830/Craftables/letter_opener/Letter_opener_intro.jpg" ,author_id: "#{user2.id}")
 
 Step.destroy_all
 
@@ -49,7 +49,7 @@ Step.create(title: "Step 1: Materials
 
 10. Straws\n
 
-", stepNum: "1", project_id: "#{project1.id}")
+", img_urls: ["https://res.cloudinary.com/dezhy95vj/image/upload/v1490120917/Craftables/house/House_step1.png"], stepNum: "1", project_id: "#{project1.id}")
 
 Step.create(title: "Step 2: Making It Fly/float", body: "The effect or mechanism for this UP house is really basic and simple. If you refer the picture/blueprint above you might get a better idea as compared to my explanation.\n
 \n
@@ -59,7 +59,7 @@ Cut the same sized circle on the thermocol/cardboard and stick it right on top o
 \n
 You can take two straws and attach it on top of the circle on the cardboard in a way that they are parallel to each other. Now using double-sided tape attach the motor in between the two straws and secure it firmly with tape.\n
 \n
-Remember try to make the house and hovercraft as light as possible using really light-weight materials, so that you can get the house to float higher, making the effect better and people happier.", stepNum: "2", project_id: "#{project1.id}")
+Remember try to make the house and hovercraft as light as possible using really light-weight materials, so that you can get the house to float higher, making the effect better and people happier.",img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120636/Craftables/house/House_step2.jpg"], stepNum: "2", project_id: "#{project1.id}")
 
 Step.create(title: "Step 3: Making the UP House
 
@@ -71,7 +71,7 @@ I suggest that you color each and every part and include all the details in the 
 \n
 IMPORTANT NOTE: Try to make the house as light as possible, so that your final house can fly higher. Use light weight materials and try to make the house as real as possible. Due to my time limit I was not able to accomplish a very realistic house, but you can.\n
 \n
-I've also added a picture of the UP house with all the views of the house. It was of great reference to me and maybe to you as well :)", stepNum: "3", project_id: "#{project1.id}")
+I've also added a picture of the UP house with all the views of the house. It was of great reference to me and maybe to you as well :)",img_urls=["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120837/Craftables/house/House_step3.png"] stepNum: "3", project_id: "#{project1.id}")
 
 Step.create(title: "Step 4: Finishing Touches and Extra Details
 
@@ -92,7 +92,7 @@ OTHER DETAILS: unfortunately I wasn't able to implement these ideas, but maybe y
 4. To cover up the battery box behind, maybe make a staircase out of it, or just put the grassy paper on top of it.\n
 \n
 And again, be creative guys, but remember whatever you do try to make it as light as possible and most of all colourful.\n
-", stepNum: "3", project_id: "#{project1.id}")
+", img_urls: ["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120651/Craftables/house/step_4.jpg"],stepNum: "3", project_id: "#{project1.id}")
 
 Step.create(title: "Step 1: Materials", body: "- A glass mosaic tile; these are usually supplied on a net or with some other backing that doesn't look that attractive. On mine, these was adhesive from the mesh on the back. I later chose to cover mine with felt, but I think a better way would have been to sand/polish the back instead. \n
 \n
@@ -104,7 +104,7 @@ The best thing about using mosaic tiles is that there are so many different colo
 \n
 - Pliers; I'm using my jewellery pliers for this. Any flat or blunt nose pliers would work - you just need to bend 90 degree corners in the wire, and do a little bit of shaping.\n
 \n
-- Small piece of felt (optional)", stepNum: "1",project_id: "#{project2.id}")
+- Small piece of felt (optional)", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120801/Craftables/glass_tile/Glass_Tile_step1.jpg"], stepNum: "1",project_id: "#{project2.id}")
 
 Step.create(title: "Step2: Cutting and Bending the Wire", body: "You will need to cut out 2 pieces of 20 gauge copper wire the same length. The length you need will be calculated by measuring the perimeter of the tile, and then adding at least 10cm (4in).\n
 \n
@@ -124,17 +124,17 @@ Then follow the diagram I've made to continue weaving down to the first bend in 
 \n
 Do 2 wraps with the thin wire on one thick wire, then 2 wraps on the other thick wire and so on. Between each thicker wire you will change direction with your wrapping i.e. 2 wraps clockwise on one wire, 2 wraps anti-clockwise on the other wire...\n
 
-P.S. Whenever you are weaving, you will need to regularly use your pliers to carefully push your woven copper strands together so the wire wraps are touching. You want the weaving to be as tight and as closely woven as possible without loose bits.", stepNum: "3",project_id: "#{project2.id}")
+P.S. Whenever you are weaving, you will need to regularly use your pliers to carefully push your woven copper strands together so the wire wraps are touching. You want the weaving to be as tight and as closely woven as possible without loose bits.", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120782/Craftables/glass_tile/Glass_Tile_step2.jpg"], stepNum: "3",project_id: "#{project2.id}")
 
 Step.create(title: "Step4: Weaving the Frame", body: "At the bend in the wire, it's time to change weaving pattern for the frame section.\n
 \n
 To do this, start by wrapping one thick wire 5 times. Then follow the weaving diagram. The next step is wrapping both thick wires 3 times, then the opposing thick wire 5 times, then both wires 3 times, then back to the beginning of the pattern.",
-  stepNum: "4",project_id: "#{project2.id}")
+  stepNum: "4",img_urls: ["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120788/Craftables/glass_tile/Glass_Tile_step4.jpg"],project_id: "#{project2.id}")
 
 Step.create(title: "Step5: Complete the Frame", body: "Keep going with the weaving, and when you've done enough weaving to go around another corner of the tile, you can bend the woven wire at right angles to snugly fit around the tile edge.\n
 \n
 Stop when you have completed the full square frame and reached the base of the bail. Don't stop short of this point; weave right up to and maybe slightly past the base of the bail, otherwise there may be a little gap.",
-stepNum: "5", project_id: "#{project2.id}")
+stepNum: "5", img_urls: ["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120795/Craftables/glass_tile/Glass_Tile_step5.jpg"],project_id: "#{project2.id}")
 
 Step.create(title: "Step6: Wire Loop Embellishment", body: "The next step is to finish the thick wire that is at the front of the tile. \n
 \n
@@ -142,7 +142,7 @@ To do this, I take my round nose pliers and loop the wire over 3 times in the sa
 \n
 The tile should be snugly fitting, and no glue should be required to keep the tile in place.\n
 \n
-You can manipulate the wire frame now to make it fit the tile the best it can, and to make sure the frame has nice straight sides and sharp 90 dgeree corners.", stepNum: "6",project_id: "#{project2.id}")
+You can manipulate the wire frame now to make it fit the tile the best it can, and to make sure the frame has nice straight sides and sharp 90 dgeree corners.", img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/v1490120794/Craftables/glass_tile/Glass_Tile_step6.jpg"],stepNum: "6",project_id: "#{project2.id}")
 
 Step.create(title: "Credits", body: "This project is a modified verion of from the instructable by FernMakes",
 stepNum: "7", project_id: "#{project2.id}")
@@ -153,15 +153,15 @@ Step.create(title: "Step 1:", body: "The first thing I did was gathered up some 
 
 Step.create(title: "Step 2:", body: "I use a homemade press to make the junk mail billet, I'll show what it looks like in a few of pictures in the next step, the wooden piece you see in the first pic is the press block. All of the junk mail has to be cut to the same width and length as this block, so I use it as my reference for making the paper strips. It doesn't have to be perfect but the closer you can get it to the same size the better.
 
-", stepNum: "2", project_id: "#{project3.id}")
+", img_urls: ["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120826/Craftables/letter_opener/Letter_opener_step1.jpg"],stepNum: "2", project_id: "#{project3.id}")
 
 Step.create(title: "Step 3:", body: "These are a few pics of the Micarta press I made. The body is just a U shaped channel made from MDF supported by a couple of pieces of 2x4s that work as the legs to get it off the table. The 2x4 legs make it easier to clamp up. I also added a support piece to the 2x4 legs that is just a piece of scrap wood. The press block is made from 3/4 plywood that I double up so that it would be rigid and wouldn't flex when clamped. Before using the press I make sure to thoroughly coat the entire work surface with wax. This will help prevent the billet from sticking. I also use wax paper for added protection from sticking.
 
-", stepNum: "3", project_id: "#{project3.id}")
+",img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120834/Craftables/letter_opener/Letter_opener_step2.jpg"], stepNum: "3", project_id: "#{project3.id}")
 
 Step.create(title: "Step 4:", body: "This is the resin I use. I mix it per the instructions on the can. Make sure to cover your work surface with a trash bag or something that is disposable since this is a messy process. There will be squeeze out and the resin gets everywhere and does not clean up easily.
 
-", stepNum: "4", project_id: "#{project3.id}")
+",img_urls:["http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120829/Craftables/letter_opener/Letter_opener_step4.jpg"], stepNum: "4", project_id: "#{project3.id}")
 
 Step.create(title: "Step 5:", body: "I use a small plastic tub and pour some of the resin mixture in to it. Then I dip the paper strips one at a time in to the resin. I try to squeegee out the excess between my fingers. Then I place it in the press/mold.
 

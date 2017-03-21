@@ -17,12 +17,20 @@ class Keyword < ApplicationRecord
                  .group("projects.id")
                  .having("COUNT(keywords.id) >= ?", (phrase.length))
 
+
+
+
+
+
+
+
   end
 
   def self.getProjects(keyphrase)
     projectIds = getProjectIds(keyphrase)
 
-    project_id = projectIds.pluck(:id)
+      project_id = projectIds.pluck("projects.id")
+
 
     return project_id
   end

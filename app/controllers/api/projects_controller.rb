@@ -1,5 +1,5 @@
 class Api::ProjectsController < ApplicationController
-  before_action :require_login, only: [:create]
+  # before_action :require_login, only: [:create]
   def index
     @projects = Project.all
     render :index

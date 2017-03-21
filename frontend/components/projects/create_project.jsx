@@ -5,14 +5,11 @@ import createHistory from 'history/createBrowserHistory';
 import {Redirect} from 'react-router-dom';
 import merge from 'lodash/merge';
 // import DropzoneComponent from 'react-dropzone-component';
-import Dropzone from 'react-dropzone';
+// import Dropzone from 'react-dropzone';
 import request from 'superagent';
 import ShowErrors from '../show_errors';
 
 
-
-const CLOUDINARY_UPLOAD_PRESET = 'rb5gmcfs';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/Craftables/upload';
 
 
 
@@ -79,29 +76,38 @@ class CreateProject extends React.Component{
   //   }
   // }
 
-
-  onImageDrop(files) {
-    // debugger;
-    this.handleImageUpload(files[0]);
-      // console.log(file);
-  }
-  handleImageUpload(file) {
-    let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                        .field('file', file);
-
-    upload.end((err, response) => {
-      if (err) {
-        console.error(err);
+  handleCloudinary(e) {
+    e.preventDefault();
+    cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
+      if(error){
+        console.log(error);
+      }else{
+        console.log(results[0].secure_url);
       }
-
-      if (response.body.secure_url !== '') {
-        this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
-        });
-      }
-    });
+    })
   }
+  // onImageDrop(files) {
+  //   // debugger;
+  //   this.handleImageUpload(files[0]);
+  //     // console.log(file);
+  // }
+  // handleImageUpload(file) {
+  //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
+  //                       .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+  //                       .field('file', file);
+  //
+  //   upload.end((err, response) => {
+  //     if (err) {
+  //       console.error(err);
+  //     }
+  //
+  //     if (response.body.secure_url !== '') {
+  //       this.setState({
+  //         uploadedFileCloudinaryUrl: response.body.secure_url
+  //       });
+  //     }
+  //   });
+  // }
   handleSubmit(event){
     event.preventDefault;
     let project = this.state.project;
@@ -183,7 +189,7 @@ class CreateProject extends React.Component{
     //   addedfile: this.handleFileAdded.bind(this),
     //   processingmultiple: this.handleFileAdded.bind(this)
     // }
-    debugger;
+    // debugger;
     return(
       <div className="create-project-div">
         <ShowErrors errors={this.props.errors}/>
@@ -198,9 +204,7 @@ class CreateProject extends React.Component{
                 <textarea onChange={this.update("body")}></textarea>
               </label>
             </div>
-            <Dropzone multiple={true}
-                      accept="image/*"
-                      onDrop={this.onImageDrop.bind(this)}></Dropzone>
+            <div><button onClick={this.handleCloudinary.bind(this)}></button></div>
           </div>
           <div className="submit-button-create-project">
             <input type="submit"  value="Publish"></input>

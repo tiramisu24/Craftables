@@ -24,26 +24,31 @@ class ShowProject extends React.Component{
 
   setScroll(){
     $( document ).ready(function() {
-    var $sidebar = $('#sidebar');
-    var $sidebarStopper = $('#sidebar-stopper');
-    if (!!$sidebar.offset()) { // make sure ".sidebar" element exists
-      
-      var generalSidebarHeight = $sidebar.innerHeight();
-      var sidebarTop = $sidebar.offset().top;
-      var stickOffset = 0;
-      var sidebarStopperPosition = $sidebarStopper.offset().top;
-      var stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
-      var diff = stopPoint + stickOffset;
+    const $sidebar = $('#sidebar');
+    const $sidebarStopper = $('#sidebar-stopper');
 
+    if (!!$sidebar.offset()) { // make sure ".sidebar" element exists
+      let generalSidebarHeight = $sidebar.innerHeight();
+      let sidebarTop = $sidebar.offset().top;
+      let stickOffset = 0;
+      let sidebarStopperPosition = $sidebarStopper.offset().top;
+      let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
+      let diff = stopPoint + stickOffset;
       $(window).scroll(function(){ // scroll event
-        var windowTop = $(window).scrollTop(); // returns number
+        let windowTop = $(window).scrollTop();
+        let $sidebarTopBar = $('#sidebar-top-bar')
+          $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
+          $sidebarTopBar.width($('.project-show-header').width())
 
         if (stopPoint < windowTop) {
             $sidebar.css({ position: 'absolute', top: diff });
+            $sidebarTopBar.css({ position: 'absolute', top: diff });
         } else if (sidebarTop < windowTop+stickOffset) {
             $sidebar.css({ position: 'fixed', top: stickOffset });
+            $sidebarTopBar.css({ position: 'fixed', top: stickOffset });
         } else {
             $sidebar.css({position: 'absolute', top: 'initial'});
+            $sidebarTopBar.css({position: 'absolute',top: 'initial'});
         }
       });
 
@@ -52,7 +57,6 @@ class ShowProject extends React.Component{
   }
 
   componentWillReceiveProps(nextProps){
-    // debugger;
     let projectsHash = {
       projectsHash: nextProps.projectsHash,
       projectId: this.props.match.params.id,
@@ -85,7 +89,6 @@ class ShowProject extends React.Component{
     let projectId = this.state.projectId;
     let project = projectList[projectId];
     if(!project.steps) return <div></div>;
-      // debugger;
     let steps = project.steps.map(step => (
       <div className="single-step" key={step.id}>
         <h5>{step.title}</h5>
@@ -96,16 +99,20 @@ class ShowProject extends React.Component{
     return (
       <div>
 
-        <Jumbotron id="project-show-main-picture">Future Image</Jumbotron>
+        <Jumbotron id="project-show-main-picture">
+          <img src={project.img_url} className="show_img_url"/>
+        </Jumbotron>
 
       <Grid className="project-show-main">
         <Row className="main-body">
           <Col md={8} sm={12}>
-            <Row className="project-show-nav">
+            <Row className="project-show-nav" id="sidebar-top-bar">
               <HashLink to="#show-page-instructions">Instructions</HashLink>
               <HashLink to="#show-page-author-bio">Author</HashLink>
               <HashLink to="#show-page-comments">Comments</HashLink>
-
+            </Row>
+            <Row id="replace-top-bar">
+              <Col></Col>
             </Row>
             <Row className="project-show-header">
                 <Col sm={10}>
@@ -170,7 +177,7 @@ class ShowProject extends React.Component{
 
           </Col>
         </Row>
-
+        <div id="footer-space"></div>
       </Grid>
         </div>
 
