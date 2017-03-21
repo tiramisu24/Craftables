@@ -31926,7 +31926,7 @@ var FeaturedProjects = function (_React$Component) {
       });
       return _react2.default.createElement(
         'ul',
-        { className: 'featured-project-list' },
+        { className: 'search-project-list' },
         wrappedList
       );
     }

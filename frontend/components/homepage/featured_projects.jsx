@@ -28,7 +28,7 @@ class FeaturedProjects extends React.Component{
       </Link>
     ))
     return(
-      <ul className="featured-project-list">
+      <ul className="search-project-list">
         {wrappedList}
       </ul>
     )

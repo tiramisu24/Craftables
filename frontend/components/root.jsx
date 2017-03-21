@@ -21,7 +21,7 @@ const Root = ({store}) => (
         <Route path='/new_project' component={CreateProjectContainer}/>
         <Route path='/project/:id' component={ShowProjectContainer}/>
         <Route path ='/edit_project/:id' component={UpdateProjectContainer}/>
-        <Route path ='/search_result' component={SearchResultContainer}/>
+        <Route path ='/search_results' component={SearchResultContainer}/>
       </App>
     </HashRouter>
   </Provider>
