@@ -1,16 +1,29 @@
 class Keyword < ApplicationRecord
   validates :keyword, presence: true, uniqueness: true
-  has_many :key_joins,
+  has_many :keyword_joins,
     foreign_key: :keyword_id,
     class_name: :KeywordJoin
 
   has_many :projects,
-    through: :key_joins,
+    through: :keyword_joins,
     source: :project
 
 
-  def self.getProjects(keyword)
-    key = Keyword.find_by(keyword: keyword)
-    key ? key.projects : nil
+  def self.getProjectIds(keyphrase)
+    phrase = keyphrase.split(" ")
+    projectIds = Keyword.select("projects.id")
+                 .joins(:projects)
+                 .where(keyword: phrase)
+                 .group("projects.id")
+                 .having("COUNT(keywords.id) >= ?", (phrase.length))
+
+  end
+
+  def self.getProjects(keyphrase)
+    projectIds = getProjectIds(keyphrase)
+
+    project_id = projectIds.pluck(:id)
+
+    return project_id
   end
 end

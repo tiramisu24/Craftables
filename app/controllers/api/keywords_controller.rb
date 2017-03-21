@@ -1,6 +1,9 @@
 class Api::KeywordsController < ApplicationController
   def index
-    @projects = Keyword.getProjects(params[:keyword])
+    params[:keyword] = "up house"
+     projectIds= Keyword.getProjects(params[:keyword])
+    @projects =projectIds.map { |el| Project.find_by(id: el) }
+    debugger
     if @projects
       render "api/projects/index"
     else

@@ -16,17 +16,13 @@ class Step < ApplicationRecord
   end
 
   def save_keys
-    puts "inside save_keys"
     title_keywords = self.title.downcase.split(" ") - BASIC_WORDS
     # body_keywords = self.body.downcase.split(" ") - BASIC_WORDS
     title_keywords.map do |word|
-      puts "inside loop"
       temp_keyword = Keyword.find_by(keyword: word)
-      puts "find keyword"
       if(!temp_keyword)
         temp_keyword = Keyword.create(keyword: word)
       end
-      puts "before adding keywordJoin"
       KeywordJoin.create(keyword_id: temp_keyword.id, project_id: self.project_id)
     end
   end

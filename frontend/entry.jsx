@@ -22,3 +22,27 @@ document.addEventListener('DOMContentLoaded', ()=> {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root)
 })
+
+$( document ).ready(function() {
+
+  var $sidebar = $('#sidebar');
+  if (!!$sidebar.offset()) { // make sure ".sidebar" element exists
+    console.log("in sidebar");
+
+    var generalSidebarHeight = $sidebar.innerHeight();
+    var sidebarTop = $sidebar.offset().top;
+    var stickOffset = 0;
+
+    $(window).scroll(function(){ // scroll event
+      console.log("inside window");
+      var windowTop = $(window).scrollTop(); // returns number
+
+      if (stopPoint < windowTop) {
+          $sidebar.css({ position: 'fixed', top: stickOffset });
+      } else {
+          $sidebar.css({position: 'absolute', top: 'initial'});
+      }
+    });
+
+  }
+});
