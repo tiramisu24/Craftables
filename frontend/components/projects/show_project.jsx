@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
 import {HashLink} from 'react-router-hash-link';
 import Comments from './comments_container';
+import Footer from '../footer'
 
 
 
@@ -97,6 +98,17 @@ class ShowProject extends React.Component{
     }
     return imgs
   }
+
+  moveBody(){
+    const $main_img = $('#project-show-main-picture');
+    const $header_nav = $('#project-show-nav');
+    const $header_title = $('#project-show-header');
+    // let totalHeight = $main_img.innerHeight() - $header_nav.innerHeight() - $header_title.innerHeight();
+    let totalHeight = $main_img.innerHeight() -300;
+    // $('project-show-body').css({height: totalHeight});
+    // console.log($('project-show-body').innerHeight());
+    return totalHeight;
+  }
   render(){
 
     let projectList = this.state.projectsHash;
@@ -119,11 +131,9 @@ class ShowProject extends React.Component{
     ))
     return (
       <div>
-
-        <Jumbotron id="project-show-main-picture">
-          <img src={project.img_url} className="show_img_url"/>
-        </Jumbotron>
-
+      <Jumbotron id="project-show-main-picture">
+        <img src={project.img_url} className="show-img-url"/>
+      </Jumbotron>
       <Grid className="project-show-main">
         <Row className="main-body">
           <Col md={8} sm={12}>
@@ -198,7 +208,8 @@ class ShowProject extends React.Component{
 
           </Col>
         </Row>
-        <div id="footer-space"></div>
+        <Footer/>
+
       </Grid>
         </div>
 
