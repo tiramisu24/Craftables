@@ -1,7 +1,11 @@
 class Api::ProjectsController < ApplicationController
   # before_action :require_login, only: [:create]
   def index
-    @projects = Project.all
+    if(params[:find_user_id])
+      @projects = Project.find_projects_by_user_id(params[:find_user_id])
+    else
+      @projects = Project.all
+    end
     render :index
   end
   def create

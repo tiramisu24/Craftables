@@ -19,8 +19,9 @@ const ProjectReducer = (state=initialState, action) => {
     case RECEIVE_PROJECTS:
 
       newState.projects = action.projects;
-      //hacky way to fix jbuilder
-      delete newState.projects["project"];
+      if( newState.projects.project){
+        delete newState.projects["project"];
+      }
 
       return newState;
     case RECEIVE_PROJECT:

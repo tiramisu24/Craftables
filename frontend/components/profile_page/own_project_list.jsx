@@ -2,14 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import ProjectList from '../project_list'
 
-class FeaturedProjects extends React.Component{
+class OwnProjects extends React.Component{
   constructor(props){
     super(props);
     this.state = {projectList :this.props.projectsHash};
   }
 
   componentWillMount(){
-    this.props.showProjects();
+    this.props.showMyProjects();
   }
 
   componentWillReceiveProps(nextProps){
@@ -24,4 +24,4 @@ class FeaturedProjects extends React.Component{
   }
 
 }
-export default FeaturedProjects;
+export default OwnProjects;

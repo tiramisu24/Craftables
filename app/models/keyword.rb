@@ -18,12 +18,6 @@ class Keyword < ApplicationRecord
                  .having("COUNT(keywords.id) >= ?", (phrase.length))
 
 
-
-
-
-
-
-
   end
 
   def self.getProjects(keyphrase)

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Grid, Row, Col} from 'react-bootstrap';
+import ProjectList from '../project_list'
+
 
 class SearchResult extends React.Component{
   constructor(props){
@@ -20,17 +22,9 @@ class SearchResult extends React.Component{
     let projects = this.state.projectList;
     if(Object.keys(projects).length === 0) return <div></div>;
 
-    let wrappedList = Object.keys(projects).map(projectId => (
-      <Link to={`/project/${projectId}`} key={projectId} className="card-project">
-        <div className="card-project-image">Image goes here</div>
-        <div className = "card-project-title">{projects[projectId].title}</div>
-      </Link>
-    ))
-    return(
-      <ul className="search-project-list">
-        {wrappedList}
-      </ul>
-    )
+    return <ProjectList projects={projects}/>
+
+    
   }
 
 }

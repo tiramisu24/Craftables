@@ -23,6 +23,12 @@ class Project < ApplicationRecord
   BASIC_WORDS =[
     "a", "and", "at", "by", "the", "is", "was", "this","that"
   ]
+
+  def self.find_projects_by_user_id(user_id)
+    user = User.find_by(id: user_id)
+    user.projects
+  end
+  
   private
   def ensure_not_archived
     self.archived ||= false

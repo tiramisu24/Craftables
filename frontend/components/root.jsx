@@ -9,7 +9,7 @@ import ShowProjectContainer from './projects/show_project_container';
 import UpdateProjectContainer from './projects/update_project_container';
 import SearchResultContainer from './search/search_result_container';
 import Header from './header/header'
-
+import ProfilePage from './profile_page/profile_page'
 
 
 const Root = ({store}) => (

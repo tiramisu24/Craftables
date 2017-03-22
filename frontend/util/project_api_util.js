@@ -5,6 +5,14 @@ export const getProjects = () => (
   })
 )
 
+export const getMyProjects = (userId) => (
+  $.ajax({
+    type: "GET",
+    url: "api/projects",
+    data: {find_user_id: userId}
+  })
+)
+
 export const createProject = (project) => (
   $.ajax({
     type: "POST",

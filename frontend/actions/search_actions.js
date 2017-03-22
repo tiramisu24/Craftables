@@ -12,8 +12,5 @@ export const findProjects = (keyword) => dispatch => {
   return SearchAPIUtil.getProjects(keyword)
                       .then(projects => {
                         dispatch(receiveProjects(projects.projects))})
-                      .fail(() => getAPIProjects()
-                            .then(projects => tempSendtoState)
-                            .fail((errors) => (console.log(errors)))
-                      )
+                      .fail((errors) => (console.log(errors)))
 }

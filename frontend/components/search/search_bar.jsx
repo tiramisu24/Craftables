@@ -6,6 +6,7 @@ class SearchBar extends React.Component{
   constructor(props){
     super(props);
     this.state = {keyword: ""};
+    this.findProjects = this.findProjects.bind(this);
   }
 
   update(event){
@@ -14,20 +15,19 @@ class SearchBar extends React.Component{
   }
 
   findProjects(){
-    if(this.state.keyword === ""){
+    if(this.state.keyword !== ""){
       this.props.findProjects(this.state.keyword)
       localStorage.setItem("searching", "true");
-      debugger;
       this.setState({keyword: ""})
     }
   }
 
   render(){
-    debugger;
+    // debugger;
     return(
-      <div>
+      <div className="search-bar">
         {(localStorage.searching === "true") ? (<Redirect to="/search_results"/>) : <div></div>}
-        <form onSubmit={this.findProjects.bind(this)}>
+        <form onSubmit={this.findProjects}>
           <input type="text" onChange={this.update.bind(this)} placeholder={"search..."} value={this.state.keyword}></input>
         </form>
       </div>
