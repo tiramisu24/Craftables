@@ -5,12 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
 user1 = User.create(username: "tiramisu", password: "password");
 user2 = User.create(username: "calamari", password: "password");
 
 
-Project.destroy_all
 project1 = Project.create(title: "Up House", body: "This project of mine was mainly inspired by all the scrap in my room :P And we do recycle a lot, from my cereal boxes to the amazon boxes. But if you take a closer look or think deeper, think bigger every item that you throw/recycle has some value or the other. We just have to learn to make best use of it and be creative. I'm really happy with this Instructable cause one I didn't spend a single penny and two because it's just one happy and colorful house. Plus making something that moves/works is an art by itself.
 
 Of course, I love participating in competitions and no better place to post your ideas than Instructables. I love working/making projects with a lot of color in them. From bright to dark, color expresses a lot and bright colors actually make the mind happier I feel. And as I said making something move or work (adding life) is something amazing. So that's how I came up with this project, making a colorful full house fly/float !!. Plus you learn how to make a simple hovercraft :)t", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490120647/Craftables/house/intro.jpg",author_id: "#{user1.id}");
@@ -24,7 +22,6 @@ project3 = Project.create(title: "Letter Opener Made From Junk Mail", body: "Lik
 
 ", img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490120830/Craftables/letter_opener/Letter_opener_intro.jpg" ,author_id: "#{user2.id}")
 
-Step.destroy_all
 
 Step.create(title: "Step 1: Materials
 ", body: "So all the materials needed are your basic stuff you find at home. \n

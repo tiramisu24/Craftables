@@ -4,11 +4,8 @@ import {withRouter} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import {Redirect} from 'react-router-dom';
 import merge from 'lodash/merge';
-
-// import DropzoneComponent from 'react-dropzone-component';
-// import Dropzone from 'react-dropzone';
-// import request from 'superagent';
 import ShowErrors from '../show_errors';
+import {Grid, Row, Col} from 'react-bootstrap'
 
 
 
@@ -147,13 +144,16 @@ class CreateProject extends React.Component{
               <label>
                 <input type="text"
                   onChange={this.updateStep("title",idx+1)}
-                  placeholder="StepTitle"></input>
+                  placeholder={`Step ${idx+1}...`}></input>
               </label>
               <label>
-                <textarea onChange={this.updateStep("body",idx+1)}></textarea>
+                <textarea onChange={this.updateStep("body",idx+1)}
+                          placeholder={"In this step you will..."}>
+
+                </textarea>
               </label>
               <div>{this.showUploadedImage(this.state.img_urls[idx+1])}</div>
-              <div><button onClick={this.handleCloudinary(idx+1).bind(this)}> Click me!</button></div>
+              <div><button onClick={this.handleCloudinary(idx+1).bind(this)}> Add Photo!</button></div>
             </div>
           </div>
       ))
@@ -190,20 +190,24 @@ class CreateProject extends React.Component{
               </label>
 
               <label>
-                <textarea onChange={this.update("body")}></textarea>
+                <textarea onChange={this.update("body")}
+                          placeholder="This is how you make..."></textarea>
               </label>
             </div>
             <div>
               <img src={this.state.img_urls[0]}/>
             </div>
-            <div><button onClick={this.handleCloudinary(0).bind(this)}>click me!</button></div>
-          </div>
-          <div className="submit-button-create-project">
-            <input type="submit"  value="Publish"></input>
+            <div>
+              <button onClick={this.handleCloudinary(0).bind(this)}>Add Photo!</button>
+              <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
+            </div>
           </div>
           {this.addStep()}
+          <div className="submit-button-create-project">
+
+            <input type="submit"  value="Publish"></input>
+          </div>
         </form>
-        <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
 
       </div>
     )
