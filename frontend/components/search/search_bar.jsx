@@ -17,11 +17,13 @@ class SearchBar extends React.Component{
     if(this.state.keyword === ""){
       this.props.findProjects(this.state.keyword)
       localStorage.setItem("searching", "true");
+      debugger;
       this.setState({keyword: ""})
     }
   }
 
   render(){
+    debugger;
     return(
       <div>
         {(localStorage.searching === "true") ? (<Redirect to="/search_results"/>) : <div></div>}
