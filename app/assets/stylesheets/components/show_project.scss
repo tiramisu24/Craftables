@@ -127,20 +127,32 @@
   border-bottom: 1px solid grey;
 
 }
-.project-show-comments p{
-}
+
 .each-comment{
   border-bottom: 1px solid grey;
   padding: 10px 0px;
+  // background-color: wheat;
 
 }
 .comment-user-info{
   display: flex;
+  justify-content: space-between;
+  // background-color: pink;
+  width: 100%
 }
 
 .comment-img{
   height: 50px;
   padding-right: 10px;
+}
+.comment-info{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+}
+
+.submit-comment{
+  margin: 30px 0px;
 }
 
 .show_img_url{

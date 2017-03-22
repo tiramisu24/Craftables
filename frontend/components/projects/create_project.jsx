@@ -4,9 +4,10 @@ import {withRouter} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import {Redirect} from 'react-router-dom';
 import merge from 'lodash/merge';
+
 // import DropzoneComponent from 'react-dropzone-component';
 // import Dropzone from 'react-dropzone';
-import request from 'superagent';
+// import request from 'superagent';
 import ShowErrors from '../show_errors';
 
 
@@ -38,7 +39,7 @@ class CreateProject extends React.Component{
       },
       steps :{},
       addNumStep : [],
-      uploadFile : null
+      img_urls: {}
     }
 
   }
@@ -61,56 +62,44 @@ class CreateProject extends React.Component{
       let step = steps[stepNum] ? steps[stepNum] : {title: "", body: ""};
 
       step[input] = event.target.value;
-      let newSteps = merge(steps, {[stepNum]: step});
 
+      let newSteps = merge(steps, {[stepNum]: step});
       this.setState({steps: newSteps})
     };
   }
 
-  // uploadImage(){
-  //   console.log("i am here");
-  //   debugger;
-  //   return (event) => {
-  //     debugger;
-  //     console.log("I am here");
-  //   }
-  // }
+  handleCloudinary(stepNumPic) {
+    return (e) => {
+      e.preventDefault();
+      cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
+        if(error){
+          console.log(error);
+        }else{
 
-  handleCloudinary(e) {
-    e.preventDefault();
-    cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
-      if(error){
-        console.log(error);
-      }else{
-        console.log(results[0].secure_url);
-      }
-    })
+          let img_urls = null
+
+          if(stepNumPic === 0){
+            img_urls = results[0].secure_url;
+          }else {
+            img_urls = results.map(result => (
+              result.secure_url
+            ))
+          }
+          let hash = merge(this.state.img_urls, {[stepNumPic]: img_urls });
+
+          this.setState({img_urls: hash})
+        }
+      })
+    }
   }
-  // onImageDrop(files) {
-  //   // debugger;
-  //   this.handleImageUpload(files[0]);
-  //     // console.log(file);
-  // }
-  // handleImageUpload(file) {
-  //   let upload = request.post(CLOUDINARY_UPLOAD_URL)
-  //                       .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-  //                       .field('file', file);
-  //
-  //   upload.end((err, response) => {
-  //     if (err) {
-  //       console.error(err);
-  //     }
-  //
-  //     if (response.body.secure_url !== '') {
-  //       this.setState({
-  //         uploadedFileCloudinaryUrl: response.body.secure_url
-  //       });
-  //     }
-  //   });
-  // }
   handleSubmit(event){
     event.preventDefault;
     let project = this.state.project;
+
+    if(this.state.img_urls[0]){
+      project["img_url"]=this.state.img_urls[0]
+    }
+    debugger
     this.props.createProject({project})
         .then( () => {
             let steps = this.state.steps;
@@ -118,19 +107,23 @@ class CreateProject extends React.Component{
             numberSteps.forEach( numStep => {
               let step = steps[numStep];
               step["stepNum"] = numStep;
+
+              if(this.state.img_urls[numStep]){
+                console.log(this.state.img_urls);
+                step["img_urls"] = this.state.img_urls[numStep]
+                console.log(this.state.img_urls[numStep]);
+              }
+              debugger;
               step["project_id"] = this.props.projectId;
-              this.props.newStep({step}).then(
-                () => {
-                  console.log(this.props);
-                  console.log(this.props.stepId);
-                }
-              );
+              debugger
+              this.props.newStep({step})
             })
+            debugger;
+
             let path = `/project/${this.props.projectId}`;
             this.redirect(path);
           }
         );
-      debugger;
   }
 
   showErrors(){
@@ -159,11 +152,21 @@ class CreateProject extends React.Component{
               <label>
                 <textarea onChange={this.updateStep("body",idx+1)}></textarea>
               </label>
+              <div>{this.showUploadedImage(this.state.img_urls[idx+1])}</div>
+              <div><button onClick={this.handleCloudinary(idx+1).bind(this)}> Click me!</button></div>
             </div>
-            <div>Future Image</div>
           </div>
       ))
       return stepForm
+    }
+  }
+  showUploadedImage(image_urls){
+    if (image_urls){
+      return image_urls.map(url => (
+          <img key={url} src={url}/>
+        ))
+    }else {
+      return <div></div>
     }
   }
 
@@ -176,20 +179,6 @@ class CreateProject extends React.Component{
 
   render(){
     if (localStorage.user === "") return <div></div>;
-    // const componentConfig = {
-    //     iconFiletypes: ['.jpg', '.png', '.gif'],
-    //     showFiletypeIcon: true,
-    //     postUrl: 'no-url'
-    //   };
-    // const djsConfig = {
-    //   autoProcessQueue: false,
-    //   uploadMultiple: true
-    // };
-    // const eventHandlers = {
-    //   addedfile: this.handleFileAdded.bind(this),
-    //   processingmultiple: this.handleFileAdded.bind(this)
-    // }
-    // debugger;
     return(
       <div className="create-project-div">
         <ShowErrors errors={this.props.errors}/>
@@ -204,7 +193,10 @@ class CreateProject extends React.Component{
                 <textarea onChange={this.update("body")}></textarea>
               </label>
             </div>
-            <div><button onClick={this.handleCloudinary.bind(this)}></button></div>
+            <div>
+              <img src={this.state.img_urls[0]}/>
+            </div>
+            <div><button onClick={this.handleCloudinary(0).bind(this)}>click me!</button></div>
           </div>
           <div className="submit-button-create-project">
             <input type="submit"  value="Publish"></input>

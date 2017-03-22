@@ -5,11 +5,13 @@ class Api::StepsController < ApplicationController
   end
 
   def create
-    if (step_params[:title] == "" && step_params[:body] == "")
-      render json: ["empty step"], status: 202
-    end
+    # if (step_params[:title] == "" && step_params[:body] == "")
+    #   render json: ["empty step"], status: 202
+    # end
 
     @step = Step.new(step_params)
+    debugger
+
     if @step.save
       render :show
     else
@@ -41,7 +43,7 @@ class Api::StepsController < ApplicationController
 
   private
   def step_params
-    params.require(:step).permit(:stepNum, :title, :body, :project_id)
+    params.require(:step).permit(:stepNum, :title, :body, :project_id, img_urls: [])
   end
 
 end

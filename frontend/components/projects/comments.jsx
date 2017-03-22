@@ -49,12 +49,13 @@ class Comments extends React.Component{
     if(Object.keys(this.state.comments) === 0) return <div></div>;
     let comments = Object.keys(this.state.comments).map(key => (
       <Row className="each-comment" key={key}>
-        <Col sm={6} className="comment-user-info">
-          <div className="comment-img">User profile picture</div>
-          <div>
-            <div>{this.state.comments[key].author.username}</div>
-            <div>{this.state.comments[key].created_at}</div>
-          </div>
+        <Col className="comment-user-info">
+          <Col sm={6} className="comment-img">User profile picture</Col>
+          <Col sm={6} className="comment-info">
+              <div>{this.state.comments[key].author.username}</div>
+              <div>{this.state.comments[key].created_at.slice(0,10)}
+            </div>
+          </Col>
         </Col>
 
         <Col sm={12}>
@@ -64,7 +65,7 @@ class Comments extends React.Component{
     ));
     return <div>
         {comments}
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form onSubmit={this.handleSubmit.bind(this)} className="submit-comment">
         <label>
           <input type="text" onChange={this.update.bind(this)} placeholder="Add a comment..." value={this.state.commentDes}/>
         </label>
