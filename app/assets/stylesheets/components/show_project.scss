@@ -47,11 +47,22 @@
   padding: 10px 0px;
 }
 
-.single-step-img{
-  height: 300px;
+.show-step-photo-section{
+  width: 100%;
+  // background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+.show-page-container{
+  width: 80%;
+  height: auto;
   border-radius:5px;
   border: 1px solid grey;
   margin: 15px 0px;
+}
+
+.show-page-container > img {
+  width: 100%;
 }
 
 

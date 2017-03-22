@@ -22,6 +22,11 @@ class ShowProject extends React.Component{
     this.props.showProject(this.state.projectId);
   }
 
+  componentDidMount(){
+    this. setScroll()
+
+  }
+
   setScroll(){
     $( document ).ready(function() {
     const $sidebar = $('#sidebar');
@@ -31,10 +36,10 @@ class ShowProject extends React.Component{
       let generalSidebarHeight = $sidebar.innerHeight();
       let sidebarTop = $sidebar.offset().top;
       let stickOffset = 0;
-      let sidebarStopperPosition = $sidebarStopper.offset().top;
-      let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
-      let diff = stopPoint + stickOffset;
       $(window).scroll(function(){ // scroll event
+        let sidebarStopperPosition = $sidebarStopper.offset().top;
+        let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
+        let diff = stopPoint + stickOffset;
         let windowTop = $(window).scrollTop();
         let $sidebarTopBar = $('#sidebar-top-bar')
           $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
@@ -80,19 +85,34 @@ class ShowProject extends React.Component{
       </div>
     }
   }
+  stepImg(step){
+    let imgs = <div></div>
+    if(step.img_urls.length > 0){
+      imgs =step.img_urls.map( el => (
+        <div className="show-page-container" key={el}>
+          <img src={el}></img>
+        </div>
+      ))
+    }
+    return imgs
+  }
   render(){
 
     let projectList = this.state.projectsHash;
     if(Object.keys(projectList).length === 0) return <div></div>;
-
     this. setScroll()
+
+
+
     let projectId = this.state.projectId;
     let project = projectList[projectId];
     if(!project.steps) return <div></div>;
     let steps = project.steps.map(step => (
       <div className="single-step" key={step.id}>
         <h5>{step.title}</h5>
-        <div className="single-step-img">Future img</div>
+        <div className="show-step-photo-section">
+          {this.stepImg(step)}
+        </div>
         <p>{step.body}</p>
       </div>
     ))
