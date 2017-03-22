@@ -1,10 +1,26 @@
 .header {
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  border-bottom: 1px solid grey;
+  color: black;
+  text-shadow: 2px 2px 1px white;
+  width: 100%;
+}
+
+.header .search-bar{
+  // background-color: pink;
+  width: 300px;
+}
+.header .search-bar div{
+  padding-right: 10px;
+  // background-color: wheat;
+}
+.header .search-bar form{
+  padding-left: 10px;
+  // background-color: blue;
 }
 
 .auth-modals {
@@ -12,12 +28,12 @@
   flex-direction: row;
   align-items: center;
   margin: 10px;
+  margin-right: 10em;
 }
 
 .logo {
-  // background-color: pink;
   display: table;
-  margin-left: 20px;
+  margin-left: 10em;
 }
 
 logo h1 {
