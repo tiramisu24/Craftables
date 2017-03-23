@@ -17,7 +17,6 @@ const Root = ({store}) => (
     <HashRouter>
       <App>
         <Route path ='/' component={Header}/>
-          <Redirect to='/homepage'/>
         <Route path='/homepage' component={HomePage}/>
         <Route path='/new_project' component={CreateProjectContainer}/>
         <Route path='/project/:id' component={ShowProjectContainer}/>

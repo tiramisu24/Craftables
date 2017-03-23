@@ -1,0 +1,57 @@
+.placeholder{
+  height: 15vh;
+}
+
+.user-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+
+  // border-
+  border-bottom: 1px solid grey;
+}
+.profile-user-des{
+  position: relative;
+  top: -20px;
+  margin: 10px 20px;
+  // background-color: pink;
+}
+
+.profile-user-des >div{
+  margin: 10px 0;
+}
+.profile-img{
+  width:100%;
+}
+.profile-img-container{
+  width: 150px;
+  // background-color: pink;
+  padding-bottom: 20px;
+  // margin-left: 20em;
+  margin: 5vh 10px;
+  align-self: right;
+  // border: 1px solid back;
+}
+.profile-modal button{
+  width: 150px;
+}
+
+.edit-profile-photo{
+  margin: 30px 0px;
+  width:100px;
+}
+.edit-profile-bio{
+  height: 300px;
+}
+
+.my-project-list{
+  margin: 5vh 10em;
+}
+// .update-button{
+//   position: relative;
+//   right: -19em;
+//   // height: 300px;
+//   // margin-right: 10em;
+//   background-color: pink;
+// }

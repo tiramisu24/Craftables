@@ -55,10 +55,11 @@ class UserDropdown extends React.Component {
     }
     return (
       <div className="dropdown-form">
-        <DropdownButton title="|_|" noCaret id="header-dropdown" onClick={this.profileClicked}>
+        <DropdownButton title={<i className="fa fa-bars" aria-hidden="true"></i>
+} noCaret id="header-dropdown" onClick={this.profileClicked}>
           <MenuItem>
-
-            <Link to={`/profile_page/${localStorage.id}`}>Profile</Link></MenuItem>
+            <Link to={`/profile_page/${localStorage.id}`}>Profile <i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
+          </MenuItem>
           <MenuItem>
             <Link to="/new_project">New Project</Link>
           </MenuItem>
