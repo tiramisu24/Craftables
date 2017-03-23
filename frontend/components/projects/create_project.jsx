@@ -21,6 +21,8 @@ class CreateProject extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addStep = this.addStep.bind(this);
     this.clickAddStep = this.clickAddStep.bind(this);
+    this.changeAddFunctionButtons=this.changeAddFunctionButtons.bind(this);
+    this.addFunctionButtons=this.addFunctionButtons.bind(this);
 
     this.state = this.initialState();
   }
@@ -36,10 +38,18 @@ class CreateProject extends React.Component{
       },
       steps :{},
       addNumStep : [],
-      img_urls: {}
+      img_urls: {0: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490216839/ci96tpehqzmry74hroil.jpg",
+                  1: ["http://res.cloudinary.com/dezhy95vj/image/upload/v1490216839/ci96tpehqzmry74hroil.jpg"]},
+      addFunctionButtons: false
     }
 
   }
+
+  // ComponentDidUpdate(){
+  //   let newbol = false;
+  //   this.setState({addFunctionButtons:newbol})
+  //   debugger;
+  // }
 
   redirect(path){
     this.props.history.push(path);
@@ -96,7 +106,7 @@ class CreateProject extends React.Component{
     if(this.state.img_urls[0]){
       project["img_url"]=this.state.img_urls[0]
     }
-    debugger
+    // debugger
     this.props.createProject({project})
         .then( () => {
             let steps = this.state.steps;
@@ -139,23 +149,27 @@ class CreateProject extends React.Component{
       return stepForm;
     }else{
       stepForm = this.state.addNumStep.map((num,idx) => (
-        <div key={idx} className="create-project-form-inputs">
-            <div className="create-project-form-text-inputs">
-              <label>
+        <Row key={idx} className="create-project-section">
+            <Col  md={6} sm={12}>
+              <Row className="create-project-title">
                 <input type="text"
                   onChange={this.updateStep("title",idx+1)}
                   placeholder={`Step ${idx+1}...`}></input>
-              </label>
-              <label>
+              </Row>
+              <Row className="create-project-des">
                 <textarea onChange={this.updateStep("body",idx+1)}
                           placeholder={"In this step you will..."}>
-
                 </textarea>
-              </label>
-              <div>{this.showUploadedImage(this.state.img_urls[idx+1])}</div>
-              <div><button onClick={this.handleCloudinary(idx+1).bind(this)}> Add Photo!</button></div>
-            </div>
-          </div>
+              </Row>
+            </Col>
+            <Col md={6} sm={12}>
+              <div className="create-project-img-wrapper">{this.showUploadedImage(this.state.img_urls[idx+1])}</div>
+              <div>
+              <button className="add-photo" onClick={this.handleCloudinary(idx+1).bind(this)}> Add Photo!</button></div>
+            </Col>
+
+
+        </Row>
       ))
       return stepForm
     }
@@ -163,10 +177,24 @@ class CreateProject extends React.Component{
   showUploadedImage(image_urls){
     if (image_urls){
       return image_urls.map(url => (
-          <img key={url} src={url}/>
+          <img key={url} src={url} className="create-project-img"/>
         ))
     }else {
       return <div></div>
+    }
+  }
+  changeAddFunctionButtons(event){
+    event.preventDefault();
+    let newbol = !this.state.addFunctionButtons;
+    this.setState({addFunctionButtons:newbol})
+  }
+  addFunctionButtons(){
+    if(this.state.addFunctionButtons){
+
+      return   <span>
+        <button onClick={this.handleCloudinary(this.state.addNumStep.length).bind(this)}>Add Photo!</button>
+        <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
+      </span>
     }
   }
 
@@ -179,37 +207,47 @@ class CreateProject extends React.Component{
 
   render(){
     if (localStorage.user === "") return <div></div>;
+      // debugger;
     return(
-      <div className="create-project-div">
+      <Grid className="create-project-div">
+        <div className="create-placeholder"></div>
         <ShowErrors errors={this.props.errors}/>
-        <form className="create-project-form" onSubmit={this.handleSubmit}>
-          <div className="create-project-form-inputs">
-            <div className="create-project-form-text-inputs">
-              <label>
-                <input type="text" onChange={this.update("title")} placeholder="Title" ></input>
-              </label>
 
-              <label>
+        <form className="create-project-form" onSubmit={this.handleSubmit}>
+          <Row className="create-project-section">
+            <Col md={6} sm={12}>
+              <Row className="create-project-title">
+                <input type="text" onChange={this.update("title")} placeholder="Title" ></input>
+              </Row>
+              <Row className="create-project-des">
                 <textarea onChange={this.update("body")}
-                          placeholder="This is how you make..."></textarea>
-              </label>
-            </div>
-            <div>
-              <img src={this.state.img_urls[0]}/>
-            </div>
-            <div>
-              <button onClick={this.handleCloudinary(0).bind(this)}>Add Photo!</button>
-              <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
-            </div>
-          </div>
-          {this.addStep()}
+                  placeholder="This is how you make..."></textarea>
+              </Row>
+            </Col>
+
+              <Col md={6} sm={12} className="photo-section">
+                <div className="create-project-img-wrapper">
+                  <img src={this.state.img_urls[0]} className="create-project-img"/>
+                </div>
+                <div><button className="add-photo" onClick={this.handleCloudinary(0).bind(this)}> Add Photo!</button></div>
+              </Col>
+
+            </Row>
+            {this.addStep()}
+            <Row className="create-project-nav-buttons">
+
+              <button onClick={this.changeAddFunctionButtons}>Click Me!</button>
+              {this.addFunctionButtons()}
+
+            </Row>
+
           <div className="submit-button-create-project">
 
             <input type="submit"  value="Publish"></input>
           </div>
         </form>
 
-      </div>
+      </Grid>
     )
   }
 }

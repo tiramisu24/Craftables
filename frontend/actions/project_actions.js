@@ -56,7 +56,6 @@ export const showProject = (id) => dispatch => {
   return ProjectAPIUtil
             .showProject(id)
             .then(project => {
-              // debugger;
               dispatch(receiveCurrentProject(project))})
             .fail(errors =>   dispatch(receiveErrors(errors.responseJSON)))
 }

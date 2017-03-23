@@ -10,6 +10,7 @@ import Footer from '../footer'
 
 class ShowProject extends React.Component{
   constructor(props){
+
     super(props);
     this.state = {
       projectId : this.props.match.params.id,
@@ -24,7 +25,7 @@ class ShowProject extends React.Component{
   }
 
   componentDidMount(){
-    this. setScroll()
+    this.setScroll()
 
   }
 
@@ -38,7 +39,7 @@ class ShowProject extends React.Component{
       let sidebarTop = $sidebar.offset().top;
       let stickOffset = 0;
       $(window).scroll(function(){ // scroll event
-        $sidebar.css("background-color: grey")
+        $sidebar.css('background-color': 'grey');
         let sidebarStopperPosition = $sidebarStopper.offset().top;
         let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
         let diff = stopPoint + stickOffset;
