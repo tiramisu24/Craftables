@@ -9,6 +9,10 @@ class Keyword < ApplicationRecord
     source: :project
 
 
+  def getKeywords(query)
+    Keyword.where("keyword LIKE ?", "%#{query}%")
+  end
+
   def self.getProjectIds(keyphrase)
     phrase = keyphrase.split(" ")
     projectIds = Keyword.select("projects.id")

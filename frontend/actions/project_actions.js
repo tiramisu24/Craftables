@@ -69,9 +69,11 @@ export const showProjects = () => dispatch => {
 }
 
 export const showMyProjects = (userId) => dispatch => {
+  // debugger
   return ProjectAPIUtil
             .getMyProjects(userId)
             .then(projects => {
+              // debugger;
               dispatch(receiveProjects(projects.projects))})
             .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }

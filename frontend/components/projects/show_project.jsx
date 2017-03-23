@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom';
 import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
 import {HashLink} from 'react-router-hash-link';
 import Comments from './comments_container';
-import Footer from '../footer'
-
+import Footer from '../footer';
+import showOwnProjects from '../profile_page/own_project_list';
 
 
 class ShowProject extends React.Component{
@@ -44,9 +44,10 @@ class ShowProject extends React.Component{
         let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
         let diff = stopPoint + stickOffset;
         let windowTop = $(window).scrollTop();
-        let $sidebarTopBar = $('#sidebar-top-bar')
-          $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
-          $sidebarTopBar.width($('.project-show-header').width())
+        let $sidebarTopBar = $('#sidebar-top-bar');
+        $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
+
+          // $sidebarTopBar.widt
 
         if (stopPoint < windowTop) {
             $sidebar.css({ position: 'absolute', top: diff });
@@ -130,6 +131,7 @@ class ShowProject extends React.Component{
         <p>{step.body}</p>
       </div>
     ))
+    console.log(project);
     return (
       <div>
       <Jumbotron id="project-show-main-picture">
@@ -191,18 +193,15 @@ class ShowProject extends React.Component{
                   </Col>
                   <Col md={4} >
                     <div>Date Posted</div>
+                    <div>{project.created_at.slice(0,10)}</div>
                   </Col>
                 </Row>
                 <div className="project-show-content-divider project-show-content-author">
                   <div> Author pic</div>
                   <div>{project.author.username}</div>
                 </div>
-                <div className="project-show-content-divider">
-                  <div>Other Projects of author</div>
-                </div>
+
                 <div>
-                  <div>Future Done
-                  button</div>
                   <div>Future Favorite Button</div>
                 </div>
               </Col>

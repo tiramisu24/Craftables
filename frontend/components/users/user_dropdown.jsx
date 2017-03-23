@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
+import {DropdownButton, MenuItem} from 'react-bootstrap';
+
 class UserDropdown extends React.Component {
   constructor(props){
     super(props)
@@ -30,7 +32,8 @@ class UserDropdown extends React.Component {
       return(
         <div className="dropdown-option">
           <div className="dropdown-menu-contents">
-            <div>Profile</div>
+            <div>
+              <Link to={`/profile_page/${localStorage.id}`}>Profile</Link></div>
             <div>
               <Link to="/new_project">New Project</Link>
             </div>
@@ -52,8 +55,17 @@ class UserDropdown extends React.Component {
     }
     return (
       <div className="dropdown-form">
-        <button  onClick={this.profileClicked}>|_|</button>
-        {this.displayForm()}
+        <DropdownButton title="|_|" noCaret id="header-dropdown" onClick={this.profileClicked}>
+          <MenuItem>
+
+            <Link to={`/profile_page/${localStorage.id}`}>Profile</Link></MenuItem>
+          <MenuItem>
+            <Link to="/new_project">New Project</Link>
+          </MenuItem>
+          <MenuItem>
+            <button onClick={this.handleClick} className="logout-button">Log Out</button>
+          </MenuItem>
+        </DropdownButton>
       </div>
     )
   }

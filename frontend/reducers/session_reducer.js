@@ -1,4 +1,4 @@
-import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
+import {RECEIVE_CURRENT_USER, RECEIVE_USER} from '../actions/session_actions';
 
 import merge from 'lodash/merge';
 
@@ -7,8 +7,7 @@ const SessionReducer = (state = null, action) => {
   switch(action.type){
     case RECEIVE_CURRENT_USER:
       newState.currentUser = action.user;
-      newState.errors = [];
-      
+
       if(action.user){
         localStorage.setItem("user", action.user.username);
         localStorage.setItem("id", action.user.id)
@@ -16,6 +15,10 @@ const SessionReducer = (state = null, action) => {
         localStorage.setItem("user", "");
         localStorage.setItem("id", "")
       }
+      return newState;
+    case RECEIVE_USER:
+      newState.user = action.user
+      console.log(action.user);
       return newState;
     default:
       return newState;

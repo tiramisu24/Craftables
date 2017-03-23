@@ -1,17 +1,19 @@
-// import {connect} from 'react-redux';
-// import {} from '../../actions/project_actions';
-// import ProfilePage from './featured_projects'
-//
-// const mapStateToProps =(state, ownProps) => {
-//   return{
-//   projectsHash : state.projects.projects
-// }}
-//
-//
-// // const mapDispatchToProps = (dispatch) => ({
-// //   showMyProjects: () => dispatch(showMyProjects())
-// // })
-//
-// const ProfilePageContainer = connect(mapStateToProps, null)(ProfilePage);
-//
-// export default ProfilePageContainer;
+import {connect} from 'react-redux';
+import {changeInfo, getUser} from '../../actions/session_actions';
+import ProfilePage from './profile_page'
+
+const mapStateToProps =(state, ownProps) => {
+  // debugge r;
+  return{
+  user : state.session.user
+}}
+
+
+const mapDispatchToProps = (dispatch) => ({
+  getUser: (userId) => dispatch(getUser(userId)),
+  changeInfo: (user) => dispatch(changeInfo(user))
+})
+
+const ProfilePageContainer = connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
+
+export default ProfilePageContainer;

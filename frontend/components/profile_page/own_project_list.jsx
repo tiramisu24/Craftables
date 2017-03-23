@@ -5,11 +5,16 @@ import ProjectList from '../project_list'
 class OwnProjects extends React.Component{
   constructor(props){
     super(props);
-    this.state = {projectList :this.props.projectsHash};
+    this.state = {
+      projectList :this.props.projectsHash,
+      userId : this.props.userId
+    };
+    // debugger;
+
   }
 
   componentWillMount(){
-    this.props.showMyProjects();
+    this.props.showMyProjects(this.state.userId);
   }
 
   componentWillReceiveProps(nextProps){
@@ -19,7 +24,9 @@ class OwnProjects extends React.Component{
 
   render(){
     let projects = this.state.projectList;
+    // debugger;
     if(Object.keys(projects).length === 0) return <div></div>;
+      // debugger
     return <ProjectList projects={projects}/>
   }
 

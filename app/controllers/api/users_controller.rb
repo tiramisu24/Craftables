@@ -9,23 +9,28 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by(id: params[:id])
+    render :show
+  end
 
-  # def update
-  #   @user = user.find_by_id(user_params[:id], user_params[:password])
-  #   if @user && @user.update(user_params)
-  #     render :show
-  #   else
-  #     if @user
-  #       render json: @user.errors.full_messages, status: 401
-  #     else
-  #       render json: "no user", status 404
-  #     end
-  #   end
-  #
-  # end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    if @user && @user.update(user_params)
+      render :show
+    else
+      if @user
+        render json: @user.errors.full_messages, status: 401
+      else
+        render json: "no user", status: 404
+      end
+    end
+
+  end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :image_url)
+    params.require(:user).permit(:username, :password, :bio, :img_url)
   end
 end

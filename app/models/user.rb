@@ -6,7 +6,7 @@ class User < ApplicationRecord
 	validates :password, length: {minimum: 6}, allow_nil: :true
 
 	after_initialize :ensure_session_token
-	before_validation :ensure_session_token_uniqueness
+	# before_validation :ensure_session_token_uniqueness
 
   has_many :projects,
     primary_key: :id,
@@ -17,7 +17,7 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Comment
 
-    
+
 	def password= (password)
     @password = password
 		self.password_digest = BCrypt::Password.create(password)

@@ -93,9 +93,11 @@
 }
 #sidebar{
   width: 330px;
+  z-index: 2;
 }
 #sidebar-top-bar{
   background-color: white;
+  // background-color: grey;
   z-index: 1;
 }
 

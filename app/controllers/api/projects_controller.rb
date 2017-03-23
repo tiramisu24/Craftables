@@ -8,6 +8,7 @@ class Api::ProjectsController < ApplicationController
     end
     render :index
   end
+  
   def create
     @project = Project.new(project_params)
     if @project.save
