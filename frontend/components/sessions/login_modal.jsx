@@ -35,6 +35,7 @@ class LoginModal extends React.Component{
     const user = this.state.user
     this.props.processForm({user})
               .then(this.closeModal());
+
   }
 
   demo(){

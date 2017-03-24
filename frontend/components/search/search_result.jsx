@@ -36,6 +36,9 @@ class SearchResult extends React.Component{
     let projects = this.state.projectList;
     if(Object.keys(projects).length === 0) {
       return <div>
+        <div className="move-it-down">
+          <FeaturedProjectsContainer/>
+        </div>
         <Jumbotron>
           <div className="placeholder"></div>
           <div>No Results with your Query :(</div>
@@ -44,9 +47,7 @@ class SearchResult extends React.Component{
           <div> can also check out these projects!</div>
         </Jumbotron>
 
-        <div className="move-it-down">
-          <FeaturedProjectsContainer/>
-        </div>
+
 
 
       </div>;

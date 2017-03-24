@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all;
+Project.detroy_all;
+Step.destroy_all;
+
 user1 = User.create(username: "tiramisu", password: "password", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490214977/bulhybtsjt13ki09hzv4.jpg", bio: "");
 user2 = User.create(username: "calamari", password: "password", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490216839/ci96tpehqzmry74hroil.jpg", bio: "");
 user3 = User.create(username: "flower", password: "password", img_url: "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490120414/sample.jpg", bio: "");
@@ -12,28 +16,28 @@ user3 = User.create(username: "flower", password: "password", img_url: "https://
 
 project1 = Project.create(title: "Up House", body: "This project of mine was mainly inspired by all the scrap in my room :P And we do recycle a lot, from my cereal boxes to the amazon boxes. But if you take a closer look or think deeper, think bigger every item that you throw/recycle has some value or the other. We just have to learn to make best use of it and be creative. I'm really happy with this Instructable cause one I didn't spend a single penny and two because it's just one happy and colorful house. Plus making something that moves/works is an art by itself.
 
-Of course, I love participating in competitions and no better place to post your ideas than Instructables. I love working/making projects with a lot of color in them. From bright to dark, color expresses a lot and bright colors actually make the mind happier I feel. And as I said making something move or work (adding life) is something amazing. So that's how I came up with this project, making a colorful full house fly/float !!. Plus you learn how to make a simple hovercraft :)t", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490120647/Craftables/house/intro.jpg",author_id: "#{user1.id}");
+Of course, I love participating in competitions and no better place to post your ideas than Instructables. I love working/making projects with a lot of color in them. From bright to dark, color expresses a lot and bright colors actually make the mind happier I feel. And as I said making something move or work (adding life) is something amazing. So that's how I came up with this project, making a colorful full house fly/float !!. Plus you learn how to make a simple hovercraft :)t", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490335979/House_intro_uzpvm6.jpg",author_id: "#{user1.id}");
 
 project2 = Project.create(title: "Glass Tile & Woven Copper Pendan", body: "This tutorial will take you step-by-step through the process of making a necklace pendant (or earring charm) with just copper wire and a glass mosaic tile.\n
 \n
 It will incorporate basic wire weaving techniques, but you don't have to have jewellery-making experience to give this a go :)\n
-",img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490120788/Craftables/glass_tile/Glass_Tile_intro.jpg",  author_id: "#{user1.id}")
+",img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490369159/Glass_Tile_intro_onssq0.jpg",  author_id: "#{user1.id}")
 
 project3 = Project.create(title: "Letter Opener Made From Junk Mail", body: "Like everyone else I get a lot of junk mail and it usually ends up in the recycling bin. But I had an idea to see if I could make something with it instead of just throwing it in the bin. So I came up with this, I made a letter opener from the junk mail using fiberglass resin to make it stiff. It is basically the same as making Micarta from fabric but instead I used the paper from my junk mail. The process is fairly straight forward and the end product ended up working quite well. I don't know how long the edge will last but I only plan to use this for opening letters so I'm not too concerned with it becoming dull. And if it does become dull I can always touch up the edge.
 
-", img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490120830/Craftables/letter_opener/Letter_opener_intro.jpg" ,author_id: "#{user2.id}")
+", img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490120830/Craftables/letter_opener/Letter_opener_intro.jpg" ,author_id: "#{user2.id}")
 
 project4 = Project.create(
   title: "How to 'Dye' Easter Eggs With Silk Ties",
   body: "I’ve been on kind of an Easter Egg decorating kick lately. There are just so many fun ways to dye and decorate Easter Eggs! When I grew up, it was either the little dye tablets or natural dyeing with onion skins. That’s all we ever did. Well, now the sky’s the limit. You can paint them, decoupage, wrap and crackle them. Turns out you can also print on them with silk ties. I knew you could print on a silk scarf with a silk tie – see that tutorial here – but I didn’t know you could dye Easter Eggs with silk ties.",
-  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490315886/Easter_Egg_intro_wspf3a.jpg",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490335980/Easter_Egg_intro_orfwyl.jpg",
   author_id: "#{user3.id}"
 )
 
 project5 = Project.create(
   title: "Steampunk Heart Necklace",
   body: "Today I'm going to teach you how to make a steampunk necklace with a heart shape:",
-  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490319638/Heart_Necklace_intro_ogeqqr.jpg",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490335979/Heart_Necklace_intro_uixodb.jpg",
   author_id: "#{user2.id}"
 )
 
@@ -46,7 +50,7 @@ project6 = Project.create(
     The Kolam patterns are drawn by hand using powdered rice. Sometimes, colored dyes are used to further decorate the kolams. The purpose of drawing Kolam designs is to enhance the aesthetics of the home and also provide food for birds and insects. \n
     We put together a simple tutorial for drawing a basic Kolam pattern.
   ",
-  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322148/Kolam_intro_uyblq6.jpg",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490334647/Kolam_intro_ujr3c0.jpg",
   author_id: "#{user2.id}"
 )
 
@@ -55,7 +59,7 @@ project7 = Project.create(
   body: "
     This is a beginner’s project, it will show you how to make a very chic wire wrapped bracelet, if you want make some easy bracelets, take a look at this one!
   ",
-  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323838/Wire_Bracelet_intro_uljjim.jpg",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490336207/Wire_Bracelet_intro_xdemqa.jpg",
   author_id: "#{user2.id}"
 )
 
@@ -64,9 +68,30 @@ project8 = Project.create(
   body: "
     This project combines two of my favorite things, glass and crystals. I got this gorgeous geode from one of my favorite shops (The Purple Moon in Lava Idaho) and knew I needed to do something special with it. This project worked up really quickly and was so fun to make.
   ",
-  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324817/Glass_Feather_intro_ilvneu.jpg",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490335980/Glass_Feather_intro_f4nr8l.jpg",
   author_id: "#{user1.id}"
 )
+
+project9 = Project.create(
+  title: "Modular Cardboard Lampshade",
+  body: "
+  The light on my living room ceiling fan was too bright and reflecting on my tv, so I decided I needed a lampshade that would direct the light up and block the light from the sides. This cardboard shade was easy, quick, and made entirely from discarded materials.\n
+
+  This shade can be scaled up or down depending on how large you cut each piece.
+  ",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368947/cardboard_overhead_intro_axmnfx.jpg",
+  author_id: "#{user1.id}"
+)
+# project10 = Project.create(
+#   title: "Modular Cardboard Lampshade",
+#   body: "
+#   The light on my living room ceiling fan was too bright and reflecting on my tv, so I decided I needed a lampshade that would direct the light up and block the light from the sides. This cardboard shade was easy, quick, and made entirely from discarded materials.\n
+#
+#   This shade can be scaled up or down depending on how large you cut each piece.
+#   ",
+#   img_url:"",
+#   author_id: "#{user1.id}"
+# )
 
 
 Step.create(title: "Step 1: Materials
@@ -249,8 +274,8 @@ Step.create(
   Better safe than sorry!
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490316700/Easter_Egg_step1a_d3vsb7.jpg",
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490316700/Easter_Egg_step1b_hyqfda.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490316700/Easter_Egg_step1a_d3vsb7.jpg",
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490316700/Easter_Egg_step1b_hyqfda.jpg"
   ],
   project_id: "#{project4.id}"
 )
@@ -263,9 +288,9 @@ Step.create(
   Next, wrap the same egg again with a square of your old bedsheet. Tie off as before. Repeat with all of your eggs.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490317590/Easter_Egg_step2a_w81ctm.jpg",
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490317590/Easter_Egg_step2b_xgbdqz.jpg",
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490317590/Easter_Egg_step2c_xeqhhb.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490317590/Easter_Egg_step2a_w81ctm.jpg",
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490317590/Easter_Egg_step2b_xgbdqz.jpg",
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490317590/Easter_Egg_step2a_w81ctm.jpg"
   ],
   project_id: "#{project4.id}"
 )
@@ -289,9 +314,9 @@ Step.create(
     ENJOY!
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490318947/Easter_Egg_step4a_jzocb0.jpg",
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490318947/Easter_Egg_step4b_h4ptyo.jpg",
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490318947/Easter_Egg_step4c_qt9jce.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4a_jzocb0.jpg",
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4b_h4ptyo.jpg",
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4c_qt9jce.jpg"
   ],
   project_id: "#{project4.id}"
 )
@@ -303,7 +328,7 @@ Step.create(
     To begin cut the previously drawn templates in a not very thick wood, for this use a bank saw.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320310/Heart_Necklace_step1_udecwv.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490320310/Heart_Necklace_step1_udecwv.jpg"
   ],
   project_id: "#{project5.id}"
 )
@@ -315,7 +340,7 @@ Step.create(
     Then I removed the paint from a can, and used a small saw to open the can.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320572/Heart_Necklace_step2_xaiulc.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490320572/Heart_Necklace_step2_xaiulc.jpg"
   ],
   project_id: "#{project5.id}"
 )
@@ -339,7 +364,7 @@ Step.create(
     Having all the pieces of aluminum and wood cut and polished, I proceeded to assemble the sides.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320892/Heart_Necklace_step4_msgirk.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490321162/Heart_Necklace_step5_yzewgf.jpg"
   ],
   project_id: "#{project5.id}"
 )
@@ -364,7 +389,7 @@ Step.create(
     With small steel nails, very carefully hammer the insoles in place to finish the job.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490321358/Heart_Necklace_step6_o5kh4j.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490321358/Heart_Necklace_step6_o5kh4j.jpg"
   ],
   project_id: "#{project5.id}"
 )
@@ -375,9 +400,6 @@ Step.create(
   body: "
     And that's how the work ended, I hope you liked it.
   ",
-  img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490321441/Heart_Necklace_step7_ys0efk.jpg"
-  ],
   project_id: "#{project5.id}"
 )
 
@@ -388,7 +410,7 @@ Step.create(
     The first step is to draw the framework/grid using dots. Start with a single dot, then add three dots parallel to the imaginary line carrying the first dot. Then add 5 dots parallel to the 3 dots and finally add 7 dots parallel to the 5 dots. Now repeat the pattern of dots in the reverse order from 5 down to 3 and finally a single dot.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322499/Kolam_step1_tt8wb7.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490334647/Kolam_step1_lj62ry.jpg"
   ],
   project_id: "#{project6.id}"
 )
@@ -412,7 +434,7 @@ Step.create(
     Repeat the pattern that combined the stylised L and the diamond pattern on the bottom of the grid framework. Now you end up with exactly one-half of the complete Kolam pattern.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322851/Kolam_step2_rvhnrf.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490334647/Kolam_step2_egbg2r.jpg"
   ],
   project_id: "#{project6.id}"
 )
@@ -425,7 +447,7 @@ Step.create(
     Feel free to start on the left and complete the right side of the grid framework as well.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323006/Kolam_step3_jtxzyj.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490334647/Kolam_step3_ne8poe.jpg"
   ],
   project_id: "#{project6.id}"
 )
@@ -439,7 +461,7 @@ Step.create(
     To learn more about the different types of Kolam designs, video tutorials of more complex Kolam designs, and in-depth insights on the history and the culture of Kolam, read this article.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323430/Kolam_step4_mqvtwm.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490334647/Kolam_step4_ogjzfd.jpg"
   ],
   project_id: "#{project6.id}"
 )
@@ -458,7 +480,7 @@ Step.create(
     - Side Cutting Pliers
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323988/Wire_Bracelet_step1_vvlodk.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490323988/Wire_Bracelet_step1_vvlodk.jpg"
   ],
   project_id: "#{project7.id}"
 )
@@ -471,7 +493,7 @@ Step.create(
     2nd, make 5 glass beaded wire patterns in total and connect them together like the picture shows.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324225/Wire_Bracelet_step2_ln5qro.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490324225/Wire_Bracelet_step2_ln5qro.jpg"
   ],
   project_id: "#{project7.id}"
 )
@@ -485,7 +507,7 @@ Step.create(
     3rd, attach the longer chain to the hoop of the wire pattern and add a red crackle glass bead to the other chain end.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324321/Wire_Bracelet_step3_pmhfif.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490324321/Wire_Bracelet_step3_pmhfif.jpg"
   ],
   project_id: "#{project7.id}"
 )
@@ -497,7 +519,7 @@ Step.create(
     The colors are very bright and the bracelet is very easy to make. If you want to make a chic accessory for the coming spring days, try this wire wrapped bracelet!
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324395/Wire_Bracelet_step4_zbhnqc.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490323838/Wire_Bracelet_intro_uljjim.jpg"
   ],
   project_id: "#{project7.id}"
 )
@@ -509,7 +531,7 @@ Step.create(
     Lay your crystal on a piece of paper and design a feather around it. I went pretty simple with this design, but you could get as intricate as you want. The geode I found looked like it would fit nicely as the bottom of the feather, get creative and see where your crystal will fit best. Next, cut out all the pattern pieces. Sometimes I number the pieces of my patterns, but since this feather is so simple I didn't think it was necessary.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324939/Glass_Feather_step1_x68zkq.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490324939/Glass_Feather_step1_x68zkq.jpg"
   ],
   project_id: "#{project8.id}"
 )
@@ -522,7 +544,7 @@ Step.create(
     To cut your glass you will need a glass scoring tool and some cutting oil. You can find these items for a great price on Amazon, or if you have a Hobby Lobby nearby you can find stained glass supplies there (and use a 40% off coupon).
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490325047/Glass_Feather_step2_jn6pqn.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490325047/Glass_Feather_step2_jn6pqn.jpg"
   ],
   project_id: "#{project8.id}"
 )
@@ -535,7 +557,7 @@ Step.create(
     Place the glass right in the middle of your copper foil and apply it all the way around the piece of glass and then fold the excess foil onto the sides of the glass. You will then want to burnish the foil with a fid.
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490325146/Glass_Feather_step3_pcbk6f.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490325146/Glass_Feather_step3_pcbk6f.jpg"
   ],
   project_id: "#{project8.id}"
 )
@@ -549,7 +571,111 @@ Step.create(
     Attach some twine or chain, hang your feather in a window, and enjoy your beautiful piece of artwork!
   ",
   img_urls: [
-    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490325398/Glass_Feather_step4_fdaeil.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490325398/Glass_Feather_step4_fdaeil.jpg"
   ],
   project_id: "#{project8.id}"
+)
+
+Step.create(
+  title: "Materials",
+  stepNum: "1",
+  body: "
+  cardstock template \n
+  \n
+  scrap papers
+  \n\n
+  box cutter
+  \n\n
+  cardboard
+  \n\n
+  pencil
+  \n\n
+  lampshade ring (optional)
+  \n\n
+  hot glue/glue gun
+  \n\n
+  Xyron sticker maker OR craft glue
+  \n\n
+  binder clips (optional)
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368943/cardboard_overhead_step1_yjh9xq.jpg"
+  ],
+  project_id: "#{project9.id}"
+)
+Step.create(
+  title: "Template",
+  stepNum: "2",
+  body: "
+  Draw a right triangle (30 degree angles with all sides the same length). You could also print the image in this step and cut it out.
+
+  Draw another triangle outside the first. This one doesn't need to be quite so perfect.
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368950/cardboard_overhead_step2_saqxzk.jpg"
+  ],
+  project_id: "#{project9.id}"
+)
+Step.create(
+  title: "Cut",
+  stepNum: "3",
+  body: "
+
+  Cut out the outside triangle.
+
+  Cut the points off at the points of the inside triangle. Trace the template 15 times onto the cardboard and cut them out with a boxcutter.
+  Fold the edges of the template in and trace the triangle onto the center of each piece.
+
+  Gently cut along the lines so that the top layer of cardboard is cut but the bottom layer is left intact.
+
+  Bend at each cut.
+  \n\n
+  I used binder clips to make sure all my pieces lined up well. This step isn't entirely necessary, but it's a great way to try out different shapes.
+  \n\n
+  With a hot glue gun, glue five pieces together into a pentagon and trace the shape onto another piece of cardboard.
+
+  After cutting out the pentagon, cut out the center about 1.5in from the edge.
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368941/cardboard_overhead_step3_jubom4.jpg"
+  ],
+  project_id: "#{project9.id}"
+)
+Step.create(
+  title: "Glue",
+  stepNum: "4",
+  body: "
+  Glue the last 10 pieces together alternating between point up and point down.
+
+  Glue the top onto the sides.
+
+  Glue the rim onto the open side.
+
+  Glue the lampshade ring onto the rim. If the ring doesn't fit your needs or you don't have access to one, you could also cut some cardboard to fit your lamp.
+  \n\n
+  Fold each side of the template in half and make a crease at the edge.
+
+  Draw a line from each crease to make a triangle in the center.
+
+  Trace the top triangle onto another piece of cardstock to make a large triangle.
+
+  Trace and cut a duplicate and trim it down for a smaller triangle.
+
+  Use the large and small triangles as templates to cut pieces of scrap paper into triangles.
+
+  \n\n
+  I ran my triangles through a Xyron sticker maker, but you can also just use some glue to apply them.
+  \n\n
+  Apply your triangles to your lampshade.
+
+  If you didn't use a sticker maker, brush some glue on the back of each piece to apply.
+
+
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368945/cardboard_overhead_step4_qqgj1u.jpg"
+  ],
+  project_id: "#{project9.id}"
 )
