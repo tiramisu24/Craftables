@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all;
-Project.detroy_all;
+Project.destroy_all;
 Step.destroy_all;
 
 user1 = User.create(username: "tiramisu", password: "password", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490214977/bulhybtsjt13ki09hzv4.jpg", bio: "");
@@ -82,16 +82,33 @@ project9 = Project.create(
   img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368947/cardboard_overhead_intro_axmnfx.jpg",
   author_id: "#{user1.id}"
 )
-# project10 = Project.create(
-#   title: "Modular Cardboard Lampshade",
-#   body: "
-#   The light on my living room ceiling fan was too bright and reflecting on my tv, so I decided I needed a lampshade that would direct the light up and block the light from the sides. This cardboard shade was easy, quick, and made entirely from discarded materials.\n
-#
-#   This shade can be scaled up or down depending on how large you cut each piece.
-#   ",
-#   img_url:"",
-#   author_id: "#{user1.id}"
-# )
+project10 = Project.create(
+  title: "Dahlia Paper Flower Wreath",
+  body: "
+  Decorate for Spring with vibrant paper!
+
+My friend and I got together to make Rolled Paper Wreaths
+
+for Spring--you can't plan too early, right?!
+They are so vibrant, they add the perfect POP to the front door!
+
+You could use Bold reds and Greens to make a Poinsettia for Winter too!
+
+",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490371420/flower_intro_drswr3.jpg",
+  author_id: "#{user3.id}"
+)
+project11 = Project.create(
+  title: "How to Sew",
+  body: "
+  This instructable will cover the basics of hand sewing - tools needed, threading the needle, knotting the thread, running stitch, basting stitch, backstitch, slipstitch, blanket stitch, whip stitch and finishing with knots.
+
+Please comment with what you'd like to learn! I know this is not everything that needs to be covered, so I'd like input from everyone to see what you all want me to cover. :D
+
+",
+  img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371960/sew_intro_nsppig.jpg",
+  author_id: "#{user1.id}"
+)
 
 
 Step.create(title: "Step 1: Materials
@@ -671,11 +688,244 @@ Step.create(
 
   If you didn't use a sticker maker, brush some glue on the back of each piece to apply.
 
-
-
   ",
   img_urls: [
     "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368945/cardboard_overhead_step4_qqgj1u.jpg"
   ],
   project_id: "#{project9.id}"
 )
+Step.create(
+  title: "Materials",
+  stepNum: "1",
+  body: "
+  56 pieces of lightweight paper
+  \n
+  15 Sheets of Martian Green
+  \n
+  15 sheets of Terra Green
+  \n
+  11 sheets of Pulsar Pink
+  \n
+  11 sheets of Plasma Pink
+  \n
+  2 sheets of Galaxy Gold (cut in half)
+  \n
+  2 sheets of Solar Yellow (cut in half)
+  \n
+  Cardboard circle for the backing (mine is 18in diameter)
+  You'll also need a hot glue/gun
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371414/flower_step1_twfuad.jpg"
+  ],
+  project_id: "#{project10.id}"
+)
+
+Step.create(
+  title: "Template",
+  stepNum: "2",
+  body: "
+  Start rolling!
+Roll the shorter of the sides and pivot while you roll,
+
+so the bottom left corner is the bottom tip of the cone.
+
+It takes some practice, but after 56 rolls...you'll be pro!
+
+After you roll the cone, hot glue the top corner in place.
+You are going to cut off the bottom tip in a minute,
+
+so make sure you are gluing at the top of the cone.
+
+  \n\n
+  I alternated my greens for variety.
+Cut about 2 inches off the bottom of the cones.
+
+Lay them out on your circle of cardboard so you can see how they fit.
+
+Then glue down on the cardboard.
+
+Mine are about 4 inches into on the cardboard, and slightly overlapped,
+
+but shooting out like rays of the sun.
+  \n\n
+  Then I rolled 22 pinks!
+I again trimmed off about 3 inches and glued them around
+
+the cardboard further in the circle.
+
+Slightly overlapping and alternating colors.
+I used all but 6 of them. The remaining 6 were cut
+
+another inch shorter and placed inside the center.
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371414/flower_step2_tkp6t4.jpg"
+  ],
+  project_id: "#{project10.id}"
+)
+
+Step.create(
+  title: "Yellow Center!",
+  stepNum: "3",
+  body: "
+  Then I cut 2 sheets of each yellow in half.
+
+Rolled them and added them to the center.
+
+It looked good...but like it needed something.
+
+I took 1 sheet of paper and cut it in half.
+then cut slits in it every half inch but didn't cut it all the way through.
+
+Then roll it up--this time just like a tube, glue it in place and curl down the fringes.
+
+And again with another half sheet of the other yellow.
+
+Then I hot glued it right in the center!
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371411/flower_step3_rhz9kw.jpg"
+  ],
+  project_id: "#{project10.id}"
+)
+Step.create(
+  title: "Materials!",
+  stepNum: "1",
+  body: "
+  These things will make you a nice little sewing kit:
+
+Needles - You'll want to look for sharps for basic sewing. Betweens are used for quilting. Embroidery or crewel needles have larger eyes (an eye is the hole at the top of the needle) and are used with thicker threads, like upholstery or embroidery floss.
+\n
+Scissors - You'll want a good pair of shears (normally sold with names like dressmaking shears) and a pair of pinking shears. Pinking shears have small triangular teeth that cut the fabric in a such a way that it lessens unraveling. Smaller embroidery scissors are also good for cutting threads.
+\n
+Pincushion & Pins - You'll pin most everything you sew to keep the fabrics from slipping. A pincushion keeps them neat and tidy.
+Measuring tape - For measuring. ;)
+\n
+Air soluble/water soluble marking pens: perfect for embroidery and using patterns!
+Seam Ripper - This will help you correct mistakes.
+\n
+Beeswax - Sounds odd, I know. But essential for hand sewing. When you run your thread over the beewax, it gives the thread a nice coating that will keep it from tangling and make it stronger.
+\n
+Thimbles - These can be wood, leather or metal. They'll keep your fingers from getting sore and/or pricked.
+Thread or Floss - An all-purpose cotton thread is good for most things. However, there are many threads to choose from. You'll often pick thread based on your project - cotton fabric = cotton thread, silk = silk thread, etc. Floss is much thicker and normally comes in six-string strands. You'll use this for embroidery and finishing.
+\n
+Fabric - Might I recommend going to your local sewing store and buying some remnants to start off with? Remnants are small bits of fabric from the end of a fabric roll. They're quite cheap, I love them!
+\n
+Sewing Needle Booklet - You can either keep the packaging the needles come in or make your own! I made my own! You can get the pattern for it here: https://www.instructables.com/id/how-to-sew-a-needle-book/, or buy one in my etsy store!
+\n
+You may also want to invest in an iron, self-healing cutting mat, rotary cutter, and rulers. But they're not entirely necessary!
+\n
+And now that we have the basics, let's thread a needle!
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371963/sew_step1_lqkxs4.jpg"
+  ],
+  project_id: "#{project11.id}"
+)
+Step.create(
+  title: "Running & Basting Stitches",
+  stepNum: "2",
+  body: "
+  A running stitch is the stitch most people know - the basting stitch is a longer version of a running stitch. A running stitch can be used for most anything - basting stitches are really only used to keep two pieces of fabric together for fitting, applique, or machine sewing when pins would get in the way!
+
+You'll want to start by threading your needle in one of the two ways I've taught you. Knot the thread end(s).
+
+For the running stitch: bring your needle up through the fabric from the back (or wrong side, whichever lingo you prefer) until the knot hits the fabric. At this point, you'll simply make a stitch to the left or right of where the thread came through. Then bring the thread back up and start all over again!
+
+For the basting stitch: simply make longer stitches, between 1/4in and 1/2in in length! These are the pink stitches in the first picture. :D
+
+Pictures will make this easier. Follow along, now!
+
+Keep in mind that running and basting stitches should look the same from both sides.
+Backstitch is my absolute favorite stitch. It's smaller, stronger, and easier to keep straight than a running stitch. It is the closest to machine sewing that you can get by hand.
+
+It's also pretty simple.
+
+So thread your needle and knot the end of the threads.
+
+Bring the needle up through the back or wrong side of the fabric until you hit the knot. Take a small stitch to the right or left. When the needle goes back through the the wrong side, you'll be bringing it up through the fabric one stitch away from the last stitch. You will then push the needle through the fabric right next to the end of the first stitch.
+
+Sound confusing? Take a look at the pictures. It will help!
+
+The first two pictures show multiple ways to backstitch. You can do the stitches right next to one another or space them out. I prefer them right next to each other. :)
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371954/sew_step2_pc1ls9.jpg"
+  ],
+  project_id: "#{project11.id}"
+)
+
+
+Step.create(
+  title: "Slipstitching!",
+  stepNum: "3",
+  body: "
+  Learning to slip stitch is a little complicated, but it's a wonderful stitch to learn to finish your projects. Invisible stitches are the best! Slip stitching is a great way to finish small projects or project that really need to look finished and flawless. :D There are other ways, of course, but this is the main one I use. :) And once you learn to slip stitch you'll want to do it all the time!
+
+There are tons of pictures - I promise it's the best way to learn!
+
+To practice slip stitch you'll want to cut out a small square of fabric. Fold it in half and press. Open, and then fold each side into the center line. Press. Fold down center line. You'll have something that looks just like the piece of fabric I'm using.
+
+Now, thread your needle - I chose double threaded for this one because it makes it more visible! Double threading your needle will make a stronger seam, but choose single threaded if you want the stitches to be almost invisible. I'm also using purple thread, though typically you will use thread to match your fabric so it blends in. :)
+
+Knot it and pull the needle through the top of the fabric by sticking it through the top folded edge. Pull the thread until the knot catches. Now, move the needle to the bottom fold. You will want to stick the needle into the crease horizontally and push it along behind the fabric for about 1/4 inch. Then, pull the needle through and go back up to the top fold. Push the needle horizontally through the top fold and pull through. Continue this until the end.
+
+At the end, make a small stitch in the fold opposite of your last long stitch. Pull the thread until it forms a small loop. Put your needle through the loop twice. Pull on the thread to form a knot. Do this twice for extra staying power. :)
+
+The pictures at the end show what the slip stitch should look like. Pretty tiny, right? Now imagine that with matching thread! Lovely!
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371945/sew_step3_k9l2dx.jpg"
+  ],
+  project_id: "#{project11.id}"
+)
+Step.create(
+  title: "Decorative Stitches!",
+  stepNum: "4",
+  body: "
+  Blanket stitch and whip stitch are used in many projects as visible seam stitches. You'll see them used on plushies, blankets, appliquÃ©, etc.
+
+You can use them to connect two pieces of fabric or on a single piece of fabric as edging.
+
+This stitches are shown on felt. The stitches themselves are black embroidery floss (all six strands.) and they're done using an embroidery needle. As I mentioned before, you thread an embroidery needle the single thread way.
+
+The tricky part, really, is getting the floss through the eye of the needle. I always make sure to cut the end with very sharp scissors and wet the threads. (Yes, I stick the end in my mouth. You should too.) When the ends are wet, you can flatten them between your thumb and forefinger. This will lead to easier threading. :D
+
+But anyway... blanket stitch!
+
+Pull the thread through to the front near the edge of the fabric. Then, place the needle diagonally from where the thread is and go to the back of the fabric. As you're pulling the thread, notice that it wants to form a diagonal stitch. HO, thread! Stop right there. You're about the teach the thread a lesson.
+
+Put your needle through that loop and pull so the stitch becomes a 90 degree angle. It's easier in the pictures. But you'll continue with the diagonal stitching and pulling until you're done.
+
+At the end, take the needle and move it to the right of the last vertical line the thread forms. Bring it up through the fabric and form a loop like we've been doing. Put the needle through the loop a couple times and viola, a knot! Yay!
+
+Whip stitch is much easier. Fold a piece of fabric in half and pin it in place. Now, open the top fold and insert the needle so that it comes out the front side. Once on the front side, that the needle through the back and to the front so that it comes out level to the first stitch. Continue to do this until you come to the end. You can finish this one just like blanket stitch, honestly.
+
+Using the pictures for reference will probably help a lot. And remember that these stitches should look the same on both sides. :)
+
+
+  ",
+  img_urls: [
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490371951/sew_step4_uyhvvw.jpg"
+  ],
+  project_id: "#{project11.id}"
+)
+# Step.create(
+#   title: "Yellow Center!",
+#   stepNum: "3",
+#   body: "
+#   Draw a right triangle (30 degree angles with all sides the same length). You could also print the image in this step and cut it out.
+#
+#   Draw another triangle outside the first. This one doesn't need to be quite so perfect.
+#
+#   ",
+#   img_urls: [
+#     "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490368950/cardboard_overhead_step2_saqxzk.jpg"
+#   ],
+#   project_id: "#{project9.id}"
+# )
