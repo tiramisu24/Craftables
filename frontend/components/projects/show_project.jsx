@@ -45,18 +45,17 @@ class ShowProject extends React.Component{
         let windowTop = $(window).scrollTop();
 
 
-
         let $sidebarTopBar = $('#sidebar-top-bar');
         $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
         $sidebarTopBar.width($('.project-show-header').width());
 
-        if (stopPoint < windowTop) {
-            $sidebar.css({ position: 'absolute', top: diff });
-            $sidebarTopBar.css({ position: 'absolute', top: diff });
-            $("#sidebar-top-bar-wrapper").css('display', 'none')
-            console.log("if");
-
-        } else if ((sidebarTop < windowTop)) {
+        // if (stopPoint < windowTop) {
+        //     $sidebar.css({ position: 'absolute', top: diff });
+        //     $sidebarTopBar.css({ position: 'absolute', top: diff });
+        //     $("#sidebar-top-bar-wrapper").css('display', 'none')
+        //
+        // } else
+        if ((sidebarTop < windowTop)) {
             $sidebar.css({ position: 'fixed', top: 0 });
             $sidebarTopBar.css({ position: 'fixed', top: 0 });
             $("#sidebar-top-bar-wrapper").css('display', 'block')
