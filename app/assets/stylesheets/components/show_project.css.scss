@@ -92,10 +92,17 @@
   padding: 15px 5px;
   color: white;
 }
+.jump-step{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  // background-color: blue;
+}
 #sidebar{
   width: 330px;
   z-index: 30;
 }
+
 #sidebar-top-bar-wrapper{
   display: none;
   width: 600em;
@@ -115,10 +122,7 @@
   z-index: 20;
 }
 
-#replace-top-bar{
-  // height: 65px;
-  // background-color: green;
-}
+
 
 .project-show-bio{
   border: 1px solid grey;
@@ -160,6 +164,12 @@
 .comment-img{
   height: 50px;
   padding-right: 10px;
+}
+// .comment-img a{
+//   width: 100%;
+// }
+.comment-img img{
+  width: 80px !important;
 }
 .comment-info{
   display: flex;

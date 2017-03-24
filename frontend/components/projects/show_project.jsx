@@ -47,20 +47,30 @@ class ShowProject extends React.Component{
         $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
         $sidebarTopBar.width($('.project-show-header').width());
 
-        if (stopPoint < windowTop) {
-            $sidebar.css({ position: 'absolute', top: diff });
-            $sidebarTopBar.css({ position: 'absolute', top: diff });
-            $("#sidebar-top-bar-wrapper").css('display', 'none')
-
-        } else if (sidebarTop < windowTop+stickOffset) {
-            $sidebar.css({ position: 'fixed', top: stickOffset });
-            $sidebarTopBar.css({ position: 'fixed', top: stickOffset });
+        // if (stopPoint < windowTop) {
+        //     $sidebar.css({ position: 'absolute', top: diff });
+        //     $sidebarTopBar.css({ position: 'absolute', top: diff });
+        //     $("#sidebar-top-bar-wrapper").css('display', 'none')
+        //     console.log("if");
+        //
+        // } else
+        if ((sidebarTop < windowTop)) {
+            $sidebar.css({ position: 'fixed', top: 0 });
+            $sidebarTopBar.css({ position: 'fixed', top: 0 });
             $("#sidebar-top-bar-wrapper").css('display', 'block')
+            // console.log("sidebarTop");
+            // console.log(sidebarTop);
+            // console.log("windowTop");
+            // console.log(windowTop);
+            // console.log("else if");
+            // console.log(sidebarTop < windowTop);
 
         } else {
             $sidebar.css({position: 'absolute', top: 'initial'});
             $sidebarTopBar.css({position: 'absolute',top: 'initial'});
             $("#sidebar-top-bar-wrapper").css('display', 'none')
+            // console.log("got here");
+            // console.log("else case");
 
         }
       });
@@ -104,6 +114,12 @@ class ShowProject extends React.Component{
     }
     return imgs
   }
+  stepNumLinks(project){
+    let stepNums =  project.steps.map(step => (
+      <HashLink to={`#stepNum-${step.stepNum}`}                 key={`.stepNum-key-${step.stepNum}`}>Step {step.stepNum}</HashLink>
+    ))
+    return <div className="jump-step">{stepNums}</div>
+  }
 
   render(){
 
@@ -117,7 +133,9 @@ class ShowProject extends React.Component{
     let project = projectList[projectId];
     if(!project.steps) return <div></div>;
     let steps = project.steps.map(step => (
-      <div className="single-step" key={step.id}>
+      <div className={`single-step`}
+           id={`stepNum-${step.stepNum}`}
+           key={step.id}>
         <h5>{step.title}</h5>
         <div className="show-step-photo-section">
           {this.stepImg(step)}
@@ -125,7 +143,6 @@ class ShowProject extends React.Component{
         <p>{step.body}</p>
       </div>
     ))
-    console.log(project);
     return (
       <div>
       <Jumbotron id="project-show-main-picture">
@@ -210,12 +227,17 @@ class ShowProject extends React.Component{
                     <div>{project.author.bio}</div>
                   </div>
                 </div>
+                <div>
+                  Jump to:
+
+                  {this.stepNumLinks(project)}
+
+                </div>
 
               </Col>
 
           </Col>
         </Row>
-        <Footer/>
       </Grid>
         </div>
       )

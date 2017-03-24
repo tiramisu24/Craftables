@@ -10,6 +10,7 @@ import UpdateProjectContainer from './projects/update_project_container';
 import SearchResultContainer from './search/search_result_container';
 import Header from './header/header'
 import ProfilePageContainer from './profile_page/profile_page_container'
+import Footer from './footer'
 
 
 const Root = ({store}) => (
@@ -23,6 +24,8 @@ const Root = ({store}) => (
         <Route path ='/edit_project/:id' component={UpdateProjectContainer}/>
         <Route path ='/search_results' component={SearchResultContainer}/>
         <Route path ='/profile_page/:id' component={ProfilePageContainer}/>
+        <Route path ='/' component={Footer}/>
+
       </App>
     </HashRouter>
   </Provider>

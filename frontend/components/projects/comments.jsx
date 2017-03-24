@@ -1,5 +1,6 @@
 import React from 'react';
-import {Grid, Row, Col, Jumbotron} from 'react-bootstrap'
+import {Grid, Row, Col, Jumbotron} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 
 class Comments extends React.Component{
@@ -45,22 +46,55 @@ class Comments extends React.Component{
     this.setState({commentDes: event.target.value});
   }
 
-  render(){
-    if(Object.keys(this.state.comments) === 0) return <div></div>;
-    let comments = Object.keys(this.state.comments).map(key => (
-      <Row className="each-comment" key={key}>
+  userProfilePicture(comment){
+    let user = comment.author;
+    let userInfo = undefined;
+    if(user && user.img_url){
+      userInfo = (
         <Col className="comment-user-info">
-          <Col sm={6} className="comment-img">User profile picture</Col>
+          <Col sm={6} className="comment-img">
+            <Link to={`/profile_page/${user.id}`}
+              className="profile-pic-extra-small">
+              <img src={user.img_url}/>
+            </Link >
+
+          </Col>
           <Col sm={6} className="comment-info">
-              <div>{this.state.comments[key].author.username}</div>
-              <div>{this.state.comments[key].created_at.slice(0,10)}
+              <div>{user.username}</div>
+              <div>{comment.created_at.slice(0,10)}
             </div>
           </Col>
         </Col>
+      )
+    }
+    else{
+      userInfo = (
+        <Col className="comment-user-info">
+          <Col sm={6} className="comment-img">
 
-        <Col sm={12}>
-          {this.state.comments[key].description}
+            <img src="http://res.cloudinary.com/dezhy95vj/image/upload/c_scale,w_360/v1490381081/default_user_profile_a0uir4.jpg"></img>
+          </Col>
+          <Col sm={6} className="comment-info">
+              <div>Annoynomus</div>
+              <div>{comment.created_at.slice(0,10)}
+            </div>
+          </Col>
         </Col>
+      )
+    }
+    return userInfo;
+  }
+
+  render(){
+    if(Object.keys(this.state.comments) === 0) return<div></div>;
+    let comments = Object.keys(this.state.comments).map(key => (
+      <Row className="each-comment" key={key}>
+        {this.userProfilePicture(this.state.comments[key])}
+        <Row>
+          <Col>
+            {this.state.comments[key].description}
+          </Col>
+        </Row>
       </Row>
     ));
     return <div>

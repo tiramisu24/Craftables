@@ -48,6 +48,10 @@
   margin-left: 10em;
   color: white !important;
 }
+.logo:hover{
+  text-shadow: 1px 1px 1px white;
+
+}
 
 logo h1 {
   display: table-cell;;
@@ -59,5 +63,18 @@ logo h1 {
 }
 
 .footer{
-  height: 20vh;
+  margin-top: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  background-color: rgba(2, 2, 2, 0.9);
+
+}
+.footer a{
+  margin: 0px 8em;
+  color: white;
+  font-size: 24px;
+  // background-color: rgba(2, 2, 2, 0.2);
+
 }

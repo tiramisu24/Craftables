@@ -26,7 +26,6 @@ class SearchResult extends React.Component{
       </div>
     }else{
       return <div>
-
         <Link to="new_project">New Project</Link>
       </div>
     }
@@ -38,9 +37,11 @@ class SearchResult extends React.Component{
     if(Object.keys(projects).length === 0) {
       return <div>
           <div className="placeholder"></div>
-          <div>No Results with your query :(</div>
-          <div>Why don't you create a new project?</div>
-          {this.createProjectButton()}
+          <div className="no-result-page">
+            <div>No Results with your query :(</div>
+            <div>Why don't you create a new project?</div>
+            {this.createProjectButton()}
+          </div>
       </div>;
     }
     else{

@@ -9,6 +9,23 @@
   margin: 5vh 5em;
 
 }
+.no-result-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.no-result-page > div{
+  margin-top:2vh;
+}
+
+
+.no-result-page a{
+  background-color: grey;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
 .card-project {
   display: flex;
   flex-direction: column;
@@ -26,7 +43,7 @@
   background-color: wheat;
 
 }
-i
+
 // .card-img-card img{
 //   // height: 185px !important;
 //   // width: 100%;
