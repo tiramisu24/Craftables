@@ -253,7 +253,7 @@ class CreateProject extends React.Component{
             <input type="submit"  value="Publish"></input>
           </div>
         </form>
-
+        <div className="create-placeholder"></div>
       </Grid>
     )
   }

@@ -4,6 +4,8 @@ import {withRouter} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import {Redirect} from 'react-router-dom';
 import merge from 'lodash/merge';
+import {Grid, Row, Col} from 'react-bootstrap'
+
 // import AddStepForm from './add_step_form';
 
 
@@ -13,7 +15,8 @@ class UpdateProject extends React.Component{
 
     this.state = {
       projectId : this.props.projectId,
-      project: this.props.projectsHash
+      project: this.props.projectsHash,
+      img_urls: {}
     }
 
     this.showErrors = this.showErrors.bind(this);
@@ -72,10 +75,33 @@ class UpdateProject extends React.Component{
       step["project_id"] = this.props.projectId;
       this.props.updateStep(step);
     })
-    debugger;
     let path = `/project/${this.props.projectId}`;
     this.redirect(path);
 
+  }
+  handleCloudinary(stepNumPic) {
+    return (e) => {
+      e.preventDefault();
+      cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
+        if(error){
+          console.log(error);
+        }else{
+
+          let img_urls = null
+
+          if(stepNumPic === 0){
+            img_urls = results[0].secure_url;
+          }else {
+            img_urls = results.map(result => (
+              result.secure_url
+            ))
+          }
+          let hash = merge(this.state.img_urls, {[stepNumPic]: img_urls });
+
+          this.setState({img_urls: hash})
+        }
+      })
+    }
   }
 
   showErrors(){
@@ -112,32 +138,41 @@ class UpdateProject extends React.Component{
     let project = this.state.project;
     if (project.author && (localStorage.user == project.author.username)){
       return(
-        <div className="create-project-div">
+        <Grid className="create-project-div">
+          <div className="create-placeholder"></div>
+
           <ul>{this.showErrors}</ul>
           <form className="create-project-form" onSubmit={this.handleSubmit}>
-            <div className="create-project-form-inputs">
-              <div className="create-project-form-text-inputs">
-                <label>
+            <Row className="create-project-section">
+              <Col md={6} sm={12}>
+                <Row className="create-project-title">
                   <input type="text"
                          onChange={this.update("title")}
                          placeholder="Title"
                          value={project.title}></input>
-                </label>
-
-                <label>
+                </Row>
+                <Row className="create-project-des">
                   <textarea onChange={this.update("body")}
                             value={project.body}></textarea>
-                </label>
-              </div>
-              <div className>Future Image Upload</div>
-            </div>
+                </Row>
+              </Col>
+
+              <Col md={6} sm={12} className="photo-section">
+                <div className="create-project-img-wrapper">
+                  <img src={this.state.img_urls[0]} className="create-project-img"/>
+                </div>
+                <div><button className="add-photo" onClick={this.handleCloudinary(0).bind(this)}> <i className="fa fa-camera" aria-hidden="true"></i></button></div>
+              </Col>
+
+            </Row>
+            {this.showSteps(project.steps)}
             <div className="submit-button-create-project">
               <input type="submit"  value="Publish"></input>
             </div>
-            {this.showSteps(project.steps)}
           </form>
+          <div className="create-placeholder"></div>
 
-        </div>
+        </Grid>
       )
 
     }else {
