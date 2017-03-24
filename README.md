@@ -5,7 +5,7 @@
 ###Create Projects
 Users can post step-by-step projects with detailed instructions and images or videos. Inspired by Medium's minimalist style, the forms for creating and editing projects are created from simple html form elements. The blank page creates less distraction for the users, allowing them to better channel their artistic spirits.
 
-![image of create page](wireframes/new_project.png)
+![image of create page](docs/wireframes/new_project.png)
 
 
 In the backend, Project and Steps are separate tables. Projects and Steps are stored separately so that that the author can edit each individual steps. The User table keeps references to Projects and Comments. Validations ensure a user is only able to edit/delete their own projects. The Project table keeps reference of the steps.
@@ -19,7 +19,7 @@ When a project is created or updated, an AJAX request saves the project to the R
 ###Showcase Project
 Users can navigate to the project show page by clicking on the project image in the homepage, search or user profile. Upon entering the page, an API request is sent to fetch the author information, steps, and comments associated with the project. Sticky top and side bars allows users to navigate between steps. Comments are rendered at the bottom of the page along with a form to create a new comment. Clicking the user profile picture will direct to the user profile page. An anonymous is given a default picture. When a new comment is created, and API request will save the comment to the database. The store updates to hold the current list of comments. Newly created comments will render to the bottom of the show page.
 
-![image of create page](wireframes/show_page.png)
+![image of create page](docs/wireframes/show_page.png)
 
 ## Future Implementations
 
