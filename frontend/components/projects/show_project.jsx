@@ -150,7 +150,7 @@ class ShowProject extends React.Component{
                   <h4 className="project-show-author">By: {project.author.username}</h4>
                 </Col>
                 <Col sm={2}>
-                  <Link to={`profile_page/${project.author.id}`} className="profile-pic-small">
+                  <Link to={`/profile_page/${project.author.id}`} className="profile-pic-small">
                     <img src={project.author.img_url}/>
                   </Link >
                 </Col>
@@ -200,7 +200,7 @@ class ShowProject extends React.Component{
                   </Col>
                 </Row>
                 <div className="project-show-content-divider project-show-content-author">
-                  <Link to={`profile_page/${project.author.id}`} className="profile-pic-extra-small">
+                  <Link to={`/profile_page/${project.author.id}`} className="profile-pic-extra-small">
                     <img src={project.author.img_url}/>
                   </Link >
                   <div className="project-show-sidebar-author-info">
@@ -211,9 +211,6 @@ class ShowProject extends React.Component{
                   </div>
                 </div>
 
-                <div>
-                  <div>Future Favorite Button</div>
-                </div>
               </Col>
 
           </Col>

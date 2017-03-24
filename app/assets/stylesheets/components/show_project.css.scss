@@ -103,15 +103,16 @@
   position:relative;
   padding-right: 200em;
   margin-left: -100em;
-  z-index: 1;
-  border-bottom: 1px solid black;
+  z-index: -11;
+  border-bottom: 1px solid grey;
+  // background-color: grey;
 }
 #sidebar-top-bar{
   height: 62px;
   // width: 100vw;
 
   background-color: white;
-  z-index: 2;
+  z-index: 20;
 }
 
 #replace-top-bar{

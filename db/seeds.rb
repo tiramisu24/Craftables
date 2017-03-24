@@ -332,8 +332,7 @@ Step.create(
   ",
   img_urls: [
     "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4a_jzocb0.jpg",
-    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4b_h4ptyo.jpg",
-    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4c_qt9jce.jpg"
+    "http://res.cloudinary.com/dezhy95vj/image/upload/q_100/v1490318947/Easter_Egg_step4b_h4ptyo.jpg"
   ],
   project_id: "#{project4.id}"
 )

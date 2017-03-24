@@ -10,13 +10,13 @@ class SearchResult extends React.Component{
   constructor(props){
     super(props);
     localStorage.setItem("searching", "false");
-    this.state = {projectList :this.props.projectsHash};
+    // this.state = {projectList :this.props.projectsHash};
 
   }
 
   componentWillReceiveProps(nextProps){
-    let projectList = nextProps.projectsHash;
-    this.setState({projectList})
+    // let projectList = nextProps.projectsHash;
+    // this.setState({projectList})
 
   }
   createProjectButton(){
@@ -33,30 +33,22 @@ class SearchResult extends React.Component{
   }
 
   render(){
-    let projects = this.state.projectList;
+    let projects = this.props.projectsHash;
+    console.log(projects);
     if(Object.keys(projects).length === 0) {
       return <div>
-        <div className="move-it-down">
-          <FeaturedProjectsContainer/>
-        </div>
-        <Jumbotron>
           <div className="placeholder"></div>
-          <div>No Results with your Query :(</div>
+          <div>No Results with your query :(</div>
           <div>Why don't you create a new project?</div>
           {this.createProjectButton()}
-          <div> can also check out these projects!</div>
-        </Jumbotron>
-
-
-
-
       </div>;
     }
-
-    return<div>
-      <div className="placeholder"></div>
-      <ProjectList projects={projects}/>
-    </div>
+    else{
+      return<div>
+        <div className="placeholder"></div>
+        <ProjectList projects={projects}/>
+      </div>
+    }
 
 
   }
