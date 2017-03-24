@@ -1,9 +1,10 @@
 #project-show-main-picture{
   // position: absolute;
   padding-top: 0px;
+  padding-bottom: 0px;
   margin-bottom: 0px;
   border-radius: 0px;
-  height: 70vh;
+  // height: 70vh;
   width: 100%;
 }
 
@@ -93,7 +94,7 @@
 }
 #sidebar{
   width: 330px;
-  z-index: 3;
+  z-index: 30;
 }
 #sidebar-top-bar-wrapper{
   display: none;
@@ -174,10 +175,10 @@
 }
 
 .profile-pic-small{
-  padding: 40px 0px;
   width: 100px;
 }
 .profile-pic-small > img{
+  padding: 30px 0px;
   width:100%;
 }
 .profile-pic-extra-small > img{
