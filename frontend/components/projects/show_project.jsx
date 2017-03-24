@@ -39,25 +39,29 @@ class ShowProject extends React.Component{
       let sidebarTop = $sidebar.offset().top;
       let stickOffset = 0;
       $(window).scroll(function(){ // scroll event
-        $sidebar.css('background-color': 'grey');
         let sidebarStopperPosition = $sidebarStopper.offset().top;
         let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
         let diff = stopPoint + stickOffset;
         let windowTop = $(window).scrollTop();
         let $sidebarTopBar = $('#sidebar-top-bar');
         $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
-
-          // $sidebarTopBar.widt
+        $sidebarTopBar.width($('.project-show-header').width());
 
         if (stopPoint < windowTop) {
             $sidebar.css({ position: 'absolute', top: diff });
             $sidebarTopBar.css({ position: 'absolute', top: diff });
+            $("#sidebar-top-bar-wrapper").css('display', 'none')
+
         } else if (sidebarTop < windowTop+stickOffset) {
             $sidebar.css({ position: 'fixed', top: stickOffset });
             $sidebarTopBar.css({ position: 'fixed', top: stickOffset });
+            $("#sidebar-top-bar-wrapper").css('display', 'block')
+
         } else {
             $sidebar.css({position: 'absolute', top: 'initial'});
             $sidebarTopBar.css({position: 'absolute',top: 'initial'});
+            $("#sidebar-top-bar-wrapper").css('display', 'none')
+
         }
       });
 
@@ -101,16 +105,6 @@ class ShowProject extends React.Component{
     return imgs
   }
 
-  moveBody(){
-    const $main_img = $('#project-show-main-picture');
-    const $header_nav = $('#project-show-nav');
-    const $header_title = $('#project-show-header');
-    // let totalHeight = $main_img.innerHeight() - $header_nav.innerHeight() - $header_title.innerHeight();
-    let totalHeight = $main_img.innerHeight() -300;
-    // $('project-show-body').css({height: totalHeight});
-    // console.log($('project-show-body').innerHeight());
-    return totalHeight;
-  }
   render(){
 
     let projectList = this.state.projectsHash;
@@ -140,11 +134,13 @@ class ShowProject extends React.Component{
       <Grid className="project-show-main">
         <Row className="main-body">
           <Col md={8} sm={12}>
-            <Row className="project-show-nav" id="sidebar-top-bar">
-              <HashLink to="#show-page-instructions">Instructions</HashLink>
-              <HashLink to="#show-page-author-bio">Author</HashLink>
-              <HashLink to="#show-page-comments">Comments</HashLink>
-            </Row>
+              <Row className="project-show-nav" id="sidebar-top-bar">
+                <HashLink to="#show-page-instructions">Instructions</HashLink>
+                <HashLink to="#show-page-author-bio">Author</HashLink>
+                <HashLink to="#show-page-comments">Comments</HashLink>
+                <div id="sidebar-top-bar-wrapper">
+                </div>
+              </Row>
             <Row id="replace-top-bar">
               <Col></Col>
             </Row>
@@ -153,7 +149,11 @@ class ShowProject extends React.Component{
                   <h1 className="project-show-title">{project.title}</h1>
                   <h4 className="project-show-author">By: {project.author.username}</h4>
                 </Col>
-                <Col sm={2}>User Img</Col>
+                <Col sm={2}>
+                  <Link to={`profile_page/${project.author.id}`} className="profile-pic-small">
+                    <img src={project.author.img_url}/>
+                  </Link >
+                </Col>
             </Row>
             <Row className="project-show-body">
                 <div className="project-show-intro">
@@ -170,8 +170,11 @@ class ShowProject extends React.Component{
                 </div>
                 <div className="delete-button">{this.deleteButton(project.author.username)}</div>
                 <Row id="show-page-author-bio">
-                      <h3>Add Author Bio</h3>
-                      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <div>
+                      <h3>About this Author</h3>
+                      <div>{project.author.bio}</div>
+                    </div>
+                    <div>{project.author.bio}</div>
                 </Row>
                 <Row>
                   <Col md={12} className="project-show-comments" id="sidebar-stopper">
@@ -197,8 +200,15 @@ class ShowProject extends React.Component{
                   </Col>
                 </Row>
                 <div className="project-show-content-divider project-show-content-author">
-                  <div> Author pic</div>
-                  <div>{project.author.username}</div>
+                  <Link to={`profile_page/${project.author.id}`} className="profile-pic-extra-small">
+                    <img src={project.author.img_url}/>
+                  </Link >
+                  <div className="project-show-sidebar-author-info">
+                    <h2>
+                      {project.author.username}
+                    </h2>
+                    <div>{project.author.bio}</div>
+                  </div>
                 </div>
 
                 <div>
@@ -209,10 +219,8 @@ class ShowProject extends React.Component{
           </Col>
         </Row>
         <Footer/>
-
       </Grid>
         </div>
-
       )
   }
 }

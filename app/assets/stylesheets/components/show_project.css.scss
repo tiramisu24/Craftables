@@ -93,13 +93,24 @@
 }
 #sidebar{
   width: 330px;
-  z-index: 2;
+  z-index: 3;
+}
+#sidebar-top-bar-wrapper{
+  display: none;
+  width: 600em;
+  height: 62px;
+  position:relative;
+  padding-right: 200em;
+  margin-left: -100em;
+  z-index: 1;
+  border-bottom: 1px solid black;
 }
 #sidebar-top-bar{
+  height: 62px;
+  // width: 100vw;
+
   background-color: white;
-  width: 100vw;
-  // background-color: grey;
-  z-index: 1;
+  z-index: 2;
 }
 
 #replace-top-bar{
@@ -161,6 +172,36 @@
 .show_img_url{
   width:100%;
 }
+
+.profile-pic-small{
+  padding: 40px 0px;
+  width: 100px;
+}
+.profile-pic-small > img{
+  width:100%;
+}
+.profile-pic-extra-small > img{
+  width:100%;
+}
+.profile-pic-extra-small{
+  padding: 10px 0px;
+  width: 100px;
+}
+.profile-pic-extra-bottom{
+  padding: 10px 0px;
+  width: 100px;
+}
+.profile-pic-extra-bottom > img{
+  width:100px;
+}
+.project-show-content-author{
+  display: flex;
+  align-items: center;
+}
+.project-show-sidebar-author-info{
+  margin-left: 10px;
+}
+
 .effect1{
     -webkit-box-shadow: 0 10px 6px -6px #777;
        -moz-box-shadow: 0 10px 6px -6px #777;
@@ -168,10 +209,10 @@
 }
 
 
-.effect2
-{
+.effect2{
   position: relative;
 }
+
 .effect2:before, .effect2:after
 {
   z-index: -1;
