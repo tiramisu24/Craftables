@@ -38,8 +38,7 @@ class CreateProject extends React.Component{
       },
       steps :{},
       addNumStep : [],
-      img_urls: {0: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490216839/ci96tpehqzmry74hroil.jpg",
-                  1: ["http://res.cloudinary.com/dezhy95vj/image/upload/v1490216839/ci96tpehqzmry74hroil.jpg"]},
+      img_urls: {},
       addFunctionButtons: false
     }
 
@@ -165,7 +164,8 @@ class CreateProject extends React.Component{
             <Col md={6} sm={12}>
               <div className="create-project-img-wrapper">{this.showUploadedImage(this.state.img_urls[idx+1])}</div>
               <div>
-              <button className="add-photo" onClick={this.handleCloudinary(idx+1).bind(this)}> Add Photo!</button></div>
+              <button className="add-photo" onClick={this.handleCloudinary(idx+1).bind(this)}> <i className="fa fa-camera" aria-hidden="true"></i>
+              </button></div>
             </Col>
 
 
@@ -189,13 +189,18 @@ class CreateProject extends React.Component{
     this.setState({addFunctionButtons:newbol})
   }
   addFunctionButtons(){
-    if(this.state.addFunctionButtons){
+    // if(this.state.addFunctionButtons){
 
-      return   <span>
-        <button onClick={this.handleCloudinary(this.state.addNumStep.length).bind(this)}>Add Photo!</button>
-        <button onClick={this.clickAddStep} className="add-step-button">Add Step</button>
+      return <span className="new-project-nav-buttons">
+        <button onClick={this.handleCloudinary(this.state.addNumStep.length).bind(this)}>
+          <i className="fa fa-camera" aria-hidden="true"></i>
+        </button>
+
+        <button onClick={this.clickAddStep} className="add-step-button">
+          <i className="fa fa-plus" aria-hidden="true"></i>
+        </button>
       </span>
-    }
+    // }
   }
 
   clickAddStep(event){
@@ -214,6 +219,7 @@ class CreateProject extends React.Component{
         <ShowErrors errors={this.props.errors}/>
 
         <form className="create-project-form" onSubmit={this.handleSubmit}>
+
           <Row className="create-project-section">
             <Col md={6} sm={12}>
               <Row className="create-project-title">
@@ -229,20 +235,21 @@ class CreateProject extends React.Component{
                 <div className="create-project-img-wrapper">
                   <img src={this.state.img_urls[0]} className="create-project-img"/>
                 </div>
-                <div><button className="add-photo" onClick={this.handleCloudinary(0).bind(this)}> Add Photo!</button></div>
+                <div><button className="add-photo" onClick={this.handleCloudinary(0).bind(this)}> <i className="fa fa-camera" aria-hidden="true"></i></button></div>
               </Col>
 
             </Row>
             {this.addStep()}
             <Row className="create-project-nav-buttons">
 
-              <button onClick={this.changeAddFunctionButtons}>Click Me!</button>
+              <div className="double-arrow-icon">
+                  <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+              </div>
               {this.addFunctionButtons()}
 
             </Row>
 
           <div className="submit-button-create-project">
-
             <input type="submit"  value="Publish"></input>
           </div>
         </form>

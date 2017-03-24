@@ -12,6 +12,6 @@ const mapDispatchToProps = (dispatch) => ({
   showProjects: () => dispatch(showProjects())
 })
 
-const showFeaturedProjects = connect(mapStateToProps, mapDispatchToProps)(FeaturedProjects);
+const FeaturedProjectsContainer = connect(mapStateToProps, mapDispatchToProps)(FeaturedProjects);
 
-export default showFeaturedProjects;
+export default FeaturedProjectsContainer;

@@ -13,16 +13,23 @@
   // opacity: .1;
 }
 
+
 .header .search-bar{
   font-size: 20px;
   // background-color: pink;
-  width: 400px;
+  width: auto;
+  display: flex;
 }
+#front-page-search{
+  color: white;
+}
+
 .header .search-bar div{
   padding-right: 10px;
   // background-color: wheat;
 }
 .header .search-bar form{
+  color: grey;
   padding-left: 10px;
   // background-color: blue;
 }

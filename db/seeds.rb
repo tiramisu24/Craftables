@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 user1 = User.create(username: "tiramisu", password: "password", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490214977/bulhybtsjt13ki09hzv4.jpg", bio: "");
 user2 = User.create(username: "calamari", password: "password", img_url: "http://res.cloudinary.com/dezhy95vj/image/upload/v1490216839/ci96tpehqzmry74hroil.jpg", bio: "");
+user3 = User.create(username: "flower", password: "password", img_url: "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490120414/sample.jpg", bio: "");
 
 
 project1 = Project.create(title: "Up House", body: "This project of mine was mainly inspired by all the scrap in my room :P And we do recycle a lot, from my cereal boxes to the amazon boxes. But if you take a closer look or think deeper, think bigger every item that you throw/recycle has some value or the other. We just have to learn to make best use of it and be creative. I'm really happy with this Instructable cause one I didn't spend a single penny and two because it's just one happy and colorful house. Plus making something that moves/works is an art by itself.
@@ -21,6 +22,51 @@ It will incorporate basic wire weaving techniques, but you don't have to have je
 project3 = Project.create(title: "Letter Opener Made From Junk Mail", body: "Like everyone else I get a lot of junk mail and it usually ends up in the recycling bin. But I had an idea to see if I could make something with it instead of just throwing it in the bin. So I came up with this, I made a letter opener from the junk mail using fiberglass resin to make it stiff. It is basically the same as making Micarta from fabric but instead I used the paper from my junk mail. The process is fairly straight forward and the end product ended up working quite well. I don't know how long the edge will last but I only plan to use this for opening letters so I'm not too concerned with it becoming dull. And if it does become dull I can always touch up the edge.
 
 ", img_url:"http://res.cloudinary.com/dezhy95vj/image/upload/v1490120830/Craftables/letter_opener/Letter_opener_intro.jpg" ,author_id: "#{user2.id}")
+
+project4 = Project.create(
+  title: "How to 'Dye' Easter Eggs With Silk Ties",
+  body: "I’ve been on kind of an Easter Egg decorating kick lately. There are just so many fun ways to dye and decorate Easter Eggs! When I grew up, it was either the little dye tablets or natural dyeing with onion skins. That’s all we ever did. Well, now the sky’s the limit. You can paint them, decoupage, wrap and crackle them. Turns out you can also print on them with silk ties. I knew you could print on a silk scarf with a silk tie – see that tutorial here – but I didn’t know you could dye Easter Eggs with silk ties.",
+  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490315886/Easter_Egg_intro_wspf3a.jpg",
+  author_id: "#{user3.id}"
+)
+
+project5 = Project.create(
+  title: "Steampunk Heart Necklace",
+  body: "Today I'm going to teach you how to make a steampunk necklace with a heart shape:",
+  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490319638/Heart_Necklace_intro_ogeqqr.jpg",
+  author_id: "#{user2.id}"
+)
+
+project6 = Project.create(
+  title: "Simple Kolam Design",
+  body: "
+    What is a Kolam? \n
+    The word ‘Kolam’ is used in the Tamil language to denote geometric patterns created based on dots (“pulli”) and ornate lines (“kodu”). There is a clear linkage between kolam and various branches of mathematics such as abstract algebra, sequences and fractals. \n
+    Every morning, millions of households across many states in India have one common ritual cutting across class and social divide. It is the tradition of decorating the entrance to the home with exquisite Kolam designs. \n
+    The Kolam patterns are drawn by hand using powdered rice. Sometimes, colored dyes are used to further decorate the kolams. The purpose of drawing Kolam designs is to enhance the aesthetics of the home and also provide food for birds and insects. \n
+    We put together a simple tutorial for drawing a basic Kolam pattern.
+  ",
+  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322148/Kolam_intro_uyblq6.jpg",
+  author_id: "#{user2.id}"
+)
+
+project7 = Project.create(
+  title: "Wire Wrapped Bracelet",
+  body: "
+    This is a beginner’s project, it will show you how to make a very chic wire wrapped bracelet, if you want make some easy bracelets, take a look at this one!
+  ",
+  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323838/Wire_Bracelet_intro_uljjim.jpg",
+  author_id: "#{user2.id}"
+)
+
+project8 = Project.create(
+  title: "Stained Glass Feather",
+  body: "
+    This project combines two of my favorite things, glass and crystals. I got this gorgeous geode from one of my favorite shops (The Purple Moon in Lava Idaho) and knew I needed to do something special with it. This project worked up really quickly and was so fun to make.
+  ",
+  img_url:"https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324817/Glass_Feather_intro_ilvneu.jpg",
+  author_id: "#{user1.id}"
+)
 
 
 Step.create(title: "Step 1: Materials
@@ -185,3 +231,325 @@ Step.create(title: "Step10:", body: "After the rough shape was cut out I used my
 
 Step.create(title: "Credits", stepNum: "11",
 body: "This project is a modified version from the instrucable by danthemakerman", project_id: "#{project3.id}")
+
+Step.create(
+  title: "Supplies Needed",
+  stepNum: "1",
+  body: "
+  - Raw Eggs \n
+  – 100% Silk Ties (thrift store – check the label to make sure they’re 100% Silk) \n
+  – Scrap Fabric s.a. old sheet or pillow case \n
+  – Scissors \n
+  – Thread \n
+  – Old Pot or Pan*** \n
+  – White Vinegar \n
+  - Water \n
+  *** Since I don’t know what kind of dye was used on the silk ties, I boiled my
+  eggs in an old pot. You can pick one up at the thrift store for a couple bucks.
+  Better safe than sorry!
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490316700/Easter_Egg_step1a_d3vsb7.jpg",
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490316700/Easter_Egg_step1b_hyqfda.jpg"
+  ],
+  project_id: "#{project4.id}"
+)
+
+Step.create(
+  title: "Wrap the Eggs",
+  stepNum: "2",
+  body: "
+  Cut the ties and the fabric into squares, large enough to wrap the eggs completely. Place an egg in a square of silk and using the thread, tightly tie off the excess at one end. You want good contact between the egg and the silk. \n
+  Next, wrap the same egg again with a square of your old bedsheet. Tie off as before. Repeat with all of your eggs.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490317590/Easter_Egg_step2a_w81ctm.jpg",
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490317590/Easter_Egg_step2b_xgbdqz.jpg",
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490317590/Easter_Egg_step2c_xeqhhb.jpg"
+  ],
+  project_id: "#{project4.id}"
+)
+
+Step.create(
+  title: "Set the Dye",
+  stepNum: "3",
+  body: "
+    Partially fill your pot with water and add about 1/4 cup vinegar. Put the wrapped eggs in the water making sure they’re covered with water. Bring the water to an easy boil and simmer for about 20 minutes. Remove from heat and let the eggs cool completely. This is the hard part!
+  ",
+  project_id: "#{project4.id}"
+)
+
+Step.create(
+  title: "Unwrap the Eggs",
+  stepNum: "4",
+  body: "
+    Now comes the fun part! Unwrapping your little treasures. \n
+    Aren’t they beautiful? Two of my dyed easter eggs were much paler than the others. Upon inspection, I noticed that those silk ties had a label that reads “Stain Resistant”. This means they’ve been treated with something to keep them clean. It also means the dye won’t be released like on a non-treated tie. Those eggs are still lovely, tho. \n
+    By the way, to make your Easter Eggs shiny, rub them with bacon fat. Oh, and I honestly am not sure if they’re still safe to eat. Err on the side of caution. \n
+    ENJOY!
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490318947/Easter_Egg_step4a_jzocb0.jpg",
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490318947/Easter_Egg_step4b_h4ptyo.jpg",
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490318947/Easter_Egg_step4c_qt9jce.jpg"
+  ],
+  project_id: "#{project4.id}"
+)
+
+Step.create(
+  title: "Cut the Sheets on Wood",
+  stepNum: "1",
+  body: "
+    To begin cut the previously drawn templates in a not very thick wood, for this use a bank saw.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320310/Heart_Necklace_step1_udecwv.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "The Aluminum Can",
+  stepNum: "2",
+  body: "
+    Then I removed the paint from a can, and used a small saw to open the can.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320572/Heart_Necklace_step2_xaiulc.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "Cut the Sheets",
+  stepNum: "3",
+  body: "
+    Now with a sharpie marker draw the template on the sheet and cut it with scissors.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320951/Heart_Necklace_step3_zvqy6p.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "Lateral Sheets and Assembly",
+  stepNum: "4",
+  body: "
+    Having all the pieces of aluminum and wood cut and polished, I proceeded to assemble the sides.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490320892/Heart_Necklace_step4_msgirk.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "The Gears",
+  stepNum: "5",
+  body: "
+    With a few small gears try to get an old finish by polishing them just a little. \n
+    Having done this I proceeded to put them in place, and nailed the covers in place.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490321162/Heart_Necklace_step5_yzewgf.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "The Nails",
+  stepNum: "6",
+  body: "
+    With small steel nails, very carefully hammer the insoles in place to finish the job.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490321358/Heart_Necklace_step6_o5kh4j.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "Finish!",
+  stepNum: "7",
+  body: "
+    And that's how the work ended, I hope you liked it.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490321441/Heart_Necklace_step7_ys0efk.jpg"
+  ],
+  project_id: "#{project5.id}"
+)
+
+Step.create(
+  title: "Dot Framework",
+  stepNum: "1",
+  body: "
+    The first step is to draw the framework/grid using dots. Start with a single dot, then add three dots parallel to the imaginary line carrying the first dot. Then add 5 dots parallel to the 3 dots and finally add 7 dots parallel to the 5 dots. Now repeat the pattern of dots in the reverse order from 5 down to 3 and finally a single dot.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322499/Kolam_step1_tt8wb7.jpg"
+  ],
+  project_id: "#{project6.id}"
+)
+
+Step.create(
+  title: "Initial Dot Framework",
+  stepNum: "1",
+  body: "
+    The first step is to draw the framework/grid using dots. Start with a single dot, then add three dots parallel to the imaginary line carrying the first dot. Then add 5 dots parallel to the 3 dots and finally add 7 dots parallel to the 5 dots. Now repeat the pattern of dots in the reverse order from 5 down to 3 and finally a single dot.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322499/Kolam_step1_tt8wb7.jpg"
+  ],
+  project_id: "#{project6.id}"
+)
+
+Step.create(
+  title: "L Plus Diamond Design",
+  stepNum: "2",
+  body: "
+    Repeat the pattern that combined the stylised L and the diamond pattern on the bottom of the grid framework. Now you end up with exactly one-half of the complete Kolam pattern.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490322851/Kolam_step2_rvhnrf.jpg"
+  ],
+  project_id: "#{project6.id}"
+)
+
+Step.create(
+  title: "Repeat Pattern on the Left Side",
+  stepNum: "3",
+  body: "
+    All you have to do to complete the design (almost) is to repeat the same design on the left side of the grid. \n
+    Feel free to start on the left and complete the right side of the grid framework as well.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323006/Kolam_step3_jtxzyj.jpg"
+  ],
+  project_id: "#{project6.id}"
+)
+
+Step.create(
+  title: "Complete With Four Circles",
+  stepNum: "4",
+  body: "
+    All you have left now are four dots in the centre of the grid framework. Go ahead and circle the four dots. Now you have a simple Kolam design! \n
+    Kolam designs are deceptively simple. Once you start practising them, you will be sucked into a world of patterns and colours. It takes determination and proper planning to complete complicated Kolam designs. \n
+    To learn more about the different types of Kolam designs, video tutorials of more complex Kolam designs, and in-depth insights on the history and the culture of Kolam, read this article.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323430/Kolam_step4_mqvtwm.jpg"
+  ],
+  project_id: "#{project6.id}"
+)
+
+Step.create(
+  title: "Supplies",
+  stepNum: "1",
+  body: "
+    - 8mm Red Crackle Glass Beads \n
+    - 1.5mm Golden Aluminum Wire \n
+    - Golden Cross Chain \n
+    - Golden Headpins \n
+    - Golden Spring Clasp \n
+    - Round Nose Pliers \n
+    - Long Nose Pliers \n
+    - Side Cutting Pliers
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490323988/Wire_Bracelet_step1_vvlodk.jpg"
+  ],
+  project_id: "#{project7.id}"
+)
+
+Step.create(
+  title: "Make the Main Wire Wrapped Patterns",
+  stepNum: "2",
+  body: "
+    1st, cut about 20cm aluminum wire, slide a red crackle glass bead to one end of the wire, wrap the wire around the bead like the following picture shows; \n
+    2nd, make 5 glass beaded wire patterns in total and connect them together like the picture shows.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324225/Wire_Bracelet_step2_ln5qro.jpg"
+  ],
+  project_id: "#{project7.id}"
+)
+
+Step.create(
+  title: "Finish the Simple Glass Beaded Wire Wrapped Bracelet",
+  stepNum: "3",
+  body: "
+    1st, cut 2 pieces of golden twist chains, the lengths should be about 5cm and 10cm; \n
+    2nd, attach the shorter chain to the loop of the wire pattern and attach a spring clasp to the other chain end; \n
+    3rd, attach the longer chain to the hoop of the wire pattern and add a red crackle glass bead to the other chain end.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324321/Wire_Bracelet_step3_pmhfif.jpg"
+  ],
+  project_id: "#{project7.id}"
+)
+
+Step.create(
+  title: "Final Look!",
+  stepNum: "4",
+  body: "
+    The colors are very bright and the bracelet is very easy to make. If you want to make a chic accessory for the coming spring days, try this wire wrapped bracelet!
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324395/Wire_Bracelet_step4_zbhnqc.jpg"
+  ],
+  project_id: "#{project7.id}"
+)
+
+Step.create(
+  title: "Sketch Up Your Feather",
+  stepNum: "1",
+  body: "
+    Lay your crystal on a piece of paper and design a feather around it. I went pretty simple with this design, but you could get as intricate as you want. The geode I found looked like it would fit nicely as the bottom of the feather, get creative and see where your crystal will fit best. Next, cut out all the pattern pieces. Sometimes I number the pieces of my patterns, but since this feather is so simple I didn't think it was necessary.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490324939/Glass_Feather_step1_x68zkq.jpg"
+  ],
+  project_id: "#{project8.id}"
+)
+
+Step.create(
+  title: "Cut Your Glass",
+  stepNum: "2",
+  body: "
+    This is one of my favorite steps of every project because I get to look at all of my glass and decide which colors and textures of glass will look good together. After you have decided what pieces of glass you want to use, glue your pattern pieces on to the glass. I like to use a glue stick to adhere my patterns onto the glass, but you could also just trace the pattern directly onto the glass with a fine tipped sharpie. \n
+    To cut your glass you will need a glass scoring tool and some cutting oil. You can find these items for a great price on Amazon, or if you have a Hobby Lobby nearby you can find stained glass supplies there (and use a 40% off coupon).
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490325047/Glass_Feather_step2_jn6pqn.jpg"
+  ],
+  project_id: "#{project8.id}"
+)
+
+Step.create(
+  title: "Foil Your Glass",
+  stepNum: "3",
+  body: "
+    Next, you need to apply your copper foil to each piece of glass and to the geode. At this point you will want to decide what color you will want your solder lines to end up. I thought copper would look pretty on this feather, so I chose copper foil with copper adhesive. You could leave your solder lines silver or you could apply a black patina and end up with black solder lines. You can find copper foil with black and silver adhesive as well. \n
+    Place the glass right in the middle of your copper foil and apply it all the way around the piece of glass and then fold the excess foil onto the sides of the glass. You will then want to burnish the foil with a fid.
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490325146/Glass_Feather_step3_pcbk6f.jpg"
+  ],
+  project_id: "#{project8.id}"
+)
+
+Step.create(
+  title: "Solder Your Glass",
+  stepNum: "4",
+  body: "
+    Next, lay all your feather pieces back together on a heat resistant surface. Apply flux to all of the copper foil. Flux helps the solder to move smoothly to create nice, clean solder lines. I like to use 60/40 solder. There are many videos on youtube that teach how to solder (which is where I learned how to do it). \n
+    After I finished soldering the feather pieces together, I used copper patina to create copper solder lines. I learned a few tricks to help make the patina work best. I scrub my stained glass piece with a copper scrubber (the kind you use for cleaning dishes) and then clean the piece with windex. I poured the patina into a spray bottle and squirted the piece with the patina. I used a toothbrush to really work the patina into the solder lines. Once the piece has achieved the color I am looking for I wash it off in the sink. You can then polish the piece with turtle wax or with stained glass polish. \n
+    Attach some twine or chain, hang your feather in a window, and enjoy your beautiful piece of artwork!
+  ",
+  img_urls: [
+    "https://res.cloudinary.com/dezhy95vj/image/upload/t_media_lib_thumb/v1490325398/Glass_Feather_step4_fdaeil.jpg"
+  ],
+  project_id: "#{project8.id}"
+)

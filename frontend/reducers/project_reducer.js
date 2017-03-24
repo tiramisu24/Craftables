@@ -18,10 +18,12 @@ const ProjectReducer = (state=initialState, action) => {
   switch(action.type){
     case RECEIVE_PROJECTS:
 
-      newState.projects = action.projects;
-      if( newState.projects.project){
+      // debugger;
+      if(action.projects){
+        newState.projects = action.projects;
         delete newState.projects["project"];
       }
+      // debugger
 
       return newState;
     case RECEIVE_PROJECT:

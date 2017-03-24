@@ -1,5 +1,6 @@
 import {connect} from 'react-redux';
 import {findProjects} from '../../actions/search_actions';
+import {showProjects} from '../../actions/project_actions';
 import SearchResult from './search_result'
 
 const mapStateToProps =(state) => {
@@ -9,7 +10,8 @@ const mapStateToProps =(state) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-  findProjects: (keyword) => dispatch(findProjects(keyword))
+  findProjects: (keyword) => dispatch(findProjects(keyword)),
+  showProjects: () => dispatch(showProjects())
 })
 
 const SearchResultContainer = connect(mapStateToProps, mapDispatchToProps)(SearchResult);

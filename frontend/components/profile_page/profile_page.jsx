@@ -14,7 +14,6 @@ class ProfilePage extends React.Component{
     this.changeUser = this.changeUser.bind(this);
     this.update = this.update.bind(this);
     this.showEditButton = this.showEditButton.bind(this);
-    // this.openEditForm = this.openEditForm.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -99,26 +98,6 @@ class ProfilePage extends React.Component{
     }
 
   }
-  // shouldOpenForm(){
-  //   let newState = !this.state.open;
-  //   this.setState({open: newState})
-  // }
-  // openEditForm(){
-  //   if(this.state.open){
-  //     return<form onSubmit={this.changeUser}>
-  //       <textarea onChange={this.update()}
-  //         value={this.state.bio}
-  //         placeholder="Add a bio..."></textarea>
-  //       <div><button className="edit-photo" onClick={this.handleCloudinary().bind(this)}> Modify Profile Photo</button></div>
-  //       <input type="submit" value="Change Info"></input>
-  //     </form>
-  //   }else{
-  //     return <div></div>
-  //   }
-  //
-  // }
-
-
   render(){
     if(!this.state.user.username) return <div></div>
     let user = this.state.user
