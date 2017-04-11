@@ -26,9 +26,9 @@ class SearchBar extends React.Component{
     return(
       <div className="search-bar">
         {(localStorage.searching === "true") ? (<Redirect to="/search_results"/>) : <div></div>}
-        <div>Let's Make </div>
+        <div className="lets-make">Let's Make </div>
         <form onSubmit={this.findProjects}>
-          <input type="text" onChange={this.update.bind(this)} placeholder={"search..."} value={this.state.keyword}></input>
+          <input className="search-input" type="text" onChange={this.update.bind(this)} placeholder={"search..."} value={this.state.keyword}></input>
         </form>
       </div>
 

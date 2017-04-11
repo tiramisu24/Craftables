@@ -107,8 +107,8 @@ class ShowProject extends React.Component{
   stepImg(step){
     let imgs = <div></div>
     if(step.img_urls.length > 0){
-      imgs =step.img_urls.map( el => (
-        <div className="show-page-container effect2" key={el}>
+      imgs =step.img_urls.map( (el,idx) => (
+        <div className="show-page-container effect2" key={`el${idx}`}>
           <img src={el}></img>
         </div>
       ))

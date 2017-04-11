@@ -10,15 +10,16 @@
   width: 100%;
   z-index: 5;
   background-color: rgba(2, 2, 2, 0.2);
-  // opacity: .1;
 }
 
 
 .header .search-bar{
   font-size: 20px;
-  // background-color: pink;
   width: auto;
   display: flex;
+}
+.search-bar{
+  padding: 0 5vw;
 }
 #front-page-search{
   color: white;
@@ -26,12 +27,15 @@
 
 .header .search-bar div{
   padding-right: 10px;
-  // background-color: wheat;
 }
 .header .search-bar form{
   color: grey;
   padding-left: 10px;
-  // background-color: blue;
+}
+.search-input{
+  padding-left: 10px;
+}
+.lets-make{
 }
 
 .auth-modals {
@@ -50,11 +54,10 @@
 }
 .logo:hover{
   text-shadow: 1px 1px 1px white;
-
 }
 
-logo h1 {
-  display: table-cell;;
+logo h4 {
+  display: table-cell;
 }
 
 .dropdown-form > button {
@@ -75,6 +78,4 @@ logo h1 {
   margin: 0px 8em;
   color: white;
   font-size: 24px;
-  // background-color: rgba(2, 2, 2, 0.2);
-
 }
