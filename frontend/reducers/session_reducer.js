@@ -12,8 +12,9 @@ const SessionReducer = (state = null, action) => {
         localStorage.setItem("user", action.user.username);
         localStorage.setItem("id", action.user.id)
       } else {
-        localStorage.setItem("user", "");
-        localStorage.setItem("id", "")
+        // localStorage.setItem("user", "");
+        // localStorage.setItem("id", "")
+        localStorage.clear();
       }
       return newState;
     case RECEIVE_USER:

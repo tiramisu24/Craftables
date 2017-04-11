@@ -49,7 +49,7 @@ class UserDropdown extends React.Component {
   }
 
   render(){
-    if(localStorage.user===""){
+    if(localStorage.user===undefined){
 
       return <div></div>;
     }

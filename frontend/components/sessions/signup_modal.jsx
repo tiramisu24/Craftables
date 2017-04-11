@@ -79,7 +79,7 @@ class SignUPModal extends React.Component{
     //   ))
     //
     // }
-    if (localStorage.user !== "") return <div></div>;
+    if (localStorage.user !== undefined) return <div></div>;
 
     return (
       <div className="modal-div">
