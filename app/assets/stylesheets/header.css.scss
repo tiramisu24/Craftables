@@ -26,7 +26,7 @@
 }
 
 .header .search-bar div{
-  padding-right: 10px;
+  // padding-right: 10px;
 }
 .header .search-bar form{
   color: grey;
@@ -36,6 +36,7 @@
   padding-left: 10px;
 }
 .lets-make{
+  width: auto;
 }
 
 .auth-modals {
@@ -78,4 +79,11 @@ logo h4 {
   margin: 0px 8em;
   color: white;
   font-size: 24px;
+}
+
+.header-dropdown {
+    font-size: 24px !important;
+    color: white !important;
+    background-color: transparent !important;
+    border: none !important;
 }
