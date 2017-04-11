@@ -29,11 +29,9 @@ class ShowProject extends React.Component{
     if(window.scrolling <2) this.setScroll();
     window.scrolling +=1;
   }
-
+  
   setScroll(){
-      console.log("in here");
     $( document ).ready(function() {
-      console.log("in even listner");
     const $sidebar = $('#sidebar');
     const $sidebarStopper = $('#sidebar-stopper');
 
@@ -69,7 +67,6 @@ class ShowProject extends React.Component{
             $("#sidebar-top-bar-wrapper").css('display', 'none')
         }
       });
-
       }
     });
 
