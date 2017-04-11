@@ -18,19 +18,22 @@ class ShowProject extends React.Component{
     }
     this.deleteProject = this.deleteProject.bind(this);
     this.deleteButton = this.deleteButton.bind(this);
+    window.scrolling = 0;
   }
 
   componentWillMount(){
     this.props.showProject(this.state.projectId);
   }
 
-  componentDidMount(){
-    this.setScroll()
-
+  componentDidUpdate(){
+    if(window.scrolling <2) this.setScroll();
+    window.scrolling +=1;
   }
 
   setScroll(){
+      console.log("in here");
     $( document ).ready(function() {
+      console.log("in even listner");
     const $sidebar = $('#sidebar');
     const $sidebarStopper = $('#sidebar-stopper');
 
@@ -59,25 +62,17 @@ class ShowProject extends React.Component{
             $sidebar.css({ position: 'fixed', top: 0 });
             $sidebarTopBar.css({ position: 'fixed', top: 0 });
             $("#sidebar-top-bar-wrapper").css('display', 'block')
-            // console.log("sidebarTop");
-            // console.log(sidebarTop);
-            // console.log("windowTop");
-            // console.log(windowTop);
-            // console.log("else if");
-            // console.log(sidebarTop < windowTop);
-
         }
         else {
             $sidebar.css({position: 'absolute', top: 'initial'});
             $sidebarTopBar.css({position: 'absolute',top: 'initial'});
             $("#sidebar-top-bar-wrapper").css('display', 'none')
-            // console.log("got here");
-            // console.log("else case");
         }
       });
 
       }
     });
+
   }
 
   componentWillReceiveProps(nextProps){
@@ -117,7 +112,8 @@ class ShowProject extends React.Component{
   }
   stepNumLinks(project){
     let stepNums =  project.steps.map(step => (
-      <HashLink to={`#stepNum-${step.stepNum}`}                 key={`.stepNum-key-${step.stepNum}`}>Step {step.stepNum}</HashLink>
+      <HashLink to={`#stepNum-${step.stepNum}`}
+        key={`.stepNum-key-${step.stepNum}`}>Step {step.stepNum}</HashLink>
     ))
     return <div className="jump-step">{stepNums}</div>
   }
@@ -126,9 +122,6 @@ class ShowProject extends React.Component{
 
     let projectList = this.state.projectsHash;
     if(Object.keys(projectList).length === 0) return <div></div>;
-    this. setScroll()
-
-
 
     let projectId = this.state.projectId;
     let project = projectList[projectId];
