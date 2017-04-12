@@ -20,12 +20,12 @@ class SearchResult extends React.Component{
 
   }
   createProjectButton(){
-    if(localStorage.user === ""){
-      return <div>
+    if(localStorage.user === undefined){
+      return <div className="search-action-buttons">
         <AuthButtons/>
       </div>
     }else{
-      return <div>
+      return <div className="search-action-buttons">
         <Link to="new_project">New Project</Link>
       </div>
     }
@@ -33,7 +33,6 @@ class SearchResult extends React.Component{
 
   render(){
     let projects = this.props.projectsHash;
-    console.log(projects);
     if(Object.keys(projects).length === 0) {
       return <div className="search-result-page">
           <div className="placeholder"></div>

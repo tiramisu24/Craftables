@@ -90,11 +90,9 @@ class Comments extends React.Component{
     let comments = Object.keys(this.state.comments).map(key => (
       <Row className="each-comment" key={key}>
         {this.userProfilePicture(this.state.comments[key])}
-        <Row>
-          <Col>
-            {this.state.comments[key].description}
-          </Col>
-        </Row>
+        <div className="comment-body">
+          {this.state.comments[key].description}
+        </div>
       </Row>
     ));
     return <div>

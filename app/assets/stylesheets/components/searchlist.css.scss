@@ -2,7 +2,6 @@
   margin-top: 50vh;
 }
 .search-result-page{
-  background-color: pink;
   height: 72vh;
 
 }
@@ -49,19 +48,6 @@
 
 }
 
-// .card-img-card img{
-//   // height: 185px !important;
-//   // width: 100%;
-//   // height: 100%;
-//   object-fit: cover;
-//   object-position: 50% 50%;
-// }
-
-
-// .card-project-image{
-//   height: 100%;
-// }
-
 .card-project-info{
   width: 100%;
   display:flex;
@@ -73,9 +59,9 @@
   margin: 4px 0px;
 }
 
+.search-action-buttons{
+}
+.search-action-buttons > .auth-modals{
+  margin:0;
 
-// .card-img-card img{
-//   width: 100%;
-//   // height: 100%;
-//   object-fit: fill;
-// }
+}

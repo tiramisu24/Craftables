@@ -29,7 +29,7 @@ class ShowProject extends React.Component{
     if(window.scrolling <2) this.setScroll();
     window.scrolling +=1;
   }
-  
+
   setScroll(){
     $( document ).ready(function() {
     const $sidebar = $('#sidebar');
@@ -180,7 +180,6 @@ class ShowProject extends React.Component{
                 <Row id="show-page-author-bio">
                     <div>
                       <h3>About this Author</h3>
-                      <div>{project.author.bio}</div>
                     </div>
                     <div>{project.author.bio}</div>
                 </Row>
@@ -208,14 +207,15 @@ class ShowProject extends React.Component{
                   </Col>
                 </Row>
                 <div className="project-show-content-divider project-show-content-author">
-                  <Link to={`/profile_page/${project.author.id}`} className="profile-pic-extra-small">
-                    <img src={project.author.img_url}/>
-                  </Link >
+                  <h2>
+                    {project.author.username}
+                  </h2>
                   <div className="project-show-sidebar-author-info">
-                    <h2>
-                      {project.author.username}
-                    </h2>
-                    <div>{project.author.bio}</div>
+                    <Link to={`/profile_page/${project.author.id}`} className="profile-pic-extra-small">
+                      <img src={project.author.img_url}/>
+                    </Link >
+
+                    <div className="project-show-sidebar-author-bio">{project.author.bio}</div>
                   </div>
                 </div>
                 <div>

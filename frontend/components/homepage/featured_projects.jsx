@@ -18,6 +18,7 @@ class FeaturedProjects extends React.Component{
   }
 
   render(){
+    console.log("infeatured");
     let projects = this.state.projectList;
     if(Object.keys(projects).length === 0) return <div></div>;
 
