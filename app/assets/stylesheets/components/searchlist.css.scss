@@ -1,8 +1,11 @@
 .move-it-down{
   margin-top: 50vh;
-  background-color: pink;
 }
+.search-result-page{
+  background-color: pink;
+  height: 72vh;
 
+}
 .search-project-list{
   display: flex;
   flex-wrap: wrap;
@@ -15,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 .no-result-page > div{
   margin-top:2vh;

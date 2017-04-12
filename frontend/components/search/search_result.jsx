@@ -35,7 +35,7 @@ class SearchResult extends React.Component{
     let projects = this.props.projectsHash;
     console.log(projects);
     if(Object.keys(projects).length === 0) {
-      return <div>
+      return <div className="search-result-page">
           <div className="placeholder"></div>
           <div className="no-result-page">
             <div>No Results with your query :(</div>
@@ -45,7 +45,7 @@ class SearchResult extends React.Component{
       </div>;
     }
     else{
-      return<div>
+      return<div className="search-result-page">
         <div className="placeholder"></div>
         <ProjectList projects={projects}/>
       </div>
