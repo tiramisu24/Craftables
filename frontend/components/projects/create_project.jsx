@@ -115,9 +115,7 @@ class CreateProject extends React.Component{
               step["stepNum"] = numStep;
 
               if(this.state.img_urls[numStep]){
-                console.log(this.state.img_urls);
                 step["img_urls"] = this.state.img_urls[numStep]
-                console.log(this.state.img_urls[numStep]);
               }
               debugger;
               step["project_id"] = this.props.projectId;
