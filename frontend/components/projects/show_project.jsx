@@ -127,11 +127,11 @@ class ShowProject extends React.Component{
       <div className={`single-step`}
            id={`stepNum-${step.stepNum}`}
            key={step.id}>
-        <h5>{step.title}</h5>
+        <h4>{step.title}</h4>
         <div className="show-step-photo-section">
           {this.stepImg(step)}
         </div>
-        <p>{step.body}</p>
+        <p className="project-show-words">{step.body}</p>
       </div>
     ))
     return (
@@ -168,7 +168,7 @@ class ShowProject extends React.Component{
                   <h3>
                     Description:
                   </h3>
-                  <h4>{project.body}</h4>
+                  <div className="project-show-words">{project.body}</div>
                 </div>
                 <div id="show-page-instructions">
                   <h3>Instructions: </h3>
@@ -177,18 +177,18 @@ class ShowProject extends React.Component{
                   </div>
                 </div>
                 <div className="delete-button">{this.deleteButton(project.author.username)}</div>
-                <Row id="show-page-author-bio">
+                <div id="show-page-author-bio">
                     <div>
                       <h3>About this Author</h3>
                     </div>
-                    <div>{project.author.bio}</div>
-                </Row>
-                <Row>
+                    <div className="show-step-photo-section project-show-words">{project.author.bio}</div>
+                </div>
+                <div>
                   <Col md={12} className="project-show-comments" id="sidebar-stopper">
                     <Row><h3 id="show-page-comments">Comments</h3></Row>
                     <Comments projectId={this.state.projectId}/>
                   </Col>
-                </Row>
+                </div>
             </Row>
           </Col>
           <Col md={4} sm={12} >
@@ -215,7 +215,7 @@ class ShowProject extends React.Component{
                       <img src={project.author.img_url}/>
                     </Link >
 
-                    <div className="project-show-sidebar-author-bio">{project.author.bio}</div>
+                    <div className="project-show-sidebar-author-bio project-show-words">{project.author.bio}</div>
                   </div>
                 </div>
                 <div>
