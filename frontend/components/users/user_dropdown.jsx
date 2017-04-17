@@ -57,12 +57,9 @@ class UserDropdown extends React.Component {
       <div className="dropdown-form">
         <DropdownButton title={<i className="fa fa-bars" aria-hidden="true"></i>
 } noCaret id="header-dropdown" className="header-dropdown" onClick={this.profileClicked}>
-          <MenuItem>
-            <Link to={`/profile_page/${localStorage.id}`}>Profile <i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
-          </MenuItem>
-          <MenuItem>
-            <Link to="/new_project">New Project</Link>
-          </MenuItem>
+          <MenuItem href="#/homepage">Homepage</MenuItem>
+          <MenuItem href={`#/profile_page/${localStorage.id}`}>Profile <i className="fa fa-user-circle-o" aria-hidden="true"></i></MenuItem>
+          <MenuItem href="#/new_project">New Project</MenuItem>
           <MenuItem>
             <button onClick={this.handleClick} className="logout-button">Log Out</button>
           </MenuItem>
