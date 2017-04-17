@@ -50,21 +50,27 @@ class ShowProject extends React.Component{
         $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
         $sidebarTopBar.width($('.project-show-header').width());
 
+        if ((sidebarTop < windowTop)) {
+            $sidebar.css({ position: 'fixed', top: 0});
+            $sidebarTopBar.css({ position: 'fixed', top: 0 });
+            $("#sidebar-top-bar-wrapper").css('display', 'block');
+            $sidebarTopBar.css("border-bottom", "none");
+            $(".project-show-content-divider").css("border-bottom", "none");
+
+        }
         // if (stopPoint < windowTop) {
         //     $sidebar.css({ position: 'absolute', top: diff });
         //     $sidebarTopBar.css({ position: 'absolute', top: diff });
         //     $("#sidebar-top-bar-wrapper").css('display', 'none')
         //
         // } else
-        if ((sidebarTop < windowTop)) {
-            $sidebar.css({ position: 'fixed', top: 0 });
-            $sidebarTopBar.css({ position: 'fixed', top: 0 });
-            $("#sidebar-top-bar-wrapper").css('display', 'block')
-        }
         else {
             $sidebar.css({position: 'absolute', top: 'initial'});
             $sidebarTopBar.css({position: 'absolute',top: 'initial'});
             $("#sidebar-top-bar-wrapper").css('display', 'none')
+            $sidebarTopBar.css("border-bottom", "1px solid grey");
+            $(".project-show-content-divider").css("border-bottom", "1px solid grey");
+
         }
       });
       }
@@ -193,23 +199,19 @@ class ShowProject extends React.Component{
           </Col>
           <Col md={4} sm={12} >
               <Col className="project-show-bio" id="sidebar" >
-                <div className="project-show-content-divider">
+                <div className="project-show-content-divider" id='sidebar-side-bar'>
                   <div>About this Project</div>
                 </div>
                 <Row className="project-show-content-fav-views">
-                  <Col md={8} >
-                    <div >Favorites</div>
-                    <div>Views</div>
-                  </Col>
                   <Col md={4} >
                     <div>Date Posted</div>
                     <div>{project.created_at.slice(0,10)}</div>
                   </Col>
                 </Row>
                 <div className="project-show-content-divider project-show-content-author">
-                  <h2>
+                  <h3>
                     {project.author.username}
-                  </h2>
+                  </h3>
                   <div className="project-show-sidebar-author-info">
                     <Link to={`/profile_page/${project.author.id}`} className="profile-pic-extra-small">
                       <img src={project.author.img_url}/>

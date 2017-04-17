@@ -6,24 +6,20 @@
 
 .create-project-section{
   padding: 10px;
-  // background-color: wheat;
 }
 
 .create-project-title, .create-project-des{
-  // background-color: pink;
   margin: 10px 0px;
   border-bottom: 1px solid grey;
 }
 
 .create-project-img-wrapper{
   margin-top: 40px;
-  // background-color: #f0f8fc;
   height: 300px;
   border: 1px dashed grey;
 
 }
 .image-placeholder{
-  // background-color: wheat;
   height: 100%;
 }
 .create-project-des textarea{
@@ -34,7 +30,6 @@
   position: relative;
   top: -40vh;
   left: -2em;
-  // background-color: wheat;
 }
 .double-arrow-icon{
   display: flex;
@@ -71,15 +66,9 @@
   border-radius: 500px;
 }
 
-// .create-project-img-wrapper{
-//   width: auto;
-//   height: 30vh;
-//   // border: 1px dotted grey;
-// }
 .create-project-img{
   height: 100%;
   background-color: pink;
 }
 .submit-button-create-project{
-  // margin: 1vh 0px;
 }

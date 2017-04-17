@@ -1,5 +1,4 @@
 #project-show-main-picture{
-  // position: absolute;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
@@ -63,15 +62,12 @@
 
 .show-step-photo-section{
   width: 100%;
-  // background-color: blue;
   display: flex;
   justify-content: center;
 }
 .show-page-container{
   width: 80%;
   height: auto;
-  // border-radius: 5px;
-  // border: 1px solid grey;
   margin: 15px 0px;
 }
 
@@ -100,7 +96,6 @@
   display: flex;
   flex-direction: column;
   margin-left: 15px;
-  // background-color: blue;
 }
 #sidebar{
   width: 330px;
@@ -120,8 +115,6 @@
 }
 #sidebar-top-bar{
   height: 62px;
-  // width: 100vw;
-
   background-color: white;
   z-index: 20;
 }
@@ -155,13 +148,11 @@
 .each-comment{
   border-bottom: 1px solid grey;
   padding: 10px 0px;
-  // background-color: wheat;
 
 }
 .comment-user-info{
   display: flex;
   justify-content: space-between;
-  // background-color: pink;
   width: 100%
 }
 
@@ -169,9 +160,6 @@
   height: 50px;
   padding-right: 10px;
 }
-// .comment-img a{
-//   width: 100%;
-// }
 .comment-img img{
   width: 80px !important;
 }
@@ -181,7 +169,6 @@
   align-items:flex-end;
 }
 .comment-body{
-  // background-color: pink;
   margin: 15px;
 }
 
@@ -228,6 +215,10 @@
 }
 .project-show-sidebar-author-bio{
   width: 160px;
+  height: 160px;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
   margin: 10px;
 }
 
@@ -258,7 +249,6 @@
   box-shadow: 0 15px 10px #777;
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
-  // -o-transform: rotate(-3deg);
   -ms-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
@@ -266,7 +256,6 @@
 {
   -webkit-transform: rotate(3deg);
   -moz-transform: rotate(3deg);
-  // -o-transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   transform: rotate(3deg);
   right: 10px;
