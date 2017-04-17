@@ -1,23 +1,33 @@
+
 .create-placeholder{
-  
-}
-.create-placeholder{
-  // background-color: pink;
-  height: 20vh;
+  height: 15vh;
 }
 
+
 .create-project-section{
-  // background-color: #f0f8fc;
   padding: 10px;
+  // background-color: wheat;
 }
 
 .create-project-title, .create-project-des{
   // background-color: pink;
   margin: 10px 0px;
+  border-bottom: 1px solid grey;
 }
 
+.create-project-img-wrapper{
+  margin-top: 40px;
+  // background-color: #f0f8fc;
+  height: 300px;
+  border: 1px dashed grey;
+
+}
+.image-placeholder{
+  // background-color: wheat;
+  height: 100%;
+}
 .create-project-des textarea{
-  height: 30vh;
+  height: 300px;
   width: 100%;
 }
 .create-project-nav-buttons{
@@ -56,19 +66,19 @@
 
 .add-photo{
   position:relative;
-  top: -30vh;
-  right: -33em;
-  // background-color: pink;
+  top: -290px;
+  right: -500px;
   border-radius: 500px;
 }
 
-.create-project-img-wrapper{
-  width: auto;
-  height: 30vh;
-  // border: 1px dotted grey;
-}
+// .create-project-img-wrapper{
+//   width: auto;
+//   height: 30vh;
+//   // border: 1px dotted grey;
+// }
 .create-project-img{
   height: 100%;
+  background-color: pink;
 }
 .submit-button-create-project{
   // margin: 1vh 0px;

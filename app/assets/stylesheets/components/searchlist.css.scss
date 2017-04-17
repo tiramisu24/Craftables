@@ -1,3 +1,8 @@
+.search-bar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:  inherit;
+}
+
+
 .move-it-down{
   margin-top: 50vh;
 }

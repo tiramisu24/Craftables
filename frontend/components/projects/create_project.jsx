@@ -43,13 +43,6 @@ class CreateProject extends React.Component{
     }
 
   }
-
-  // ComponentDidUpdate(){
-  //   let newbol = false;
-  //   this.setState({addFunctionButtons:newbol})
-  //   debugger;
-  // }
-
   redirect(path){
     this.props.history.push(path);
   }
@@ -105,7 +98,6 @@ class CreateProject extends React.Component{
     if(this.state.img_urls[0]){
       project["img_url"]=this.state.img_urls[0]
     }
-    // debugger
     this.props.createProject({project})
         .then( () => {
             let steps = this.state.steps;
@@ -187,7 +179,6 @@ class CreateProject extends React.Component{
     this.setState({addFunctionButtons:newbol})
   }
   addFunctionButtons(){
-    // if(this.state.addFunctionButtons){
 
       return <span className="new-project-nav-buttons">
         <button onClick={this.handleCloudinary(this.state.addNumStep.length).bind(this)}>
@@ -198,7 +189,6 @@ class CreateProject extends React.Component{
           <i className="fa fa-plus" aria-hidden="true"></i>
         </button>
       </span>
-    // }
   }
 
   clickAddStep(event){
@@ -209,32 +199,40 @@ class CreateProject extends React.Component{
   }
 
   render(){
-    if (localStorage.user === "") return <div></div>;
-      // debugger;
+    if (localStorage.user === undefined) return <div></div>;
     return(
       <Grid className="create-project-div">
         <div className="create-placeholder"></div>
         <ShowErrors errors={this.props.errors}/>
+          <div className = "user-info">
+            <div className="profile-user-des">
+              <h2>Welcome {localStorage.user}</h2>
+              <h3>Let's get started!</h3>
+            </div>
+          </div>
 
         <form className="create-project-form" onSubmit={this.handleSubmit}>
 
           <Row className="create-project-section">
             <Col md={6} sm={12}>
-              <Row className="create-project-title">
+              <div className="create-project-title">
                 <input type="text" onChange={this.update("title")} placeholder="Title" ></input>
-              </Row>
-              <Row className="create-project-des">
+              </div>
+              <div className="create-project-des">
                 <textarea onChange={this.update("body")}
                   placeholder="This is how you make..."></textarea>
-              </Row>
+              </div>
             </Col>
 
-              <Col md={6} sm={12} className="photo-section">
-                <div className="create-project-img-wrapper">
+            <Col md={6} sm={12} className="photo-section">
+              <div className="create-project-img-wrapper">
+                <div className="image-placeholder">
+                  <div className="image-goes-here"></div>
                   <img src={this.state.img_urls[0]} className="create-project-img"/>
                 </div>
-                <div><button className="add-photo" onClick={this.handleCloudinary(0).bind(this)}> <i className="fa fa-camera" aria-hidden="true"></i></button></div>
-              </Col>
+              </div>
+              <div><button className="add-photo" onClick={this.handleCloudinary(0).bind(this)}> <i className="fa fa-camera" aria-hidden="true"></i></button></div>
+            </Col>
 
             </Row>
             {this.addStep()}

@@ -40,9 +40,11 @@
   text-shadow: none;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   margin: 10px;
   margin-right: 10em;
+  width: 200px;
 }
 
 .logo {

@@ -113,35 +113,48 @@
 .dropdown-menu-contents > div {
   padding: 10px;
 }
-/* line 4, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 2, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-placeholder {
-  height: 20vh;
+  height: 15vh;
 }
 
-/* line 9, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 7, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-project-section {
   padding: 10px;
 }
 
-/* line 14, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 12, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-project-title, .create-project-des {
   margin: 10px 0px;
+  border-bottom: 1px solid grey;
 }
 
-/* line 19, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 18, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+.create-project-img-wrapper {
+  margin-top: 40px;
+  height: 300px;
+  border: 1px dashed grey;
+}
+
+/* line 25, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+.image-placeholder {
+  height: 100%;
+}
+
+/* line 29, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-project-des textarea {
-  height: 30vh;
+  height: 300px;
   width: 100%;
 }
 
-/* line 23, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 33, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-project-nav-buttons {
   position: relative;
   top: -40vh;
   left: -2em;
 }
 
-/* line 29, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 39, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .double-arrow-icon {
   display: flex;
   align-items: center;
@@ -152,7 +165,7 @@
   background-color: grey;
 }
 
-/* line 39, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 49, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .new-project-nav-buttons {
   position: absolute;
   left: 1.8em;
@@ -160,12 +173,12 @@
   display: none;
 }
 
-/* line 45, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 55, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-project-nav-buttons:hover .new-project-nav-buttons {
   display: inline-block;
 }
 
-/* line 48, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 58, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .new-project-nav-buttons > button {
   width: 25px;
   height: 25px;
@@ -173,23 +186,18 @@
   border-radius: 500px;
 }
 
-/* line 57, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 67, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .add-photo {
   position: relative;
-  top: -30vh;
-  right: -33em;
+  top: -290px;
+  right: -500px;
   border-radius: 500px;
 }
 
-/* line 65, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
-.create-project-img-wrapper {
-  width: auto;
-  height: 30vh;
-}
-
-/* line 70, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
+/* line 79, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/new_project.css.scss */
 .create-project-img {
   height: 100%;
+  background-color: pink;
 }
 /* line 1, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .placeholder {
@@ -202,26 +210,27 @@
   justify-content: center;
   align-items: center;
   padding: 1px;
-  margin: auto 5vw;
+  margin: 20px 5vw;
   border-bottom: 1px solid grey;
 }
 
 /* line 13, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .profile-user-des {
+  margin: 20px 0;
   width: 500px;
 }
 
-/* line 17, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 18, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .profile-user-des > div {
   margin: 10px 0;
 }
 
-/* line 20, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 21, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .profile-img {
   width: 100%;
 }
 
-/* line 23, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 24, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .profile-img-container {
   width: 150px;
   padding-bottom: 20px;
@@ -229,44 +238,50 @@
   align-self: right;
 }
 
-/* line 32, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 33, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .profile-modal button {
   width: 150px;
 }
 
-/* line 36, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 37, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .edit-profile-photo {
   margin: 30px 0px;
   width: 100px;
 }
 
-/* line 40, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 41, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .edit-profile-bio {
   height: 300px;
 }
 
-/* line 44, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
+/* line 45, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/profile.css.scss */
 .my-project-list {
   margin: 5vh 10em;
 }
 /* line 1, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+.search-bar ::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: inherit;
+}
+
+/* line 6, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .move-it-down {
   margin-top: 50vh;
 }
 
-/* line 4, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 9, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .search-result-page {
   height: 72vh;
 }
 
-/* line 8, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 13, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .search-project-list {
   display: flex;
   flex-wrap: wrap;
   margin: 5vh 5em;
 }
 
-/* line 14, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 19, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .no-result-page {
   display: flex;
   height: 58vh;
@@ -275,12 +290,12 @@
   justify-content: center;
 }
 
-/* line 22, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 27, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .no-result-page > div {
   margin-top: 2vh;
 }
 
-/* line 27, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 32, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .no-result-page a {
   background-color: grey;
   padding: 5px 10px;
@@ -288,7 +303,7 @@
   color: white;
 }
 
-/* line 33, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 38, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .card-project {
   display: flex;
   flex-direction: column;
@@ -298,7 +313,7 @@
   margin: 10px;
 }
 
-/* line 42, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 47, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .card-img-card {
   width: 100%;
   height: 185px;
@@ -307,7 +322,7 @@
   background-color: wheat;
 }
 
-/* line 51, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 56, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .card-project-info {
   width: 100%;
   display: flex;
@@ -315,13 +330,13 @@
   align-items: center;
 }
 
-/* line 57, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 62, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .card-project-title {
   width: 80%;
   margin: 4px 0px;
 }
 
-/* line 64, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
+/* line 69, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/components/searchlist.css.scss */
 .search-action-buttons > .auth-modals {
   margin: 0;
 }
@@ -697,35 +712,37 @@
   text-shadow: none;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   margin: 10px;
   margin-right: 10em;
+  width: 200px;
 }
 
-/* line 48, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 50, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 .logo {
   display: table;
   margin-left: 10em;
   color: white !important;
 }
 
-/* line 53, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 55, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 .logo:hover {
   text-shadow: 1px 1px 1px white;
 }
 
-/* line 57, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 59, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 logo h4 {
   display: table-cell;
 }
 
-/* line 61, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 63, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 .dropdown-form > button {
   width: 30px;
   border: none;
 }
 
-/* line 66, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 68, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 .footer {
   margin-top: 20vh;
   display: flex;
@@ -735,14 +752,14 @@ logo h4 {
   background-color: rgba(2, 2, 2, 0.9);
 }
 
-/* line 75, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 77, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 .footer a {
   margin: 0px 20px;
   color: white;
   font-size: 24px;
 }
 
-/* line 83, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
+/* line 85, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/header.css.scss */
 .header-dropdown {
   font-size: 24px !important;
   color: white !important;
@@ -4516,27 +4533,21 @@ logo h4 {
   clip: auto;
 }
 
-/* line 20, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
+/* line 21, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
 * {
   font-family: 'Ubuntu', sans-serif;
-}
-
-/* line 25, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
-::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
-  color: inherit;
 }
 
 /*h2, h4, p, h5{
   margin: 8px 12px;
 }*/
-/* line 33, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
+/* line 32, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
 button, input, textarea {
   -webkit-appearance: none;
   border: none;
 }
 
-/* line 38, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
+/* line 37, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
 a:hover {
   text-decoration: none !important;
   text-shadow: none;
@@ -4544,18 +4555,18 @@ a:hover {
   color: black !important;
 }
 
-/* line 50, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
+/* line 49, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
 .jumbotron {
   margin-bottom: 0px;
 }
 
-/* line 54, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
+/* line 53, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
 #footer {
   height: 10vh;
   /*background-color: blue;*/
 }
 
-/* line 59, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
+/* line 58, /Users/dianezheng/Desktop/Diane/Craftables/Craftables/app/assets/stylesheets/application.css.scss */
 #root {
   height: 100vh;
 }
