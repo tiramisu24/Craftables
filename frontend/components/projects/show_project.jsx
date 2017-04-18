@@ -41,8 +41,7 @@ class ShowProject extends React.Component{
       let stickOffset = 0;
       $(window).scroll(function(){ // scroll event
         let sidebarStopperPosition = $sidebarStopper.offset().top;
-        let stopPoint = sidebarStopperPosition - 2*generalSidebarHeight;
-        let diff = stopPoint + stickOffset;
+        let stopPoint = sidebarStopperPosition - generalSidebarHeight;
         let windowTop = $(window).scrollTop();
 
         let $sidebarTopBar = $('#sidebar-top-bar');
@@ -50,8 +49,8 @@ class ShowProject extends React.Component{
         $sidebarTopBar.width($('.project-show-header').width());
 
           if (stopPoint < windowTop) {
-            $sidebar.css({ position: 'absolute', top: stopPoint });
-            $sidebarTopBar.css({ position: 'absolute', top: stopPoint });
+            $sidebar.css({ position: 'absolute', top: stopPoint-$('footer').css("height")});
+            $sidebarTopBar.css({ position: 'absolute', top: stopPoint-$('footer').css("height")});
             $("#sidebar-top-bar-wrapper").css('display', 'block');
             $sidebarTopBar.css("border-bottom", "none");
             $(".project-show-content-divider").css("border-bottom", "none");
