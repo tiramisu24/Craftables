@@ -72,7 +72,7 @@ class CreateProject extends React.Component{
       e.preventDefault();
       cloudinary.openUploadWidget(cloudinary_options, (error, results) => {
         if(error){
-          console.log(error);
+          // console.log(error);
         }else{
 
           let img_urls = null

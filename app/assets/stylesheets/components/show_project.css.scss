@@ -215,10 +215,8 @@
 }
 .project-show-sidebar-author-bio{
   width: 160px;
-  height: 160px;
-
-  text-overflow: ellipsis;
-  overflow: hidden;
+  height: 159px;
+  overflow-y: hidden;
   margin: 10px;
 }
 

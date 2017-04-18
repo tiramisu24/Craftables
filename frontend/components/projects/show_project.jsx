@@ -33,7 +33,7 @@ class ShowProject extends React.Component{
   setScroll(){
     $( document ).ready(function() {
     const $sidebar = $('#sidebar');
-    const $sidebarStopper = $('#sidebar-stopper');
+    const $sidebarStopper = $('.sidebar-stopper');
 
     if (!!$sidebar.offset()) { // make sure ".sidebar" element exists
       let generalSidebarHeight = $sidebar.innerHeight();
@@ -41,41 +41,37 @@ class ShowProject extends React.Component{
       let stickOffset = 0;
       $(window).scroll(function(){ // scroll event
         let sidebarStopperPosition = $sidebarStopper.offset().top;
-        let stopPoint = sidebarStopperPosition - generalSidebarHeight - stickOffset;
+        let stopPoint = sidebarStopperPosition - 2*generalSidebarHeight;
         let diff = stopPoint + stickOffset;
         let windowTop = $(window).scrollTop();
-
 
         let $sidebarTopBar = $('#sidebar-top-bar');
         $('#replace-top-bar').css({height: $sidebarTopBar.css("height")});
         $sidebarTopBar.width($('.project-show-header').width());
 
-        if ((sidebarTop < windowTop)) {
+          if (stopPoint < windowTop) {
+            $sidebar.css({ position: 'absolute', top: stopPoint });
+            $sidebarTopBar.css({ position: 'absolute', top: stopPoint });
+            $("#sidebar-top-bar-wrapper").css('display', 'block');
+            $sidebarTopBar.css("border-bottom", "none");
+            $(".project-show-content-divider").css("border-bottom", "none");
+          }else if ((sidebarTop < windowTop)) {
             $sidebar.css({ position: 'fixed', top: 0});
             $sidebarTopBar.css({ position: 'fixed', top: 0 });
             $("#sidebar-top-bar-wrapper").css('display', 'block');
             $sidebarTopBar.css("border-bottom", "none");
             $(".project-show-content-divider").css("border-bottom", "none");
 
-        }
-        // if (stopPoint < windowTop) {
-        //     $sidebar.css({ position: 'absolute', top: diff });
-        //     $sidebarTopBar.css({ position: 'absolute', top: diff });
-        //     $("#sidebar-top-bar-wrapper").css('display', 'none')
-        //
-        // } else
-        else {
+        }else {
             $sidebar.css({position: 'absolute', top: 'initial'});
             $sidebarTopBar.css({position: 'absolute',top: 'initial'});
             $("#sidebar-top-bar-wrapper").css('display', 'none')
             $sidebarTopBar.css("border-bottom", "1px solid grey");
             $(".project-show-content-divider").css("border-bottom", "1px solid grey");
-
         }
       });
       }
     });
-
   }
 
   componentWillReceiveProps(nextProps){
@@ -122,10 +118,8 @@ class ShowProject extends React.Component{
   }
 
   render(){
-
     let projectList = this.state.projectsHash;
     if(Object.keys(projectList).length === 0) return <div></div>;
-
     let projectId = this.state.projectId;
     let project = projectList[projectId];
     if(!project.steps) return <div></div>;
@@ -190,7 +184,7 @@ class ShowProject extends React.Component{
                     <div className="show-step-photo-section project-show-words">{project.author.bio}</div>
                 </div>
                 <div>
-                  <Col md={12} className="project-show-comments" id="sidebar-stopper">
+                  <Col md={12} className="project-show-comments">
                     <Row><h3 id="show-page-comments">Comments</h3></Row>
                     <Comments projectId={this.state.projectId}/>
                   </Col>
